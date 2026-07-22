@@ -8,7 +8,6 @@ height = 78.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=987147644]
 script = ExtResource("1_hf2h3")
-speed = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=565326032]
 offset_left = -19.0
@@ -19,3 +18,5 @@ color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434649882]
 shape = SubResource("CapsuleShape2D_jvjwp")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=482988854]

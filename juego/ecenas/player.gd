@@ -2,12 +2,19 @@ extends CharacterBody2D
 
 var direccion : Vector2
 
+@export var speed := 50
+@onready var agente:NavigationAgent2D = $NavigationAgent2D
+
+func _ready() -> void:
+	agente.target_position = direccion
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		direccion = get_global_mouse_position()
 
 func _physics_process(delta: float) -> void:
-	var vel = (direccion - self.global_position)
-	vel = vel.clamp(Vector2(-100,-100), Vector2(100,100))
-	velocity = vel
-	move_and_slide()
+	if agente.is_target_reached():
+		velocity = Vector2.ZERO
+	else:
+		var dir:= to_local(agente.get_next_path_position()).normalized()
+		velocity = dir * speed
