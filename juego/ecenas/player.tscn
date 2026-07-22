@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://c1premasw8du5"]
 
+[ext_resource type="Script" uid="uid://cuc0s8t6byrtl" path="res://ecenas/player.gd" id="1_hf2h3"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvjwp"]
 radius = 19.0
 height = 78.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=987147644]
+script = ExtResource("1_hf2h3")
+speed = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=565326032]
 offset_left = -19.0
