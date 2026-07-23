@@ -3,17 +3,35 @@
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://agregar/hojas.gd" id="1_6c4ud"]
 [ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://agregar/cueva.png" id="2_ct0pd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hotc2"]
+size = Vector2(70.50001, 60.5)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7btj2"]
+size = Vector2(68.49999, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps0ba"]
+size = Vector2(69, 62.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
 font_size = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj1xi"]
+size = Vector2(775.00037, 82.499954)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q43rt"]
+size = Vector2(82.49999, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj7tt"]
+size = Vector2(122.50003, 71.24995)
 
 [node name="Node2D" type="Node2D" unique_id=1650403230]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_6c4ud")
 
-[node name="gas1" type="Node2D" parent="." unique_id=1701716026 groups=["gas"]]
-position = Vector2(-163, 132)
+[node name="gas1" type="CharacterBody2D" parent="." unique_id=1030209451 groups=["gas"]]
+position = Vector2(-163, -270)
 
 [node name="tubo1" type="Button" parent="gas1" unique_id=2089644528]
 visible = false
@@ -27,8 +45,13 @@ wait_time = 1390.591
 one_shot = true
 autostart = true
 
-[node name="gas2" type="Node2D" parent="." unique_id=1863370020 groups=["gas"]]
-position = Vector2(29, 130)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gas1" unique_id=584140809]
+position = Vector2(8.000015, 17.999996)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_hotc2")
+
+[node name="gas2" type="CharacterBody2D" parent="." unique_id=258651819 groups=["gas"]]
+position = Vector2(29, -270)
 
 [node name="tubo2" type="Button" parent="gas2" unique_id=732765524]
 visible = false
@@ -44,10 +67,16 @@ scale = Vector2(0.85937506, 1.046875)
 texture = SubResource("CompressedTexture2D_hrqju")
 
 [node name="Timer2" type="Timer" parent="gas2" unique_id=1377879519]
+wait_time = 10.0
 one_shot = true
 
-[node name="gas3" type="Node2D" parent="." unique_id=1820819629 groups=["gas"]]
-position = Vector2(214, 130)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gas2" unique_id=447734738]
+position = Vector2(-11.500006, 20)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_7btj2")
+
+[node name="gas3" type="CharacterBody2D" parent="." unique_id=273945853 groups=["gas"]]
+position = Vector2(214, -270)
 
 [node name="tubo3" type="Button" parent="gas3" unique_id=1118197777]
 visible = false
@@ -57,7 +86,13 @@ offset_right = 16.0
 offset_bottom = 62.49998
 
 [node name="Timer3" type="Timer" parent="gas3" unique_id=660874795]
+wait_time = 20.0
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gas3" unique_id=2101083311]
+position = Vector2(-24.499985, 21.25)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_ps0ba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
 position = Vector2(31, 23)
@@ -79,6 +114,49 @@ label_settings = SubResource("LabelSettings_0hol4")
 wait_time = 30.0
 autostart = true
 
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1580543156]
+position = Vector2(-145, 217.50003)
+constant_linear_velocity = Vector2(0, -20)
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1744982894]
+position = Vector2(174.9999, -31.25)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_yj1xi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=418759545]
+position = Vector2(-157.5, -355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1394292565]
+position = Vector2(5, 10)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_q43rt")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1872592770]
+position = Vector2(2, -355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1288538510]
+position = Vector2(5, 10)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_q43rt")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=1597808463]
+position = Vector2(190, -355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=260106354]
+position = Vector2(5, 10)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_q43rt")
+
+[node name="techo" type="AnimatableBody2D" parent="." unique_id=1359857679]
+position = Vector2(-167.5, -464.99994)
+constant_linear_velocity = Vector2(0, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=419102150]
+position = Vector2(3.75, 44.375)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_tj7tt")
+
 [connection signal="pressed" from="gas1/tubo1" to="." method="_on_tubo_1_pressed"]
 [connection signal="timeout" from="gas1/Timer1" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="gas2/tubo2" to="." method="_on_tubo_2_pressed"]
@@ -86,3 +164,6 @@ autostart = true
 [connection signal="pressed" from="gas3/tubo3" to="." method="_on_tubo_3_pressed"]
 [connection signal="timeout" from="gas3/Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
