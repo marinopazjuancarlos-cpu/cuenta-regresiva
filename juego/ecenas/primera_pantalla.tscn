@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://caxtq16pxthpg"]
 
+[ext_resource type="Script" uid="uid://bhc68cxjehipt" path="res://ecenas/primera_pantalla.gd" id="1_eowtg"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://ecenas/player.tscn" id="1_lnsk3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bvb8s"]
@@ -12,6 +13,7 @@ size = Vector2(1152, 248)
 
 [node name="Node2D" type="Node2D" unique_id=704519783]
 scale = Vector2(0.4, 0.4)
+script = ExtResource("1_eowtg")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=538471883]
 navigation_polygon = SubResource("NavigationPolygon_bvb8s")

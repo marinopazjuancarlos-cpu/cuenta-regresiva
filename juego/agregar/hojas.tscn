@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://ld4eey24ic1e"]
+[gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
-[ext_resource type="Script" uid="uid://bqy5ork8rg1su" path="res://agregar/conjunto_tuberias.gd" id="1_yit34"]
-[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://agregar/cueva.png" id="4_0kn52"]
+[ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://agregar/hojas.gd" id="1_6c4ud"]
+[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://agregar/cueva.png" id="2_ct0pd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqju"]
 
@@ -10,7 +10,7 @@ font_size = 30
 
 [node name="Node2D" type="Node2D" unique_id=1650403230]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_yit34")
+script = ExtResource("1_6c4ud")
 
 [node name="gas1" type="Node2D" parent="." unique_id=1701716026 groups=["gas"]]
 position = Vector2(-163, 132)
@@ -59,32 +59,6 @@ offset_bottom = 62.49998
 [node name="Timer3" type="Timer" parent="gas3" unique_id=660874795]
 autostart = true
 
-[node name="gas4" type="Node2D" parent="." unique_id=1348187934 groups=["gas"]]
-position = Vector2(137.425, 0)
-
-[node name="tubo4" type="Button" parent="gas4" unique_id=1204037926]
-visible = false
-offset_left = -66.5
-offset_top = -17.500004
-offset_right = 16.0
-offset_bottom = 62.49998
-
-[node name="Timer4" type="Timer" parent="gas4" unique_id=1272066154]
-autostart = true
-
-[node name="gas5" type="Node2D" parent="." unique_id=577187037 groups=["gas"]]
-position = Vector2(-90, 0)
-
-[node name="tubo5" type="Button" parent="gas5" unique_id=85937171]
-visible = false
-offset_left = -66.5
-offset_top = -17.500004
-offset_right = 16.0
-offset_bottom = 62.49998
-
-[node name="Timer5" type="Timer" parent="gas5" unique_id=313613228]
-autostart = true
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
 position = Vector2(31, 23)
 
@@ -92,7 +66,7 @@ position = Vector2(31, 23)
 visible = false
 position = Vector2(29.999996, 24.999998)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_0kn52")
+texture = ExtResource("2_ct0pd")
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
 offset_left = 297.49997
@@ -111,8 +85,4 @@ autostart = true
 [connection signal="timeout" from="gas2/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="gas3/tubo3" to="." method="_on_tubo_3_pressed"]
 [connection signal="timeout" from="gas3/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="pressed" from="gas4/tubo4" to="." method="_on_tubo_4_pressed"]
-[connection signal="timeout" from="gas4/Timer4" to="." method="_on_timer_4_timeout"]
-[connection signal="pressed" from="gas5/tubo5" to="." method="_on_tubo_5_pressed"]
-[connection signal="timeout" from="gas5/Timer5" to="." method="_on_timer_5_timeout"]
 [connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]
