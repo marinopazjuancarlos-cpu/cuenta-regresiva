@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ld4eey24ic1e"]
+
+[ext_resource type="Script" uid="uid://bqy5ork8rg1su" path="res://agregar/conjunto_tuberias.gd" id="1_yit34"]
+[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://agregar/cueva.png" id="4_0kn52"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqju"]
+load_path = "res://.godot/imported/icon.svg-85dd57e1c5c1f63069c69f159f84f360.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+font_size = 30
+
+[node name="Node2D" type="Node2D" unique_id=1650403230]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_yit34")
+
+[node name="gas1" type="Node2D" parent="." unique_id=1701716026 groups=["gas"]]
+position = Vector2(-163, 132)
+
+[node name="tubo1" type="Button" parent="gas1" unique_id=2089644528]
+visible = false
+offset_left = -29.5
+offset_top = -19.499992
+offset_right = 52.999992
+offset_bottom = 60.5
+
+[node name="Timer1" type="Timer" parent="gas1" unique_id=247039600]
+wait_time = 1390.591
+one_shot = true
+autostart = true
+
+[node name="gas2" type="Node2D" parent="." unique_id=1863370020 groups=["gas"]]
+position = Vector2(29, 130)
+
+[node name="tubo2" type="Button" parent="gas2" unique_id=732765524]
+visible = false
+offset_left = -54.0
+offset_top = -17.500002
+offset_right = 28.5
+offset_bottom = 62.499992
+
+[node name="Icon" type="Sprite2D" parent="gas2" unique_id=70912221]
+visible = false
+position = Vector2(-5.999995, 2)
+scale = Vector2(0.85937506, 1.046875)
+texture = SubResource("CompressedTexture2D_hrqju")
+
+[node name="Timer2" type="Timer" parent="gas2" unique_id=1377879519]
+one_shot = true
+
+[node name="gas3" type="Node2D" parent="." unique_id=1820819629 groups=["gas"]]
+position = Vector2(214, 130)
+
+[node name="tubo3" type="Button" parent="gas3" unique_id=1118197777]
+visible = false
+offset_left = -66.5
+offset_top = -17.500004
+offset_right = 16.0
+offset_bottom = 62.49998
+
+[node name="Timer3" type="Timer" parent="gas3" unique_id=660874795]
+autostart = true
+
+[node name="gas4" type="Node2D" parent="." unique_id=1348187934 groups=["gas"]]
+position = Vector2(137.425, 0)
+
+[node name="tubo4" type="Button" parent="gas4" unique_id=1204037926]
+visible = false
+offset_left = -66.5
+offset_top = -17.500004
+offset_right = 16.0
+offset_bottom = 62.49998
+
+[node name="Timer4" type="Timer" parent="gas4" unique_id=1272066154]
+autostart = true
+
+[node name="gas5" type="Node2D" parent="." unique_id=577187037 groups=["gas"]]
+position = Vector2(-90, 0)
+
+[node name="tubo5" type="Button" parent="gas5" unique_id=85937171]
+visible = false
+offset_left = -66.5
+offset_top = -17.500004
+offset_right = 16.0
+offset_bottom = 62.49998
+
+[node name="Timer5" type="Timer" parent="gas5" unique_id=313613228]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
+position = Vector2(31, 23)
+
+[node name="Cueva" type="Sprite2D" parent="." unique_id=227276597]
+visible = false
+position = Vector2(29.999996, 24.999998)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_0kn52")
+
+[node name="Tiempo" type="Label" parent="." unique_id=2144871555]
+offset_left = 297.49997
+offset_top = -157.49998
+offset_right = 337.49997
+offset_bottom = -134.49998
+label_settings = SubResource("LabelSettings_0hol4")
+
+[node name="Tiempo_restante" type="Timer" parent="." unique_id=1630268327]
+wait_time = 30.0
+autostart = true
+
+[connection signal="pressed" from="gas1/tubo1" to="." method="_on_tubo_1_pressed"]
+[connection signal="timeout" from="gas1/Timer1" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="gas2/tubo2" to="." method="_on_tubo_2_pressed"]
+[connection signal="timeout" from="gas2/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="gas3/tubo3" to="." method="_on_tubo_3_pressed"]
+[connection signal="timeout" from="gas3/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="pressed" from="gas4/tubo4" to="." method="_on_tubo_4_pressed"]
+[connection signal="timeout" from="gas4/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="pressed" from="gas5/tubo5" to="." method="_on_tubo_5_pressed"]
+[connection signal="timeout" from="gas5/Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]

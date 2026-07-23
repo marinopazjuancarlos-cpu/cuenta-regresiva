@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://caxtq16pxthpg"]
+
+[ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://ecenas/player.tscn" id="1_lnsk3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bvb8s"]
+vertices = PackedVector2Array(1141.8438, 432, 11.2578125, 432.9922, 15.7421875, 261.9297, 577.5703, 258, 1139.2109, 258)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(6, 252, 1149, 244, 1152, 442, 1, 443)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjwp"]
+size = Vector2(1152, 248)
+
+[node name="Node2D" type="Node2D" unique_id=704519783]
+scale = Vector2(0.4, 0.4)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=538471883]
+navigation_polygon = SubResource("NavigationPolygon_bvb8s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1012271738]
+
+[node name="ColorRect" type="ColorRect" parent="NavigationRegion2D/StaticBody2D" unique_id=569850378]
+offset_right = 1151.0
+offset_bottom = 248.0
+color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+
+[node name="ColorRect" type="ColorRect" parent="NavigationRegion2D/StaticBody2D/ColorRect" unique_id=301724217]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 241.0
+offset_right = 1141.0
+offset_bottom = 437.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" unique_id=763033719]
+position = Vector2(577, 124)
+shape = SubResource("RectangleShape2D_jvjwp")
+
+[node name="CharacterBody2D" parent="NavigationRegion2D" unique_id=987147644 instance=ExtResource("1_lnsk3")]
+position = Vector2(275, 333)
+
+[node name="Button" type="Button" parent="." unique_id=1962628605]
+offset_left = 660.0
+offset_top = 260.0
+offset_right = 769.9998
+offset_bottom = 372.5
+
+[connection signal="button_up" from="Button" to="NavigationRegion2D/CharacterBody2D" method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="NavigationRegion2D/CharacterBody2D" method="_on_button_pressed"]
