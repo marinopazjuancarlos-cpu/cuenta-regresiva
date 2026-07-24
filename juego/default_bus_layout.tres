@@ -1,0 +1,19 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://djr8lkkuy1xui"]
+
+[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_j3pel"]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
+
+[resource]
+bus/1/name = &"New Bus"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 1.1804829
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectFilter_j3pel")
+bus/1/effect/0/enabled = false
+bus/1/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
+bus/1/effect/1/enabled = true

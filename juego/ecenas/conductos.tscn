@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ckgm75dvxa7e5"]
+
+[ext_resource type="Script" uid="uid://cmqx8alaa1uxi" path="res://ecenas/conductos.gd" id="1_71vgh"]
+[ext_resource type="Texture2D" uid="uid://dks0l84nxcovl" path="res://icon.svg" id="2_p6r33"]
+
+[sub_resource type="Curve2D" id="Curve2D_mvgjt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 40, -31, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, -14, 37, 0, 0, 0, 0, -18, 89, 0, 0, 0, 0, 3, 125, 0, 0, 0, 0, 25, 139, 0, 0, 0, 0, 59, 156, 0, 0, 0, 0, 106, 160, 0, 0, 0, 0, 149, 156, 0, 0, 0, 0, 181, 142, 0, 0, 0, 0, 200, 116, 0, 0, 0, 0, 211, 82, 0, 0, 0, 0, 205, 29, 0, 0, 0, 0, 190, -8, 0, 0, 0, 0, 164, -27, 0, 0, 0, 0, 135, -38, 0, 0, 0, 0, 85, -45, 0, 0, 0, 0, 40, -31)
+}
+point_count = 18
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7btj2"]
+size = Vector2(55.5, 47.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71vgh"]
+size = Vector2(65, 59.999977)
+
+[sub_resource type="LabelSettings" id="LabelSettings_71vgh"]
+font_size = 26
+
+[node name="Conductos" type="Node2D" unique_id=1899294917]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_71vgh")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=802436602]
+position = Vector2(-97, -61)
+curve = SubResource("Curve2D_mvgjt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1216233938]
+position = Vector2(40, -31)
+rotation = 2.444202
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D" unique_id=2050506648]
+rotation = -2.4260077
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=566875688]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_p6r33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=1323387515]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7btj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2136552184]
+texture = ExtResource("2_p6r33")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=704211301]
+
+[node name="Tiempo_restante" type="Timer" parent="." unique_id=959863835]
+wait_time = 30.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1443140334]
+position = Vector2(664.99994, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=902139475]
+position = Vector2(22.500061, -15.000008)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_71vgh")
+
+[node name="Label" type="Label" parent="." unique_id=300613071]
+offset_left = 144.99998
+offset_top = -364.99997
+offset_right = 604.99994
+offset_bottom = -239.99998
+label_settings = SubResource("LabelSettings_71vgh")
+
+[node name="PuntajeTimer" type="Timer" parent="." unique_id=2146456558]
+
+[connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]
