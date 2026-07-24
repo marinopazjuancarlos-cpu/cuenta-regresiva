@@ -1,64 +1,81 @@
 [gd_scene format=3 uid="uid://ld4eey24ic1e"]
 
+<<<<<<< Updated upstream:juego/En Desarrollo/agregar/tuberias.tscn
 [ext_resource type="Script" uid="uid://bqy5ork8rg1su" path="res://En Desarrollo/agregar/conjunto_tuberias.gd" id="1_yit34"]
 [ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://En Desarrollo/agregar/cueva.png" id="4_0kn52"]
+=======
+[ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://agregar/hojas.gd" id="1_6c4ud"]
+>>>>>>> Stashed changes:juego/agregar/hojas.tscn
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqju"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hotc2"]
+size = Vector2(73.000015, 75.000015)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
 font_size = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7btj2"]
+size = Vector2(129.375, 122.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps0ba"]
+size = Vector2(130.00002, 115.00003)
 
 [node name="Node2D" type="Node2D" unique_id=1650403230]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_yit34")
 
-[node name="gas1" type="Node2D" parent="." unique_id=1701716026 groups=["gas"]]
-position = Vector2(-163, 132)
+[node name="hoja1" type="CharacterBody2D" parent="." unique_id=326357848 groups=["gas"]]
+position = Vector2(-163, -270)
 
-[node name="tubo1" type="Button" parent="gas1" unique_id=2089644528]
+[node name="hoja1" type="Button" parent="hoja1" unique_id=2089644528]
 visible = false
 offset_left = -29.5
 offset_top = -19.499992
 offset_right = 52.999992
 offset_bottom = 60.5
 
-[node name="Timer1" type="Timer" parent="gas1" unique_id=247039600]
-wait_time = 1390.591
+[node name="Timer1" type="Timer" parent="hoja1" unique_id=247039600]
 one_shot = true
 autostart = true
 
-[node name="gas2" type="Node2D" parent="." unique_id=1863370020 groups=["gas"]]
-position = Vector2(29, 130)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hoja1" unique_id=353353260]
+position = Vector2(13.000012, 10.000002)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_hotc2")
 
-[node name="tubo2" type="Button" parent="gas2" unique_id=732765524]
+[node name="hoja2" type="CharacterBody2D" parent="." unique_id=2069623547 groups=["gas"]]
+position = Vector2(29, -270)
+
+[node name="hoja2" type="Button" parent="hoja2" unique_id=732765524]
 visible = false
 offset_left = -54.0
 offset_top = -17.500002
 offset_right = 28.5
 offset_bottom = 62.499992
 
-[node name="Icon" type="Sprite2D" parent="gas2" unique_id=70912221]
-visible = false
-position = Vector2(-5.999995, 2)
-scale = Vector2(0.85937506, 1.046875)
-texture = SubResource("CompressedTexture2D_hrqju")
-
-[node name="Timer2" type="Timer" parent="gas2" unique_id=1377879519]
+[node name="Timer2" type="Timer" parent="hoja2" unique_id=1377879519]
+wait_time = 10.0
 one_shot = true
 
-[node name="gas3" type="Node2D" parent="." unique_id=1820819629 groups=["gas"]]
-position = Vector2(214, 130)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hoja2" unique_id=745273064]
+position = Vector2(-4.0000014, 10)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_hotc2")
 
-[node name="tubo3" type="Button" parent="gas3" unique_id=1118197777]
+[node name="hoja3" type="CharacterBody2D" parent="." unique_id=378375589 groups=["gas"]]
+position = Vector2(214, -270)
+
+[node name="hoja3" type="Button" parent="hoja3" unique_id=1118197777]
 visible = false
 offset_left = -66.5
 offset_top = -17.500004
 offset_right = 16.0
 offset_bottom = 62.49998
 
-[node name="Timer3" type="Timer" parent="gas3" unique_id=660874795]
+[node name="Timer3" type="Timer" parent="hoja3" unique_id=660874795]
+wait_time = 20.0
 autostart = true
 
+<<<<<<< Updated upstream:juego/En Desarrollo/agregar/tuberias.tscn
 [node name="gas4" type="Node2D" parent="." unique_id=1348187934 groups=["gas"]]
 position = Vector2(137.425, 0)
 
@@ -93,6 +110,16 @@ visible = false
 position = Vector2(29.999996, 24.999998)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_0kn52")
+=======
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="hoja3" unique_id=1901410384]
+position = Vector2(-9.000015, 7.5)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_hotc2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
+position = Vector2(31, 23)
+zoom = Vector2(0.2, 0.2)
+>>>>>>> Stashed changes:juego/agregar/hojas.tscn
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
 offset_left = 297.49997
@@ -105,6 +132,7 @@ label_settings = SubResource("LabelSettings_0hol4")
 wait_time = 30.0
 autostart = true
 
+<<<<<<< Updated upstream:juego/En Desarrollo/agregar/tuberias.tscn
 [connection signal="pressed" from="gas1/tubo1" to="." method="_on_tubo_1_pressed"]
 [connection signal="timeout" from="gas1/Timer1" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="gas2/tubo2" to="." method="_on_tubo_2_pressed"]
@@ -115,4 +143,59 @@ autostart = true
 [connection signal="timeout" from="gas4/Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="pressed" from="gas5/tubo5" to="." method="_on_tubo_5_pressed"]
 [connection signal="timeout" from="gas5/Timer5" to="." method="_on_timer_5_timeout"]
+=======
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=290048764]
+position = Vector2(20, 215)
+scale = Vector2(0.99999994, 0.99999994)
+constant_linear_velocity = Vector2(0, -200)
+constant_angular_velocity = 0.0109083075
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1844619285]
+position = Vector2(-167.1875, -3.75)
+shape = SubResource("RectangleShape2D_7btj2")
+disabled = true
+
+[node name="techo" type="AnimatableBody2D" parent="." unique_id=1515673786]
+position = Vector2(17.5, -587.5)
+scale = Vector2(0.99999994, 0.99999994)
+constant_linear_velocity = Vector2(0, -2)
+constant_angular_velocity = 0.0109083075
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=328353424]
+position = Vector2(-167.1875, -6.25)
+shape = SubResource("RectangleShape2D_7btj2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1408149827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1162200917]
+position = Vector2(-150, -464.99997)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_ps0ba")
+
+[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=2083907109]
+position = Vector2(14.999998, 177.49998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=1532929564]
+position = Vector2(12.500061, 32.500015)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_7btj2")
+disabled = true
+
+[node name="AnimatableBody2D3" type="AnimatableBody2D" parent="." unique_id=1945083068]
+position = Vector2(14.999998, 177.49998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D3" unique_id=1920087533]
+position = Vector2(195, 30.000015)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_7btj2")
+disabled = true
+
+[connection signal="pressed" from="hoja1/hoja1" to="." method="_on_hoja_1_pressed"]
+[connection signal="timeout" from="hoja1/Timer1" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="hoja2/hoja2" to="." method="_on_hoja_2_pressed"]
+[connection signal="timeout" from="hoja2/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="hoja3/hoja3" to="." method="_on_hoja_3_pressed"]
+[connection signal="timeout" from="hoja3/Timer3" to="." method="_on_timer_3_timeout"]
+>>>>>>> Stashed changes:juego/agregar/hojas.tscn
 [connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
