@@ -24,7 +24,7 @@ ControladorJuego="*res://Desarrollado/Autoloads/controlador_juego.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 

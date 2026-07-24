@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3d5exwecuaq7"]
 
-[ext_resource type="Script" uid="uid://dgfmicyco3hcd" path="res://En Desarrollo/ecenas/player.gd" id="1_hf2h3"]
+[ext_resource type="Script" uid="uid://dgfmicyco3hcd" path="res://Desarrollado/Entidades/Player/player.gd" id="1_hf2h3"]
 [ext_resource type="Texture2D" uid="uid://bc6yn28017mic" path="res://En Desarrollo/agregar/caminar.png" id="2_f7hfp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvjwp"]
@@ -55,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=987147644]
+[node name="Player" type="CharacterBody2D" unique_id=987147644 groups=["player"]]
 script = ExtResource("1_hf2h3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=565326032]

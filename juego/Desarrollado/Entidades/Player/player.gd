@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal llego_a_destino
+
 ## Velocidad
 @export var speed: float = 180.0
 ## Que tan rápido alcanza velocidad máxima
@@ -33,7 +35,9 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	var distancia_al_destino := global_position.distance_to(agente.target_position)
 
-	if moviéndose and not agente.is_navigation_finished():
+	if moviéndose and distancia_al_destino <= distancia_llegada:
+		_llegar()
+	elif moviéndose and not agente.is_navigation_finished():
 		var siguiente_punto: Vector2 = agente.get_next_path_position()
 		var dir := (siguiente_punto - global_position).normalized()
 		var factor_velocidad = clamp(distancia_al_destino / 60.0, 0.15, 1.0)
@@ -45,8 +49,9 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = velocity.x < 0.0
 
 		sprite.play("caminar")
-
-		if distancia_al_destino <= distancia_llegada: _llegar()
+	elif moviéndose:
+		# is_navigation_finished() se adelantó a nuestra distancia_llegada: igual contamos como llegada
+		_llegar()
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, frenado * delta)
 		if velocity.length() < 2.0:
@@ -55,12 +60,16 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if doble_clic >= 3: get_tree().change_scene_to_file("uid://c27uvtp7ssdue")
+
+func mover_a(destino: Vector2) -> void:
+	agente.target_position = destino
+	moviéndose = true
 
 
 func _llegar() -> void:
 	moviéndose = false
 	agente.target_position = global_position  # Evita que el agente siga buscando
+	llego_a_destino.emit()
 
 
 func _on_button_pressed() -> void:

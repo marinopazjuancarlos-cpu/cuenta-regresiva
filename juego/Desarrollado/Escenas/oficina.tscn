@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cfd61lgqbjf37"]
+
+[ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="2_punto"]
+[ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="3_hojas"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_oficina"]
+vertices = PackedVector2Array(-600, -350, 600, -350, 600, 350, -600, 350)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+
+[node name="Oficina" type="Node2D" unique_id=1629527104]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=606836095]
+offset_left = -601.0
+offset_top = -349.0
+offset_right = 599.0
+offset_bottom = 351.0
+mouse_filter = 2
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=119806651]
+navigation_polygon = SubResource("NavigationPolygon_oficina")
+
+[node name="Player" parent="." unique_id=1701795305 instance=ExtResource("1_player")]
+position = Vector2(0, 200)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2095482860]
+zoom = Vector2(0.3, 0.3)
+
+[node name="PuntoMinijuego_D1_0" parent="." unique_id=36714037 instance=ExtResource("2_punto")]
+position = Vector2(-400, -100)
+escena_minijuego = ExtResource("3_hojas")
+
+[node name="PuntoMinijuego_D1_1" parent="." unique_id=223744971 instance=ExtResource("2_punto")]
+position = Vector2(-200, -100)
+indice = 1
+
+[node name="PuntoMinijuego_D2_0" parent="." unique_id=851833412 instance=ExtResource("2_punto")]
+position = Vector2(0, -100)
+dia = 2
+
+[node name="PuntoMinijuego_D2_1" parent="." unique_id=960554731 instance=ExtResource("2_punto")]
+position = Vector2(200, -100)
+dia = 2
+indice = 1
+
+[node name="PuntoMinijuego_D2_2" parent="." unique_id=871390574 instance=ExtResource("2_punto")]
+position = Vector2(400, -100)
+dia = 2
+indice = 2
+
+[node name="PuntoMinijuego_D3_0" parent="." unique_id=2006123051 instance=ExtResource("2_punto")]
+position = Vector2(-300, 100)
+dia = 3
+
+[node name="PuntoMinijuego_D3_1" parent="." unique_id=1880959121 instance=ExtResource("2_punto")]
+position = Vector2(-100, 100)
+dia = 3
+indice = 1
+
+[node name="PuntoMinijuego_D3_2" parent="." unique_id=269381272 instance=ExtResource("2_punto")]
+position = Vector2(100, 100)
+dia = 3
+indice = 2
+
+[node name="PuntoMinijuego_D3_3" parent="." unique_id=1270081687 instance=ExtResource("2_punto")]
+position = Vector2(300, 100)
+dia = 3
+indice = 3
+
+[node name="CapaMinijuego" type="CanvasLayer" parent="." unique_id=680872099]
+process_mode = 3
+layer = 10
+
+[node name="Marco" type="SubViewportContainer" parent="CapaMinijuego" unique_id=105628266 groups=["marco_minijuego"]]
+process_mode = 3
+visible = false
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CapaMinijuego/Marco" unique_id=1561589233 groups=["capa_minijuego"]]
+process_mode = 3
+handle_input_locally = false
+size = Vector2i(256, 144)
+render_target_update_mode = 0

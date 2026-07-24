@@ -37,30 +37,51 @@ const GLITCH_TIEMPO = 30.0
 
 const PATRONES_DIAS = {
 	1: {
-		"duracion": 30.0,
-		"velocidad_caida": 2.0,
+		"duracion": 45.0,
+		"velocidad_caida": 1.3,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 10.0, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 20.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 4.5, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 9.0, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 13.5, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 18.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 22.5, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 27.0, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 31.5, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 36.0, "slot": "gas3", "tipo": TIPO_VERDE},
 		],
 	},
 	2: {
-		"duracion": 30.0,
-		"velocidad_caida": 3.0,
+		"duracion": 40.0,
+		"velocidad_caida": 1.7,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 10.0, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 20.0, "slot": "gas2", "tipo": TIPO_ROJA},
+			{"tiempo": 4.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 8.0, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 12.0, "slot": "gas1", "tipo": TIPO_ROJA},
+			{"tiempo": 16.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 20.0, "slot": "gas3", "tipo": TIPO_ROJA},
+			{"tiempo": 24.0, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 28.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 32.0, "slot": "gas3", "tipo": TIPO_ROJA},
+			{"tiempo": 36.0, "slot": "gas1", "tipo": TIPO_VERDE},
 		],
 	},
 	3: {
 		"duracion": 40.0,
-		"velocidad_caida": 3.0,
+		"velocidad_caida": 2.2,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 10.0, "slot": "gas2", "tipo": TIPO_ROJA},
-			{"tiempo": 20.0, "slot": "gas3", "tipo": TIPO_PESADA},
+			{"tiempo": 3.6, "slot": "gas2", "tipo": TIPO_ROJA},
+			{"tiempo": 7.2, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 10.8, "slot": "gas1", "tipo": TIPO_ROJA},
+			{"tiempo": 14.4, "slot": "gas2", "tipo": TIPO_PESADA},
+			{"tiempo": 18.0, "slot": "gas3", "tipo": TIPO_ROJA},
+			{"tiempo": 21.6, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 25.2, "slot": "gas2", "tipo": TIPO_ROJA},
+			{"tiempo": 28.8, "slot": "gas3", "tipo": TIPO_PESADA},
+			{"tiempo": 32.4, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 36.0, "slot": "gas2", "tipo": TIPO_VERDE},
 		],
 	},
 }
@@ -203,8 +224,7 @@ func _on_tubo_3_pressed() -> void:
 func _on_tiempo_restante_timeout() -> void:
 	$Tiempo_restante.stop()
 	$PuntajeTimer.stop()
-	ControladorJuego.registrar_puntaje_minijuego(puntos, PUNTOS_MINIMOS_FINAL_A, PUNTOS_MINIMOS_FINAL_B)
-	get_tree().paused = true
+	ControladorJuego.terminar_minijuego(puntos, PUNTOS_MINIMOS_FINAL_A, PUNTOS_MINIMOS_FINAL_B)
 
 
 func _limpiar_hoja(slot: String) -> void:
@@ -249,3 +269,6 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_3_body_entered(body: Node2D) -> void:
 	_despawnear_hoja(body)
+
+func _on_area_techo_body_entered(body: Node2D) -> void:
+	_bajar_hoja(body)
