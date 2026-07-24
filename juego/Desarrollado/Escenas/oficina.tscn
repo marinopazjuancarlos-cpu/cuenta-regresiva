@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="2_punto"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="3_hojas"]
+[ext_resource type="PackedScene" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="4_cables"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oficina"]
 vertices = PackedVector2Array(-600, -350, 600, -350, 600, 350, -600, 350)
@@ -33,6 +34,7 @@ escena_minijuego = ExtResource("3_hojas")
 [node name="PuntoMinijuego_D1_1" parent="." unique_id=223744971 instance=ExtResource("2_punto")]
 position = Vector2(-200, -100)
 indice = 1
+escena_minijuego = ExtResource("4_cables")
 
 [node name="PuntoMinijuego_D2_0" parent="." unique_id=851833412 instance=ExtResource("2_punto")]
 position = Vector2(0, -100)
@@ -42,6 +44,7 @@ dia = 2
 position = Vector2(200, -100)
 dia = 2
 indice = 1
+escena_minijuego = ExtResource("4_cables")
 
 [node name="PuntoMinijuego_D2_2" parent="." unique_id=871390574 instance=ExtResource("2_punto")]
 position = Vector2(400, -100)
@@ -56,6 +59,7 @@ dia = 3
 position = Vector2(-100, 100)
 dia = 3
 indice = 1
+escena_minijuego = ExtResource("4_cables")
 
 [node name="PuntoMinijuego_D3_2" parent="." unique_id=269381272 instance=ExtResource("2_punto")]
 position = Vector2(100, 100)
