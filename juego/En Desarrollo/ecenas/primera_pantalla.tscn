@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhc68cxjehipt" path="res://En Desarrollo/ecenas/primera_pantalla.gd" id="1_eowtg"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="1_lnsk3"]
+[ext_resource type="Texture2D" uid="uid://cyjmpfbug815r" path="res://probarlo.png" id="2_u82d5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bvb8s"]
 vertices = PackedVector2Array(1141.8438, 432, 11.2578125, 432.9922, 15.7421875, 261.9297, 577.5703, 258, 1139.2109, 258)
@@ -31,6 +32,11 @@ offset_left = -10.0
 offset_top = 241.0
 offset_right = 1141.0
 offset_bottom = 437.0
+
+[node name="Probarlo" type="Sprite2D" parent="NavigationRegion2D/StaticBody2D/ColorRect/ColorRect" unique_id=1674587626]
+position = Vector2(507.5, -66)
+scale = Vector2(1.753811, 1.8376168)
+texture = ExtResource("2_u82d5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" unique_id=763033719]
 position = Vector2(577, 124)

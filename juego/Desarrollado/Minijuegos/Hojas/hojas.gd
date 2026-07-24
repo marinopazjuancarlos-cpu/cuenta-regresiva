@@ -257,7 +257,10 @@ func _despawnear_hoja(body: Node2D) -> void:
 func _bajar_hoja(body: Node2D) -> void:
 	if not body.is_in_group("gas"):
 		return
-	_detener_bajada(body.name)
+	# En vez de limpiar, volvemos a ponerla en bajada
+	en_trampolin.erase(body.name)
+	en_bajada[body.name] = true
+
 
 
 

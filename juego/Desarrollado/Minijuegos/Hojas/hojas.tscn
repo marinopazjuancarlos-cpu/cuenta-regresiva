@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
-[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://En Desarrollo/agregar/cueva.png" id="2_1u08f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hotc2"]
 size = Vector2(70.50001, 60.5)
@@ -22,6 +21,10 @@ size = Vector2(1330.1252, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj7tt"]
 size = Vector2(122.50003, 71.24995)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wfsb"]
+line_spacing = 2.805
+font_size = 30
 
 [node name="Node2D" type="Node2D" unique_id=1650403230]
 scale = Vector2(0.4, 0.4)
@@ -86,12 +89,6 @@ shape = SubResource("RectangleShape2D_ps0ba")
 visible = false
 position = Vector2(31, 23)
 
-[node name="Cueva" type="Sprite2D" parent="." unique_id=227276597]
-visible = false
-position = Vector2(29.999996, 24.999998)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_1u08f")
-
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
 offset_left = 297.49997
 offset_top = -157.49998
@@ -131,7 +128,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=260106354]
 position = Vector2(5, 10)
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_q43rt")
 
 [node name="techo" type="AnimatableBody2D" parent="." unique_id=1359857679]
@@ -155,8 +152,11 @@ shape = SubResource("RectangleShape2D_tj7tt")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1015605459]
 
 [node name="Label" type="Label" parent="." unique_id=389693401]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -257.5
+offset_top = -167.5
+offset_right = -182.50002
+offset_bottom = -120.0
+label_settings = SubResource("LabelSettings_4wfsb")
 
 [connection signal="pressed" from="gas1/tubo1" to="." method="_on_tubo_1_pressed"]
 [connection signal="pressed" from="gas2/tubo2" to="." method="_on_tubo_2_pressed"]
