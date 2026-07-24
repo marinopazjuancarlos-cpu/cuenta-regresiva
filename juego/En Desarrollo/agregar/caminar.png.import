@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwj72j8so8upl"
-path="res://.godot/imported/cueva.png-134bd14c4a5a401c6ec8767770f45903.ctex"
+uid="uid://bc6yn28017mic"
+path="res://.godot/imported/caminar.png-7939b4288361509193141d9b67566423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agregar/cueva.png"
-dest_files=["res://.godot/imported/cueva.png-134bd14c4a5a401c6ec8767770f45903.ctex"]
+source_file="res://En Desarrollo/agregar/caminar.png"
+dest_files=["res://.godot/imported/caminar.png-7939b4288361509193141d9b67566423.ctex"]
 
 [params]
 

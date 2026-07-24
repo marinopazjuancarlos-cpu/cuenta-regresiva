@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc6yn28017mic"
-path="res://.godot/imported/caminar.png-b045c0dbad4cb395014d2321a95bddcf.ctex"
+uid="uid://ch4ubr1bk2is7"
+path="res://.godot/imported/naasa.png-d8c91685deaec28b4e5f4f185c4731b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agregar/caminar.png"
-dest_files=["res://.godot/imported/caminar.png-b045c0dbad4cb395014d2321a95bddcf.ctex"]
+source_file="res://En Desarrollo/agregar/naasa.png"
+dest_files=["res://.godot/imported/naasa.png-d8c91685deaec28b4e5f4f185c4731b9.ctex"]
 
 [params]
 
