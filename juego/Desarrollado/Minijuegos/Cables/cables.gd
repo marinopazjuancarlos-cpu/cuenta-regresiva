@@ -6,11 +6,22 @@ extends Node2D
 
 const LADOS = ["arriba", "derecha", "abajo", "izquierda"]
 
-const POS_LADO = {
-	"arriba": Vector2(0, -55),
-	"derecha": Vector2(110, 0),
-	"abajo": Vector2(0, 55),
-	"izquierda": Vector2(-110, 0),
+## POSICIÓN DE LOS 2 CÍRCULOS DE CADA LADO, SEGÚN EL DÍA
+## DÍA 1: octágono (cada par en su propio lado cardinal)
+## DÍA 2 Y 3: rombo (cada par forma uno de los 4 bordes diagonales del rombo)
+const POSICIONES_CIRCULOS = {
+	1: {
+		"arriba": [Vector2(-35, -55), Vector2(35, -55)],
+		"derecha": [Vector2(110, -25), Vector2(110, 25)],
+		"abajo": [Vector2(-35, 55), Vector2(35, 55)],
+		"izquierda": [Vector2(-110, -25), Vector2(-110, 25)],
+	},
+	2: {
+		"arriba": [Vector2(9, -62), Vector2(62, -9)],
+		"derecha": [Vector2(62, 9), Vector2(9, 62)],
+		"abajo": [Vector2(-9, 62), Vector2(-62, 9)],
+		"izquierda": [Vector2(-62, -9), Vector2(-9, -62)],
+	},
 }
 
 const ESQUINAS = [Vector2(-100, -60), Vector2(100, -60), Vector2(-100, 60), Vector2(100, 60)]
@@ -82,7 +93,14 @@ func _ready() -> void:
 	dia = ControladorJuego.dia_actual
 	tiempo_restante = DURACION.get(dia, DURACION[1])
 
+	var posiciones: Dictionary = POSICIONES_CIRCULOS.get(dia, POSICIONES_CIRCULOS[2])
 	for lado in LADOS:
+		circulos[lado][0].position = posiciones[lado][0]
+		circulos[lado][1].position = posiciones[lado][1]
+
+		var centro := _centro_lado(lado)
+		indicadores[lado].position = centro + centro.normalized() * 14.0
+
 		indicadores[lado].visible = false
 		cables[lado].visible = false
 		conectados[lado] = false
@@ -90,6 +108,10 @@ func _ready() -> void:
 
 	cable_arrastre.visible = false
 	_actualizar_ui()
+
+
+func _centro_lado(lado: String) -> Vector2:
+	return (circulos[lado][0].position + circulos[lado][1].position) / 2.0
 
 
 func _process(delta: float) -> void:
@@ -160,7 +182,7 @@ func _crear_rayo(lado: String, avance: float) -> Label:
 	rayo.text = "⚡"
 	rayo.add_theme_color_override("font_color", Color(1.0, 0.85, 0.1))
 	rayo.add_theme_font_size_override("font_size", 18)
-	rayo.position = POS_LADO[lado].lerp(Vector2.ZERO, avance)
+	rayo.position = _centro_lado(lado).lerp(Vector2.ZERO, avance)
 	add_child(rayo)
 	return rayo
 
@@ -184,7 +206,7 @@ func _procesar_advertencias(delta: float) -> void:
 
 		if info.visual:
 			var avance: float = 1.0 - clamp(info.tiempo_restante / info.tiempo_total, 0.0, 1.0)
-			info.visual.position = POS_LADO[lado].lerp(Vector2.ZERO, avance)
+			info.visual.position = _centro_lado(lado).lerp(Vector2.ZERO, avance)
 
 		if info.tiempo_restante <= 0.0:
 			if info.visual:
@@ -342,7 +364,7 @@ func _spawnear_virus() -> void:
 		origen = ESQUINAS[randi() % ESQUINAS.size()]
 	else:
 		var lado: String = LADOS[randi() % LADOS.size()]
-		origen = POS_LADO[lado] * 1.3
+		origen = _centro_lado(lado) * 1.3
 
 	var etiqueta := Label.new()
 	etiqueta.text = "☣"
