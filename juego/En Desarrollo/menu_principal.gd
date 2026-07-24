@@ -12,13 +12,13 @@ func _ready() -> void:
 
 func _on_continuar_button_pressed() -> void:
 	ControladorJuego.continuar_partida()
-	ControladorTransiciones.ir_a_escena("uid://caxtq16pxthpg", "Continuar donde lo dejaste...[br]No siempre es la mejor idea...")
+	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA, "Continuar donde lo dejaste...[br]No siempre es la mejor idea...")
 
 
 func _on_nueva_partida_button_pressed() -> void:
 	ControladorJuego.nueva_partida()
-	ControladorTransiciones.ir_a_escena("uid://caxtq16pxthpg", "[rainbow]Mondongo...")
+	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA, "[rainbow]Mondongo...")
 
 
 func _on_creditos_button_pressed() -> void:
-	pass # Replace with function body.
+	print("Se supone que va una escena de creditos aqui, pero no se...")

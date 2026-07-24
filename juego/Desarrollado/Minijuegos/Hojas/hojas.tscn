@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
-[ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://En Desarrollo/agregar/hojas.gd" id="1_6c4ud"]
-[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://En Desarrollo/agregar/cueva.png" id="2_ct0pd"]
+[ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
+[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://En Desarrollo/agregar/cueva.png" id="2_1u08f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hotc2"]
 size = Vector2(70.50001, 60.5)
@@ -25,7 +25,7 @@ size = Vector2(122.50003, 71.24995)
 
 [node name="Node2D" type="Node2D" unique_id=1650403230]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_6c4ud")
+script = ExtResource("1_b1x30")
 
 [node name="gas1" type="CharacterBody2D" parent="." unique_id=1030209451 groups=["gas"]]
 position = Vector2(-163, -270)
@@ -44,6 +44,8 @@ shape = SubResource("RectangleShape2D_hotc2")
 
 [node name="gas2" type="CharacterBody2D" parent="." unique_id=258651819 groups=["gas"]]
 position = Vector2(29, -270)
+collision_layer = 2
+collision_mask = 2
 
 [node name="tubo2" type="Button" parent="gas2" unique_id=732765524]
 visible = false
@@ -65,6 +67,8 @@ shape = SubResource("RectangleShape2D_7btj2")
 
 [node name="gas3" type="CharacterBody2D" parent="." unique_id=273945853 groups=["gas"]]
 position = Vector2(214, -270)
+collision_layer = 4
+collision_mask = 4
 
 [node name="tubo3" type="Button" parent="gas3" unique_id=1118197777]
 visible = false
@@ -79,13 +83,14 @@ scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_ps0ba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
+visible = false
 position = Vector2(31, 23)
 
 [node name="Cueva" type="Sprite2D" parent="." unique_id=227276597]
 visible = false
 position = Vector2(29.999996, 24.999998)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_ct0pd")
+texture = ExtResource("2_1u08f")
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
 offset_left = 297.49997
@@ -138,6 +143,15 @@ position = Vector2(3.75, 44.375)
 scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_tj7tt")
 
+[node name="AreaTecho" type="Area2D" parent="techo" unique_id=1359857680]
+collision_layer = 0
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo/AreaTecho" unique_id=419102151]
+position = Vector2(3.75, 44.375)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_tj7tt")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1015605459]
 
 [node name="Label" type="Label" parent="." unique_id=389693401]
@@ -152,3 +166,4 @@ offset_bottom = 23.0
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="techo/AreaTecho" to="." method="_on_area_techo_body_entered"]

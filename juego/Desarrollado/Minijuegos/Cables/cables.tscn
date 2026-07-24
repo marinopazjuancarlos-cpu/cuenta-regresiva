@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Desarrollado/Minijuegos/Cables/cables.gd" id="1_cables"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_circulo"]
+radius = 14.0
+
+[node name="Cables" type="Node2D"]
+script = ExtResource("1_cables")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Corazon" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 20.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.85, 0.1, 0.15, 1)
+theme_override_font_sizes/font_size = 32
+text = "♥"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Circulo_arriba_0" type="Area2D" parent="."]
+position = Vector2(-35, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_0"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_arriba_1" type="Area2D" parent="."]
+position = Vector2(35, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_1"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_derecha_0" type="Area2D" parent="."]
+position = Vector2(110, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_0"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_derecha_1" type="Area2D" parent="."]
+position = Vector2(110, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_1"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_abajo_0" type="Area2D" parent="."]
+position = Vector2(-35, 55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_0"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_abajo_1" type="Area2D" parent="."]
+position = Vector2(35, 55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_1"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_izquierda_0" type="Area2D" parent="."]
+position = Vector2(-110, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_0"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Circulo_izquierda_1" type="Area2D" parent="."]
+position = Vector2(-110, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_1"]
+shape = SubResource("CircleShape2D_circulo")
+
+[node name="Cable_arriba" type="Line2D" parent="."]
+visible = false
+width = 4.0
+default_color = Color(1, 1, 1, 1)
+
+[node name="Cable_derecha" type="Line2D" parent="."]
+visible = false
+width = 4.0
+default_color = Color(1, 1, 1, 1)
+
+[node name="Cable_abajo" type="Line2D" parent="."]
+visible = false
+width = 4.0
+default_color = Color(1, 1, 1, 1)
+
+[node name="Cable_izquierda" type="Line2D" parent="."]
+visible = false
+width = 4.0
+default_color = Color(1, 1, 1, 1)
+
+[node name="CableArrastre" type="Line2D" parent="."]
+visible = false
+width = 3.0
+default_color = Color(1, 0.9, 0.3, 0.8)
+
+[node name="Advertencia_arriba" type="Label" parent="."]
+visible = false
+position = Vector2(-8, -80)
+theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "!"
+
+[node name="Advertencia_derecha" type="Label" parent="."]
+visible = false
+position = Vector2(122, -10)
+theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "!"
+
+[node name="Advertencia_abajo" type="Label" parent="."]
+visible = false
+position = Vector2(-8, 62)
+theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "!"
+
+[node name="Advertencia_izquierda" type="Label" parent="."]
+visible = false
+position = Vector2(-130, -10)
+theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "!"
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Puntos" type="Label" parent="UI"]
+position = Vector2(-124, -68)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "300"
+
+[node name="Tiempo" type="Label" parent="UI"]
+position = Vector2(105, -68)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "20"
