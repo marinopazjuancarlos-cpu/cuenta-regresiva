@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ld4eey24ic1e"]
 
-[ext_resource type="Script" uid="uid://bqy5ork8rg1su" path="res://agregar/conjunto_tuberias.gd" id="1_yit34"]
-[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://agregar/cueva.png" id="4_0kn52"]
+[ext_resource type="Script" uid="uid://bqy5ork8rg1su" path="res://En Desarrollo/agregar/conjunto_tuberias.gd" id="1_yit34"]
+[ext_resource type="Texture2D" uid="uid://cwj72j8so8upl" path="res://En Desarrollo/agregar/cueva.png" id="4_0kn52"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrqju"]
 

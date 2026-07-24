@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch4ubr1bk2is7"
-path="res://.godot/imported/naasa.png-68116f21a6ad307cb9de973b2b3d4f0b.ctex"
+uid="uid://cwj72j8so8upl"
+path="res://.godot/imported/cueva.png-a2a4c052567e2c335778ac7733d2b443.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agregar/naasa.png"
-dest_files=["res://.godot/imported/naasa.png-68116f21a6ad307cb9de973b2b3d4f0b.ctex"]
+source_file="res://En Desarrollo/agregar/cueva.png"
+dest_files=["res://.godot/imported/cueva.png-a2a4c052567e2c335778ac7733d2b443.ctex"]
 
 [params]
 

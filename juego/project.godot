@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Count Down"
-run/main_scene="res://ecenas/primera_pantalla.tscn"
+run/main_scene="res://En Desarrollo/ecenas/primera_pantalla.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ControladorTransiciones="*uid://p0vfohjgpsn2"
 
 [display]
 
