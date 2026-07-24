@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://dgfmicyco3hcd" path="res://Desarrollado/Entidades/Player/player.gd" id="1_hf2h3"]
 [ext_resource type="Texture2D" uid="uid://bc6yn28017mic" path="res://En Desarrollo/agregar/caminar.png" id="2_f7hfp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvjwp"]
-radius = 19.0
-height = 78.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e78xw"]
 atlas = ExtResource("2_f7hfp")
 region = Rect2(384, 0, 128, 128)
@@ -55,6 +51,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvjwp"]
+radius = 20.0
+height = 88.0
+
 [node name="Player" type="CharacterBody2D" unique_id=987147644 groups=["player"]]
 script = ExtResource("1_hf2h3")
 
@@ -66,12 +66,16 @@ offset_right = 19.0
 offset_bottom = 39.0
 color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726454520]
+position = Vector2(5, -38.4)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_7btj2")
+animation = &"caminar"
+frame_progress = 0.6035436
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434649882]
+position = Vector2(0, -26.4)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_jvjwp")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=482988854]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726454520]
-sprite_frames = SubResource("SpriteFrames_7btj2")
-animation = &"caminar"
-frame_progress = 0.5939288

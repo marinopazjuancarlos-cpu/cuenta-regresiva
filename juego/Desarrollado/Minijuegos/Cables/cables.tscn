@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://bi67isvw0aflf"]
 
-[ext_resource type="Script" path="res://Desarrollado/Minijuegos/Cables/cables.gd" id="1_cables"]
+[ext_resource type="Script" uid="uid://08n5s35ro8u5" path="res://Desarrollado/Minijuegos/Cables/cables.gd" id="1_cables"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_circulo"]
 radius = 14.0
 
-[node name="Cables" type="Node2D"]
+[node name="Cables" type="Node2D" unique_id=2082628001]
 script = ExtResource("1_cables")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1904105032]
 
-[node name="Corazon" type="Label" parent="."]
+[node name="Corazon" type="Label" parent="." unique_id=609425608]
 offset_left = -20.0
 offset_top = -16.0
 offset_right = 20.0
@@ -21,117 +21,131 @@ text = "♥"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Circulo_arriba_0" type="Area2D" parent="."]
+[node name="Circulo_arriba_0" type="Area2D" parent="." unique_id=943889463]
 position = Vector2(-35, -55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_0" unique_id=398946555]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_arriba_1" type="Area2D" parent="."]
+[node name="Circulo_arriba_1" type="Area2D" parent="." unique_id=1422520231]
 position = Vector2(35, -55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_arriba_1" unique_id=2095790937]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_derecha_0" type="Area2D" parent="."]
+[node name="Circulo_derecha_0" type="Area2D" parent="." unique_id=1463849745]
 position = Vector2(110, -25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_0" unique_id=1614043680]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_derecha_1" type="Area2D" parent="."]
+[node name="Circulo_derecha_1" type="Area2D" parent="." unique_id=1192128209]
 position = Vector2(110, 25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_derecha_1" unique_id=1615376327]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_abajo_0" type="Area2D" parent="."]
+[node name="Circulo_abajo_0" type="Area2D" parent="." unique_id=1969132288]
 position = Vector2(-35, 55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_0" unique_id=1274693304]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_abajo_1" type="Area2D" parent="."]
+[node name="Circulo_abajo_1" type="Area2D" parent="." unique_id=1934610725]
 position = Vector2(35, 55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_abajo_1" unique_id=1283277043]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_izquierda_0" type="Area2D" parent="."]
+[node name="Circulo_izquierda_0" type="Area2D" parent="." unique_id=361382286]
 position = Vector2(-110, -25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_0" unique_id=170417034]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Circulo_izquierda_1" type="Area2D" parent="."]
+[node name="Circulo_izquierda_1" type="Area2D" parent="." unique_id=1766634000]
 position = Vector2(-110, 25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circulo_izquierda_1" unique_id=1854911943]
 shape = SubResource("CircleShape2D_circulo")
 
-[node name="Cable_arriba" type="Line2D" parent="."]
+[node name="Cable_arriba" type="Line2D" parent="." unique_id=1057372483]
 visible = false
 width = 4.0
-default_color = Color(1, 1, 1, 1)
 
-[node name="Cable_derecha" type="Line2D" parent="."]
+[node name="Cable_derecha" type="Line2D" parent="." unique_id=372302727]
 visible = false
 width = 4.0
-default_color = Color(1, 1, 1, 1)
 
-[node name="Cable_abajo" type="Line2D" parent="."]
+[node name="Cable_abajo" type="Line2D" parent="." unique_id=238243847]
 visible = false
 width = 4.0
-default_color = Color(1, 1, 1, 1)
 
-[node name="Cable_izquierda" type="Line2D" parent="."]
+[node name="Cable_izquierda" type="Line2D" parent="." unique_id=1280387130]
 visible = false
 width = 4.0
-default_color = Color(1, 1, 1, 1)
 
-[node name="CableArrastre" type="Line2D" parent="."]
+[node name="CableArrastre" type="Line2D" parent="." unique_id=96008932]
 visible = false
 width = 3.0
 default_color = Color(1, 0.9, 0.3, 0.8)
 
-[node name="Advertencia_arriba" type="Label" parent="."]
+[node name="Advertencia_arriba" type="Label" parent="." unique_id=717513868]
 visible = false
-position = Vector2(-8, -80)
+offset_left = -8.0
+offset_top = -80.0
+offset_right = -8.0
+offset_bottom = -80.0
 theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
 theme_override_font_sizes/font_size = 20
 text = "!"
 
-[node name="Advertencia_derecha" type="Label" parent="."]
+[node name="Advertencia_derecha" type="Label" parent="." unique_id=1672767036]
 visible = false
-position = Vector2(122, -10)
+offset_left = 122.0
+offset_top = -10.0
+offset_right = 122.0
+offset_bottom = -10.0
 theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
 theme_override_font_sizes/font_size = 20
 text = "!"
 
-[node name="Advertencia_abajo" type="Label" parent="."]
+[node name="Advertencia_abajo" type="Label" parent="." unique_id=1864409175]
 visible = false
-position = Vector2(-8, 62)
+offset_left = -8.0
+offset_top = 62.0
+offset_right = -8.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
 theme_override_font_sizes/font_size = 20
 text = "!"
 
-[node name="Advertencia_izquierda" type="Label" parent="."]
+[node name="Advertencia_izquierda" type="Label" parent="." unique_id=1864329599]
 visible = false
-position = Vector2(-130, -10)
+offset_left = -130.0
+offset_top = -10.0
+offset_right = -130.0
+offset_bottom = -10.0
 theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
 theme_override_font_sizes/font_size = 20
 text = "!"
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="." unique_id=2014098113]
 
-[node name="Puntos" type="Label" parent="UI"]
-position = Vector2(-124, -68)
+[node name="Puntos" type="Label" parent="UI" unique_id=44710341]
+offset_left = -124.0
+offset_top = -68.0
+offset_right = -124.0
+offset_bottom = -68.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
 text = "300"
 
-[node name="Tiempo" type="Label" parent="UI"]
-position = Vector2(105, -68)
+[node name="Tiempo" type="Label" parent="UI" unique_id=1307560487]
+offset_left = 105.0
+offset_top = -68.0
+offset_right = 105.0
+offset_bottom = -68.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
 text = "20"

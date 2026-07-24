@@ -33,6 +33,8 @@ const VIRUS_VIAJE = {2: 6.0, 3: 4.0}
 const LADOS_DOBLES_DIA3 = ["izquierda", "derecha"]
 const EVENTO_RUPTURA_DIA3 = 10.0
 
+const MAX_CABLES_CONECTADOS = 2
+
 var dia: int = 1
 
 var vida: int = VIDA_INICIAL
@@ -50,6 +52,7 @@ var advertencias: Dictionary = {}
 var conectados: Dictionary = {}
 var armados: Dictionary = {}
 var arrastre_origen = null
+var orden_conexion: Array = []
 
 @onready var circulos := {
 	"arriba": [$Circulo_arriba_0, $Circulo_arriba_1],
@@ -133,18 +136,33 @@ func _lanzar_advertencia_aleatoria(forzar_lado: String = "", falsa: bool = false
 		return
 
 	var requeridas := 2 if (dia == 3 and lado in LADOS_DOBLES_DIA3) else 1
+	var tiempo := _tiempo_reaccion()
 
 	# Si el escudo de ese lado ya está conectado, la advertencia queda resuelta al instante
+	# (no hace falta mostrar el rayo, nunca llega a estar en peligro)
 	var conexiones_iniciales := requeridas if conectados[lado] else 0
+	var visual = null if conexiones_iniciales >= requeridas else _crear_rayo(lado, 0.0)
 
 	advertencias[lado] = {
-		"tiempo_restante": _tiempo_reaccion(),
+		"tiempo_restante": tiempo,
+		"tiempo_total": tiempo,
 		"conexiones_hechas": conexiones_iniciales,
 		"conexiones_requeridas": requeridas,
 		"falsa": falsa,
+		"visual": visual,
 	}
 	primera_advertencia = false
 	indicadores[lado].visible = true
+
+
+func _crear_rayo(lado: String, avance: float) -> Label:
+	var rayo := Label.new()
+	rayo.text = "⚡"
+	rayo.add_theme_color_override("font_color", Color(1.0, 0.85, 0.1))
+	rayo.add_theme_font_size_override("font_size", 18)
+	rayo.position = POS_LADO[lado].lerp(Vector2.ZERO, avance)
+	add_child(rayo)
+	return rayo
 
 
 func _tiempo_reaccion() -> float:
@@ -163,7 +181,14 @@ func _procesar_advertencias(delta: float) -> void:
 	for lado in advertencias.keys():
 		var info = advertencias[lado]
 		info.tiempo_restante -= delta
+
+		if info.visual:
+			var avance: float = 1.0 - clamp(info.tiempo_restante / info.tiempo_total, 0.0, 1.0)
+			info.visual.position = POS_LADO[lado].lerp(Vector2.ZERO, avance)
+
 		if info.tiempo_restante <= 0.0:
+			if info.visual:
+				info.visual.queue_free()
 			if not info.falsa and info.conexiones_hechas < info.conexiones_requeridas:
 				_recibir_golpe()
 			lados_a_quitar.append(lado)
@@ -216,31 +241,65 @@ func _soltar_arrastre() -> void:
 func _alternar_cable(lado: String) -> void:
 	if dia == 3 and lado in LADOS_DOBLES_DIA3:
 		if conectados[lado]:
-			conectados[lado] = false
-			armados[lado] = false
+			_desconectar(lado)
 		elif armados[lado]:
 			armados[lado] = false
-			conectados[lado] = true
+			_conectar(lado)
 			_registrar_conexion(lado)
 		else:
 			armados[lado] = true
+			_actualizar_visual_cable(lado)
 			_registrar_conexion(lado)
 	else:
-		conectados[lado] = not conectados[lado]
 		if conectados[lado]:
-			_registrar_conexion(lado, true)
+			_desconectar(lado)
+		else:
+			_conectar(lado)
+			_registrar_conexion(lado)
 
+
+## CONECTA UN LADO. SI YA HAY MAX_CABLES_CONECTADOS ACTIVOS, EXPULSA EL MÁS ANTIGUO PRIMERO
+func _conectar(lado: String) -> void:
+	if conectados[lado]:
+		return
+	if orden_conexion.size() >= MAX_CABLES_CONECTADOS:
+		_desconectar(orden_conexion.pop_front())
+
+	conectados[lado] = true
+	armados[lado] = false
+	orden_conexion.append(lado)
 	_actualizar_visual_cable(lado)
 
 
-func _registrar_conexion(lado: String, completar: bool = false) -> void:
+func _desconectar(lado: String) -> void:
+	conectados[lado] = false
+	armados[lado] = false
+	orden_conexion.erase(lado)
+	_actualizar_visual_cable(lado)
+	_reabrir_advertencia_si_corresponde(lado)
+
+
+## SI EL LADO EXPULSADO ESTABA BLOQUEANDO UNA ADVERTENCIA ACTIVA, ESTA VUELVE A SER UNA AMENAZA
+func _reabrir_advertencia_si_corresponde(lado: String) -> void:
 	if not advertencias.has(lado):
 		return
 	var info = advertencias[lado]
-	if completar:
-		info.conexiones_hechas = info.conexiones_requeridas
-	else:
-		info.conexiones_hechas += 1
+	if info.falsa or info.conexiones_hechas < info.conexiones_requeridas:
+		return
+
+	info.conexiones_hechas = 0
+	var avance: float = 1.0 - clamp(info.tiempo_restante / info.tiempo_total, 0.0, 1.0)
+	info.visual = _crear_rayo(lado, avance)
+
+
+func _registrar_conexion(lado: String) -> void:
+	if not advertencias.has(lado):
+		return
+	var info = advertencias[lado]
+	info.conexiones_hechas = min(info.conexiones_hechas + 1, info.conexiones_requeridas)
+	if info.conexiones_hechas >= info.conexiones_requeridas and info.visual:
+		info.visual.queue_free()
+		info.visual = null
 
 
 func _actualizar_visual_cable(lado: String) -> void:
@@ -350,6 +409,10 @@ func _procesar_evento_dia3() -> void:
 		armados[lado] = false
 		_actualizar_visual_cable(lado)
 		indicadores[lado].visible = false
+	orden_conexion.clear()
+	for lado in advertencias.keys():
+		if advertencias[lado].visual:
+			advertencias[lado].visual.queue_free()
 	advertencias.clear()
 
 	for lado in LADOS:
