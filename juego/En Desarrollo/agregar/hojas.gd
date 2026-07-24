@@ -19,6 +19,9 @@ const COLOR_TIPO = {
 
 const SLOTS = ["gas1", "gas2", "gas3"]
 
+const PUNTOS_MINIMOS_FINAL_A = 500
+const PUNTOS_MINIMOS_FINAL_B = 210
+
 #VELOCIDAD A LA QUE SUBE UNA HOJA UNA VEZ COMPLETADOS SUS CLICS
 const VELOCIDAD_SUBIDA = 6.0
 
@@ -182,7 +185,7 @@ func _on_tubo_3_pressed() -> void:
 func _on_tiempo_restante_timeout() -> void:
 	$Tiempo_restante.stop()
 	$PuntajeTimer.stop()
-	GameState.registrar_puntaje_minijuego(puntos)
+	ControladorJuego.registrar_puntaje_minijuego(puntos, PUNTOS_MINIMOS_FINAL_A, PUNTOS_MINIMOS_FINAL_B)
 	#PAUSADOR
 	get_tree().paused = true
 

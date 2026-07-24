@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if doble_clic >= 3: get_tree().change_scene_to_file("res://agregar/hojas.tscn")
+	if doble_clic >= 3: get_tree().change_scene_to_file("uid://c27uvtp7ssdue")
 
 
 func _llegar() -> void:
