@@ -1,0 +1,69 @@
+72322a848ab928aa5c89f0cb78209805
+::res://::1784999228
+default_bus_layout.tres::AudioBusLayout::7828079911758233308::1784999232::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1784943770::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::7899848634276193005::1784943770::1784999232::1::::<><><>0<>0<>f668953bd38412623c957013a14f076e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+interruptores.gd::GDScript::7005831922866973156::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+lampara.png::CompressedTexture2D::4883967951605315095::1784943770::1784999234::1::::<><><>0<>0<>6cb0620ed97da93f4f91e14ca67258f7<>res://.godot/imported/lampara.png-d1f137e6ad96f84c02d5ac97d4a7d6f7.ctex::
+Sin título.png::CompressedTexture2D::1864635234508982913::1784943770::1784999232::1::::<><><>0<>0<>413a96d1b855a8b082373ac96f5942e7<>res://.godot/imported/Sin título.png-c945da32bc4b7291f440abac62a17a7f.ctex::
+tuberias.tscn::PackedScene::7049165636337219260::1784943770::0::1::::<><><>0<>0<><>::uid://bqy5ork8rg1su::::res://agregar/conjunto_tuberias.gd<>uid://cwj72j8so8upl::::res://agregar/cueva.png
+::res://agregar/::1784943770
+hojas.gd::GDScript::1968439894663789216::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+::res://Desarrollado/::1784943770
+::res://Desarrollado/Autoloads/::1784943770
+controlador_juego.gd::GDScript::6562290063587776018::1784943770::0::1::::<>Node<><>0<>0<><>::
+controlador_transiciones.gd::GDScript::7886126302875022552::1784943770::0::1::::<>CanvasLayer<><>0<>0<><>::
+controlador_transiciones.tscn::PackedScene::1105726830797680981::1784943770::0::1::::<><><>0<>0<><>::uid://dkmdl3lagtgtc::::res://Desarrollado/Autoloads/controlador_transiciones.gd
+::res://Desarrollado/Entidades/::1784943770
+::res://Desarrollado/Entidades/Player/::1784943770
+player.gd::GDScript::7591460034174927587::1784943770::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::9132572701372954240::1784943770::0::1::::<><><>0<>0<><>::uid://dgfmicyco3hcd::::res://Desarrollado/Entidades/Player/player.gd<>uid://bc6yn28017mic::::res://En Desarrollo/agregar/caminar.png
+::res://Desarrollado/Entidades/PuntoMinijuego/::1784943770
+punto_minijuego.gd::GDScript::787120144789422547::1784943770::0::1::::<>Area2D<><>0<>0<><>::
+punto_minijuego.tscn::PackedScene::4591450189768822879::1784943770::0::1::::<><><>0<>0<><>::uid://lhj0vm1aumjr::::res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.gd
+::res://Desarrollado/Escenas/::1784943770
+oficina.tscn::PackedScene::5131907964010172740::1784943770::0::1::::<><><>0<>0<><>::uid://d3d5exwecuaq7::::res://Desarrollado/Entidades/Player/player.tscn<>uid://b6oerp7v0wsup::::res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn<>uid://c27uvtp7ssdue::::res://Desarrollado/Minijuegos/Hojas/hojas.tscn<>res://Desarrollado/Minijuegos/Cables/cables.tscn
+::res://Desarrollado/Escenas/DulceHogar/::1784943770
+dulce_hogar.gd::GDScript::6772563480132239353::1784943770::0::1::::DulceHogar<>Node2D<><>0<>0<><>::
+dulce_hogar.tscn::PackedScene::6919191109794294367::1784943770::0::1::::<><><>0<>0<><>::uid://c3qxepqfjpibp::::res://Desarrollado/Escenas/DulceHogar/dulce_hogar.gd<>uid://cyjmpfbug815r::::res://Desarrollado/Escenas/DulceHogar/probarlo.png<>uid://d3d5exwecuaq7::::res://Desarrollado/Entidades/Player/player.tscn
+probarlo.png::CompressedTexture2D::6476708670386898077::1784943770::1784999232::1::::<><><>0<>0<>d337e350a0b35226f0dfdc11900164bf<>res://.godot/imported/probarlo.png-7d6f525f76043c3d85f6e71fb55e5809.ctex::
+::res://Desarrollado/Minijuegos/::1784943770
+::res://Desarrollado/Minijuegos/Cables/::1784943770
+cables.gd::GDScript::1823689441619088906::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+cables.tscn::PackedScene::3013885352187168415::1784943770::0::1::::<><><>0<>0<><>::uid://08n5s35ro8u5::::res://Desarrollado/Minijuegos/Cables/cables.gd
+::res://Desarrollado/Minijuegos/Hojas/::1784943770
+hojas.gd::GDScript::8136070984816296991::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+hojas.tscn::PackedScene::6735253097864739624::1784943770::0::1::::<><><>0<>0<><>::uid://dn6f5u5kpfie6::::res://Desarrollado/Minijuegos/Hojas/hojas.gd
+::res://ecenas/::1784943770
+conductos.gd::GDScript::5649592974133931766::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+conductos.tscn::PackedScene::5487903400928873206::1784943770::0::1::::<><><>0<>0<><>::uid://cmqx8alaa1uxi::::res://ecenas/conductos.gd<>uid://dks0l84nxcovl::::res://icon.svg
+interruptores.tscn::PackedScene::8082217340698184886::1784943770::0::1::::<><><>0<>0<><>::uid://c62xa7utbp3h5::::res://interruptores.gd
+player.gd::GDScript::1723463312171004929::1784943770::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://En Desarrollo/::1784943770
+hojas.gd::GDScript::5050074191868005548::1784943770::0::1::::<>Node<><>0<>0<><>::
+menu_principal.gd::GDScript::4767506614373840744::1784943770::0::1::::<>Control<><>0<>0<><>::
+menu_principal.tscn::PackedScene::5752672812570931548::1784943770::0::1::::<><><>0<>0<><>::uid://b86oew3i70kwm::::res://En Desarrollo/menu_principal.gd
+mole.tscn::PackedScene::7730611762163025373::1784943770::0::1::::<><><>0<>0<><>::uid://dks0l84nxcovl::::res://icon.svg
+player.tscn::PackedScene::6629756931467330170::1784943770::0::1::::<><><>0<>0<><>::uid://dgfmicyco3hcd::::res://Desarrollado/Entidades/Player/player.gd
+::res://En Desarrollo/agregar/::1784943770
+caminar.png::CompressedTexture2D::2592275974773079490::1784943770::1784999232::1::::<><><>0<>0<>4a8d33734e700fce0955bd098dac78dc<>res://.godot/imported/caminar.png-7939b4288361509193141d9b67566423.ctex::
+conjunto_tuberias.gd::GDScript::3560834668764066112::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+cueva.png::CompressedTexture2D::6337567011939975617::1784943770::1784999232::1::::<><><>0<>0<>a228b3302c7fb5616d235ed5e5cbd257<>res://.godot/imported/cueva.png-a2a4c052567e2c335778ac7733d2b443.ctex::
+naasa.png::CompressedTexture2D::5325247286491133628::1784943770::1784999232::1::::<><><>0<>0<>264e998af6b8ed434db14a539b2adc52<>res://.godot/imported/naasa.png-d8c91685deaec28b4e5f4f185c4731b9.ctex::
+tuberias.tscn::PackedScene::780038597680916976::1784943770::0::1::::<><><>0<>0<><>::
+::res://En Desarrollo/ecenas/::1784943770
+primera_pantalla.gd::GDScript::2883812643633820169::1784943770::0::1::::<>Node2D<><>0<>0<><>::
+primera_pantalla.tscn::PackedScene::4821505665503681224::1784943770::0::1::::<><><>0<>0<><>::uid://bhc68cxjehipt::::res://En Desarrollo/ecenas/primera_pantalla.gd<>uid://d3d5exwecuaq7::::res://Desarrollado/Entidades/Player/player.tscn<>uid://cyjmpfbug815r::::res://Desarrollado/Escenas/DulceHogar/probarlo.png
+::res://OST/::1784943770
+MÚSICA 1.ogg::AudioStreamOggVorbis::4367953896364625649::1784943770::1784999232::1::::<><><>0<>0<>9274a55a129b08cbf44da35347bc8580<>res://.godot/imported/MÚSICA 1.ogg-689b10da271be203a574db0c1a1b5ef4.oggvorbisstr::
+MÚSICA 2.ogg::AudioStreamOggVorbis::813720005669707661::1784943770::1784999232::1::::<><><>0<>0<>75f314a2f8b4495722184118b55e9511<>res://.godot/imported/MÚSICA 2.ogg-92c22a8a62a745d91169ef916fbf6249.oggvorbisstr::
+MÚSICA 3.ogg::AudioStreamOggVorbis::4091315366964893941::1784943770::1784999232::1::::<><><>0<>0<>35767a342ad112109cb9173fa28166e3<>res://.godot/imported/MÚSICA 3.ogg-e8527deacfd9f415f6b51b2ce8571135.oggvorbisstr::
+MÚSICA 4.ogg::AudioStreamOggVorbis::1847638640431738245::1784943770::1784999232::1::::<><><>0<>0<>a1d311b948cfd5e3e56c80032b7e5157<>res://.godot/imported/MÚSICA 4.ogg-6ee8fbe62002b0f6c3add90366b6c815.oggvorbisstr::
+MÚSICA 5.ogg::AudioStreamOggVorbis::5211329877169157512::1784943770::1784999232::1::::<><><>0<>0<>ca93b54b8b5fe409b990a2ddb05eefe1<>res://.godot/imported/MÚSICA 5.ogg-2adba0480899cdde9d1c0242958aa06c.oggvorbisstr::
+MÚSICA 6.ogg::AudioStreamOggVorbis::6397451525797523515::1784943770::1784999232::1::::<><><>0<>0<>4f73735315e62660b18e8d5d43eb8a8b<>res://.godot/imported/MÚSICA 6.ogg-9aa14e90e7363314907acbb0bf1a4a67.oggvorbisstr::
+MÚSICA 7.ogg::AudioStreamOggVorbis::1771512640679799956::1784943770::1784999232::1::::<><><>0<>0<>688b0d4808e41c61af04c49808e7cefb<>res://.godot/imported/MÚSICA 7.ogg-e9ce8b2771e65e1105ba96d934b00634.oggvorbisstr::
+MÚSICA 8.ogg::AudioStreamOggVorbis::4774085775572047638::1784943770::1784999232::1::::<><><>0<>0<>1b40918af22e5beda330ec1d07ae396e<>res://.godot/imported/MÚSICA 8.ogg-f1f863ef915360be018cdd000e76a3fa.oggvorbisstr::
+MÚSICA 9.ogg::AudioStreamOggVorbis::8626155672168533746::1784943770::1784999232::1::::<><><>0<>0<>9ccb3c65a6adaaf8552195cec1c32672<>res://.godot/imported/MÚSICA 9.ogg-9569ed4668d730f778c73d123be23c9f.oggvorbisstr::
+MÚSICA 10.ogg::AudioStreamOggVorbis::61138642726648568::1784943770::1784999232::1::::<><><>0<>0<>4df65bae1438bf8c6f50625edf61806b<>res://.godot/imported/MÚSICA 10.ogg-14bcd0240d19b3493f5bdfb29576c834.oggvorbisstr::
+MÚSICA 11.ogg::AudioStreamOggVorbis::3443558121684107098::1784943770::1784999232::1::::<><><>0<>0<>6633db380114c79b1ee0a5c2d4d1d399<>res://.godot/imported/MÚSICA 11.ogg-6d1234affb222d00a5fb58d361be28d5.oggvorbisstr::
+MÚSICA 12.ogg::AudioStreamOggVorbis::2655282540366873049::1784943770::1784999232::1::::<><><>0<>0<>88bbb859fd6fe921babde87bfdb20ddc<>res://.godot/imported/MÚSICA 12.ogg-906cff184679023b491036f4ee135ccf.oggvorbisstr::
