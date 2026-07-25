@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
-[ext_resource type="Texture2D" uid="uid://dsqhcihs17p7v" path="res://Desarrollado/Minijuegos/Hojas/hojas fondo.png" id="2_b1x30"]
+[ext_resource type="Texture2D" uid="uid://sa6sr2btcsv5" path="res://arte/libreta/libreta1.png" id="2_1u08f"]
 [ext_resource type="Texture2D" uid="uid://bigrxstfcnkpd" path="res://Desarrollado/Minijuegos/Hojas/hoja_verde.tres" id="3_verde"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tubo"]
@@ -29,16 +29,23 @@ line_spacing = 1.122
 font_size = 12
 
 [node name="Node2D2" type="Node2D" unique_id=1650403230]
-position = Vector2(-12.4, -9.2)
 script = ExtResource("1_b1x30")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1117214074]
-offset_left = -140.0
-offset_top = -80.0
-offset_right = 165.0
-offset_bottom = 100.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -90.0
+offset_right = 152.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 mouse_filter = 2
-texture = ExtResource("2_b1x30")
+texture = ExtResource("2_1u08f")
 expand_mode = 1
 stretch_mode = 5
 
