@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="2_punto"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="3_hojas"]
-[ext_resource type="PackedScene" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="4_cables"]
+[ext_resource type="PackedScene" uid="uid://bi67isvw0aflf" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="4_cables"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oficina"]
 vertices = PackedVector2Array(-600, -350, 600, -350, 600, 350, -600, 350)
@@ -75,19 +75,17 @@ indice = 3
 process_mode = 3
 layer = 10
 
-[node name="Marco" type="SubViewportContainer" parent="CapaMinijuego" unique_id=105628266 groups=["marco_minijuego"]]
+[node name="Marco" type="Control" parent="CapaMinijuego" unique_id=105628266 groups=["marco_minijuego"]]
 process_mode = 3
 visible = false
-texture_filter = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-stretch = true
+clip_contents = true
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+mouse_filter = 2
 
-[node name="SubViewport" type="SubViewport" parent="CapaMinijuego/Marco" unique_id=1561589233 groups=["capa_minijuego"]]
+[node name="Contenido" type="Node2D" parent="CapaMinijuego/Marco" unique_id=1561589233 groups=["capa_minijuego"]]
 process_mode = 3
-handle_input_locally = false
-size = Vector2i(256, 144)
-render_target_update_mode = 0
+position = Vector2(144, 81)

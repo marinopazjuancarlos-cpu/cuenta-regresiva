@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 
 signal llego_a_destino
 
