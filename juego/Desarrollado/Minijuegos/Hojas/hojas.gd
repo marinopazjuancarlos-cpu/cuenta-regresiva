@@ -5,8 +5,8 @@ const TIPO_ROJA = "roja"
 const TIPO_PESADA = "pesada"
 
 
-const VELOCIDAD_SUBIDA = 6.0
-const VELOCIDAD_BAJADA = 2.0
+const VELOCIDAD_SUBIDA = 2.4
+const VELOCIDAD_BAJADA = 0.8
 
 var en_bajada: Dictionary = {}
 var en_trampolin: Dictionary = {}
@@ -21,6 +21,12 @@ const COLOR_TIPO = {
 	TIPO_VERDE: Color(0.35, 0.85, 0.35),
 	TIPO_ROJA: Color(0.85, 0.25, 0.25),
 	TIPO_PESADA: Color(0.4, 0.4, 0.45),
+}
+
+const TEXTURA_TIPO = {
+	TIPO_VERDE: preload("res://Desarrollado/Minijuegos/Hojas/hoja_verde.tres"),
+	TIPO_ROJA: preload("res://Desarrollado/Minijuegos/Hojas/hoja_roja.tres"),
+	TIPO_PESADA: preload("res://Desarrollado/Minijuegos/Hojas/hoja_pesada.tres"),
 }
 
 const SLOTS = ["gas1", "gas2", "gas3"]
@@ -38,7 +44,7 @@ const GLITCH_TIEMPO = 30.0
 const PATRONES_DIAS = {
 	1: {
 		"duracion": 45.0,
-		"velocidad_caida": 1.3,
+		"velocidad_caida": 0.52,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
 			{"tiempo": 4.5, "slot": "gas2", "tipo": TIPO_VERDE},
@@ -53,7 +59,7 @@ const PATRONES_DIAS = {
 	},
 	2: {
 		"duracion": 40.0,
-		"velocidad_caida": 1.7,
+		"velocidad_caida": 0.68,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
 			{"tiempo": 4.0, "slot": "gas2", "tipo": TIPO_VERDE},
@@ -69,7 +75,7 @@ const PATRONES_DIAS = {
 	},
 	3: {
 		"duracion": 40.0,
-		"velocidad_caida": 2.2,
+		"velocidad_caida": 0.88,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
 			{"tiempo": 3.6, "slot": "gas2", "tipo": TIPO_ROJA},
@@ -88,7 +94,7 @@ const PATRONES_DIAS = {
 
 @export var dia: int = 1
 
-var velocidad_caida: float = 2.0
+var velocidad_caida: float = 0.52
 var puntos: int = 0
 var eventos_pendientes: Array = []
 var tipos_hoja: Dictionary = {}
@@ -108,13 +114,18 @@ func _ready() -> void:
 
 	for slot in SLOTS:
 		_tubo_de(get_node(slot)).visible = false
+		_icono_de(get_node(slot)).visible = false
 
 
 func _tubo_de(gas: Node) -> Button:
 	return gas.get_node("tubo" + gas.name.substr(3))
 
+
+func _icono_de(gas: Node) -> Sprite2D:
+	return gas.get_node("Icono")
+
 # Nueva constante para velocidad horizontal
-const VELOCIDAD_HORIZONTAL = 2.5
+const VELOCIDAD_HORIZONTAL = 1.0
 
 var direccion_horizontal: Dictionary = {
 	"gas1": -1,   # -1 = izquierda, 1 = derecha
@@ -123,8 +134,9 @@ var direccion_horizontal: Dictionary = {
 }
 
 
-const LIMITE_DERECHA = 480
-const LIMITE_IZQUIERDA = -330
+#LIMITES DEL VAIVEN: AJUSTADOS PARA QUE LA HOJA NO SE SALGA DEL MARCO DE LA OFICINA (288x162)
+const LIMITE_DERECHA = 132
+const LIMITE_IZQUIERDA = -100
 
 func _physics_process(_delta: float) -> void:
 	$Label.text =str(puntos)
@@ -147,7 +159,7 @@ func _physics_process(_delta: float) -> void:
 			pendulo(gas, slot)
 
 		elif tubo.visible:
-			if gas.position.y < 130:
+			if gas.position.y < 52:
 				gas.position.y += velocidad_caida
 				gas.position.x += VELOCIDAD_HORIZONTAL * direccion_horizontal[slot]
 				pendulo(gas, slot)
@@ -171,19 +183,22 @@ func _activar_glitch() -> void:
 		tipos_hoja[slot] = TIPO_PESADA
 		if not en_trampolin.get(slot, false):
 			clics_restantes[slot] = CLICS_REQUERIDOS[TIPO_PESADA]
-		_tubo_de(get_node(slot)).modulate = COLOR_TIPO[TIPO_PESADA]
+		var gas = get_node(slot)
+		_tubo_de(gas).modulate = COLOR_TIPO[TIPO_PESADA]
+		_icono_de(gas).texture = TEXTURA_TIPO[TIPO_PESADA]
 	_sacudir_camara()
 
 
 
+#SACUDE LA ESCENA ENTERA. NO USA LA CAMARA PORQUE EL MINIJUEGO SE DIBUJA DENTRO DEL
+#MARCO DE LA OFICINA (SIN CAMARA PROPIA), ASI QUE SE MUEVE EL NODO RAIZ
 func _sacudir_camara() -> void:
-	var camara = $Camera2D
-	var offset_original = camara.offset
+	var posicion_original = position
 	var tween = create_tween()
 	for i in range(6):
-		var temblor = Vector2(randf_range(-8, 8), randf_range(-8, 8))
-		tween.tween_property(camara, "offset", offset_original + temblor, 0.04)
-	tween.tween_property(camara, "offset", offset_original, 0.04)
+		var temblor = Vector2(randf_range(-3.2, 3.2), randf_range(-3.2, 3.2))
+		tween.tween_property(self, "position", posicion_original + temblor, 0.04)
+	tween.tween_property(self, "position", posicion_original, 0.04)
 
 
 func _spawnear_hoja(evento: Dictionary) -> void:
@@ -193,6 +208,9 @@ func _spawnear_hoja(evento: Dictionary) -> void:
 	clics_restantes[evento.slot] = CLICS_REQUERIDOS[evento.tipo]
 	tubo.visible = true
 	tubo.modulate = COLOR_TIPO[evento.tipo]
+	var icono = _icono_de(gas)
+	icono.texture = TEXTURA_TIPO[evento.tipo]
+	icono.visible = true
 
 
 func _on_puntaje_timer_timeout() -> void:
@@ -228,7 +246,9 @@ func _on_tiempo_restante_timeout() -> void:
 
 
 func _limpiar_hoja(slot: String) -> void:
-	_tubo_de(get_node(slot)).visible = false
+	var gas = get_node(slot)
+	_tubo_de(gas).visible = false
+	_icono_de(gas).visible = false
 	tipos_hoja.erase(slot)
 	clics_restantes.erase(slot)
 	en_trampolin.erase(slot)

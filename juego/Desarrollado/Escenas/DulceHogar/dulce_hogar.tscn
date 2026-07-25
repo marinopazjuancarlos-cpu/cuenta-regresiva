@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3qxepqfjpibp" path="res://Desarrollado/Escenas/DulceHogar/dulce_hogar.gd" id="1_60hde"]
 [ext_resource type="Texture2D" uid="uid://cyjmpfbug815r" path="res://Desarrollado/Escenas/DulceHogar/probarlo.png" id="1_vxohv"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_vxohv"]
+[ext_resource type="Script" uid="uid://ds6ady3stk4nl" path="res://Desarrollado/Entidades/Interactuable/interactuable.gd" id="3_interactuable"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ubc1v"]
 vertices = PackedVector2Array(588.97656, 358.96094, 128.47656, 358.03906, 197.07031, 291, 399.1328, 321.3828, 404.20313, 291, 565.21875, 316.1875)
@@ -38,6 +39,8 @@ limit_bottom = 428
 
 [node name="Puerta" type="Area2D" parent="." unique_id=1704407867]
 position = Vector2(146, 333)
+script = ExtResource("3_interactuable")
+lineas = Array[String](["No tengo ganas de salir todavia."])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puerta" unique_id=176583432]
 polygon = PackedVector2Array(-12, -70, 10, -91, 10, -10, -12, 12)
@@ -46,6 +49,8 @@ polygon = PackedVector2Array(-12, -70, 10, -91, 10, -10, -12, 12)
 
 [node name="VentanaParque" type="Area2D" parent="." unique_id=1556171366]
 position = Vector2(267, 225)
+script = ExtResource("3_interactuable")
+lineas = Array[String](["El parque se ve tranquilo desde aqui.", "Hace tiempo que no voy."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VentanaParque" unique_id=370361541]
 position = Vector2(0, -1)
@@ -57,6 +62,8 @@ position = Vector2(-35, 66)
 
 [node name="Cama" type="Area2D" parent="." unique_id=852202137]
 position = Vector2(497, 310)
+script = ExtResource("3_interactuable")
+lineas = Array[String](["Aun no estoy cansado."])
 
 [node name="JugadorAlcance" type="Marker2D" parent="Cama" unique_id=1521565327]
 position = Vector2(-20, 10)

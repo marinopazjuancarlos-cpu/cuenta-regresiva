@@ -9,6 +9,7 @@ radius = 14.0
 script = ExtResource("1_cables")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1904105032]
+enabled = false
 
 [node name="Corazon" type="Label" parent="." unique_id=609425608]
 offset_left = -20.0
