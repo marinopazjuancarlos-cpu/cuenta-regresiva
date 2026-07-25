@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byj4mpq3mbbi0"
+path="res://.godot/imported/MÚSICA 3.ogg-e8527deacfd9f415f6b51b2ce8571135.oggvorbisstr"
+
+[deps]
+
+source_file="res://OST/MÚSICA 3.ogg"
+dest_files=["res://.godot/imported/MÚSICA 3.ogg-e8527deacfd9f415f6b51b2ce8571135.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
