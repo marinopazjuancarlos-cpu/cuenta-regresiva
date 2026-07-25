@@ -115,7 +115,7 @@ func _ready() -> void:
 	for slot in SLOTS:
 		_tubo_de(get_node(slot)).visible = false
 		_icono_de(get_node(slot)).visible = false
-
+	
 
 func _tubo_de(gas: Node) -> Button:
 	return gas.get_node("tubo" + gas.name.substr(3))
@@ -283,15 +283,6 @@ func _bajar_hoja(body: Node2D) -> void:
 
 
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	_despawnear_hoja(body)
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	_despawnear_hoja(body)
-
-func _on_area_2d_3_body_entered(body: Node2D) -> void:
-	_despawnear_hoja(body)
 
 func _on_area_techo_body_entered(body: Node2D) -> void:
 	_bajar_hoja(body)
