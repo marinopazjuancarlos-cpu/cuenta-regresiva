@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://p0vfohjgpsn2"]
+
+[ext_resource type="Script" uid="uid://dkmdl3lagtgtc" path="res://Desarrollado/Autoloads/controlador_transiciones.gd" id="1_30q4o"]
+
+[sub_resource type="Animation" id="Animation_30q4o"]
+resource_name = "FadeInOut"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e7l82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fal1o"]
+_data = {
+&"FadeInOut": SubResource("Animation_30q4o"),
+&"RESET": SubResource("Animation_e7l82")
+}
+
+[node name="ControladorTransiciones" type="CanvasLayer" unique_id=896441061]
+layer = 100
+script = ExtResource("1_30q4o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=465012008]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=712969117]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=98495346]
+libraries/ = SubResource("AnimationLibrary_fal1o")

@@ -39,8 +39,8 @@ func _process(delta: float) -> void:
 	# Movimiento de la rueda
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		if mouse_speed.y < 0:
-			$Sprite2D.rotation -= 0.02
-			$Path2D/PathFollow2D.progress += 2
+			$Sprite2D.rotation += 0.02
+			$Path2D/PathFollow2D.progress -= 2
 			_sumar_rotacion(1)
 		elif mouse_speed.y > 0:
 			$Sprite2D.rotation -= 0.02
