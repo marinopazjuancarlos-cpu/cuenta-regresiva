@@ -7,7 +7,8 @@ var puntos: int = 0
 const PUNTOS_MINIMOS_FINAL_A = 100
 const PUNTOS_MINIMOS_FINAL_B = 50
 const PUNTOS_MINIMOS_FINAL_C = 10
-
+const COLOR_OCULTO = Color(0.05, 0.05, 0.05, 1)
+const COLOR_ILUMINADO = Color(1, 1, 1, 1)
 const DURACION_MINIJUEGO = 30.0
 const PUNTOS_POR_VUELTA = 10
 const INTERVALO_CARA = 10.0
@@ -30,13 +31,15 @@ func _ready() -> void:
 	$CaraTimer.start()
 
 func _process(delta: float) -> void:
-	$Area2D.position = get_global_mouse_position() * 4
+	pos_cosas($PointLight2D)
+
+
+
 	$Label.text = str(int($Tiempo_restante.time_left))
 	var current_mouse_pos = get_viewport().get_mouse_position()
 	mouse_speed = (current_mouse_pos - prev_mouse_pos) / delta
 	prev_mouse_pos = current_mouse_pos
 
-	# Movimiento de la rueda
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		if mouse_speed.y < 0:
 			$Sprite2D.rotation -= 0.02
@@ -46,8 +49,6 @@ func _process(delta: float) -> void:
 			$Sprite2D.rotation += 0.02
 			$Path2D/PathFollow2D.progress -= 2
 			_sumar_rotacion(1)
-
-
 	if cara_activa:
 		tiempo_cara += delta
 		if cara_en_linterna:
@@ -60,7 +61,9 @@ func _process(delta: float) -> void:
 			_desactivar_cara()
 
 	$Puntos.text = str(int(puntos))
-
+func pos_cosas(cosa):
+	cosa.position = get_global_mouse_position() * 4
+	# Movimiento de la rueda
 func _sumar_rotacion(grados: float) -> void:
 	rotacion_acumulada += abs(grados)
 	if rotacion_acumulada >= 360.0:
@@ -76,12 +79,13 @@ func _on_tiempo_restante_timeout() -> void:
 
 func _on_cara_timer_timeout() -> void:
 	_activar_cara()
-
 func _activar_cara() -> void:
 	cara_activa = true
 	tiempo_cara = 0.0
 	tiempo_contacto = 0.0
-	$Path2D/PathFollow2D/CharacterBody2D/Sprite2D.visible = true
+	var sprite_cara = $Path2D/PathFollow2D/CharacterBody2D/Sprite2D
+	sprite_cara.visible = true
+	sprite_cara.modulate = COLOR_OCULTO  # arranca oculta
 
 func _desactivar_cara() -> void:
 	cara_activa = false
@@ -97,10 +101,13 @@ func _linterna_alerta() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D and body.name == "Cara":
 		cara_en_linterna = true
-		tiempo_contacto = 0.0   
+		tiempo_contacto = 0.0
+		body.get_node("Sprite2D").modulate = COLOR_ILUMINADO
+
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D and body.name == "Cara":
 		cara_en_linterna = false
-		tiempo_contacto = 0.0   
+		tiempo_contacto = 0.0
 		$Area2D/lin.modulate = Color(1,1,1)
+		body.get_node("Sprite2D").modulate = COLOR_OCULTO

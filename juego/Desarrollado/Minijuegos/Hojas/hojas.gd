@@ -120,6 +120,7 @@ const LIMITE_DERECHA = 132
 const LIMITE_IZQUIERDA = -100
 
 func _physics_process(_delta: float) -> void:
+	dia =3
 	$Label.text =str(puntos)
 	var transcurrido = $Tiempo_restante.wait_time - $Tiempo_restante.time_left
 	while eventos_pendientes.size() > 0 and transcurrido >= eventos_pendientes[0].tiempo:

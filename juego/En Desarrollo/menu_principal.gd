@@ -8,7 +8,6 @@ extends Control
 
 func _ready() -> void:
 	continuar_button.visible = ControladorJuego.hay_partida_actual()
-	ControladorAudio.reproducir_musica(preload("uid://cjndd3mwd7d5s"))
 
 
 func _on_continuar_button_pressed() -> void:
@@ -19,7 +18,6 @@ func _on_continuar_button_pressed() -> void:
 func _on_nueva_partida_button_pressed() -> void:
 	ControladorJuego.nueva_partida()
 	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA, "[rainbow]Mondongo...", 1.5, false)
-	ControladorAudio.detener_musica(1)
 
 
 func _on_creditos_button_pressed() -> void:

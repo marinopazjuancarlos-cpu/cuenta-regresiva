@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
-[ext_resource type="Texture2D" uid="uid://dqsefysln0ub0" path="res://arte/minijuego hojas/ductomejor3.png" id="2_yot8g"]
+[ext_resource type="Texture2D" uid="uid://dtkad1svd06if" path="res://arte/minijuego hojas/fondo_filtro.png" id="2_1u08f"]
 [ext_resource type="Texture2D" uid="uid://bigrxstfcnkpd" path="res://Desarrollado/Minijuegos/Hojas/hoja_verde.tres" id="3_verde"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tubo"]
@@ -30,8 +30,9 @@ script = ExtResource("1_b1x30")
 metadata/_edit_horizontal_guides_ = [80.0]
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=1117214074]
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("2_yot8g")
+position = Vector2(13.999999, 10.999999)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("2_1u08f")
 
 [node name="gas1" type="CharacterBody2D" parent="." unique_id=1030209451 groups=["gas"]]
 position = Vector2(-65.2, -108)
@@ -108,7 +109,6 @@ shape = SubResource("RectangleShape2D_ps0ba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
 position = Vector2(12.4, 9.2)
-enabled = false
 zoom = Vector2(1.05, 1.05)
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]

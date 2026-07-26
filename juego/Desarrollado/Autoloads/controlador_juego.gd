@@ -7,6 +7,7 @@ const RUTA_GUARDADO = "user://partida.save"
 const MINIJUEGOS_POR_DIA = [2, 3, 4]
 
 const RUTA_OFICINA = "uid://cfd61lgqbjf37"
+
 const RUTAS_FINAL = {
 	Final.A: "res://Desarrollado/Escenas/final_a.tscn",
 	Final.B: "res://Desarrollado/Escenas/final_b.tscn",
