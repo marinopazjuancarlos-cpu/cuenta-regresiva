@@ -3,25 +3,51 @@
 [ext_resource type="Script" uid="uid://wgaasx2yo6g0" path="res://ecenas/sala_ventilación.gd" id="1_b6hpx"]
 [ext_resource type="Texture2D" uid="uid://kpx311klmo63" path="res://arte/habitaciones base/habitacion lateral.png" id="1_fdc5o"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_b6hpx"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cnx0i5wg83y78" path="res://arte/filtro aire.png" id="4_8l6hi"]
 [ext_resource type="Texture2D" uid="uid://ceuhpxnm51k8f" path="res://arte/tubo de aire.png" id="5_xtw0y"]
 [ext_resource type="Texture2D" uid="uid://buf4vo4fq1bq8" path="res://arte/conducto de aire.png" id="6_v36to"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="7_558nb"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="8_pt8cp"]
+=======
+[ext_resource type="Texture2D" uid="uid://cnx0i5wg83y78" path="res://arte/filtro aire.png" id="4_tt2fn"]
+[ext_resource type="Texture2D" uid="uid://ceuhpxnm51k8f" path="res://arte/tubo de aire.png" id="5_8l6hi"]
+[ext_resource type="Texture2D" uid="uid://buf4vo4fq1bq8" path="res://arte/conducto de aire.png" id="6_xtw0y"]
+[ext_resource type="Script" uid="uid://bgaxfurr352xm" path="res://ecenas/animated_sprite_2d.gd" id="7_v36to"]
+>>>>>>> 89249df1e6254be8d0cbed9ec9ecdf0361c19182
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ji5db"]
-vertices = PackedVector2Array(-59.773438, 41.929688, -79, 41.46875, -77.203125, 39.132813, -58.648438, 39.648438, 90.85156, 28.960938, 110.703125, 68, -72.82031, 68, -52.84375, 28.03125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 0), PackedInt32Array(7, 4, 0, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-59, 18, -64.74107, 29.482132, -82, 29, -99, 51, -75.77264, 51.54526, -89, 78, 127, 78, 97, 19)])
+vertices = PackedVector2Array(-59.773438, 41.929688, -79, 41.46875, -77.203125, 39.132813, -58.648438, 39.648438, 88.046875, 68, -72.82031, 68, 74.8125, 28.9375, -52.84375, 28.039063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 6), PackedInt32Array(7, 6, 0, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-59, 18, -64.74107, 29.482132, -82, 29, -99, 51, -75.77264, 51.54526, -89, 78, 102, 78, 82, 19)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_558nb"]
+atlas = ExtResource("6_xtw0y")
+region = Rect2(0, 0, 37, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt8cp"]
+atlas = ExtResource("6_xtw0y")
+region = Rect2(37, 0, 37, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goqy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt8cp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
 size = Vector2(20, 53)
 
 [node name="sala_ventilación" type="Node2D" unique_id=1298471561]
 script = ExtResource("1_b6hpx")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1937399866]
-position = Vector2(5, -1)
 
 [node name="HabitacionLateral" type="Sprite2D" parent="." unique_id=1969915886]
 texture = ExtResource("1_fdc5o")
@@ -30,8 +56,26 @@ texture = ExtResource("1_fdc5o")
 position = Vector2(5, -1)
 navigation_polygon = SubResource("NavigationPolygon_ji5db")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=450831257]
+position = Vector2(38, -15)
+sprite_frames = SubResource("SpriteFrames_goqy1")
+script = ExtResource("7_v36to")
+
+[node name="FiltroAire" type="Sprite2D" parent="." unique_id=1767140888]
+position = Vector2(-12, -25)
+texture = ExtResource("4_tt2fn")
+
+[node name="TuboDeAire" type="Sprite2D" parent="." unique_id=371134032]
+position = Vector2(105, 21)
+texture = ExtResource("5_8l6hi")
+
+[node name="TuboDeAire" type="Sprite2D" parent="TuboDeAire" unique_id=2142762372]
+position = Vector2(5.0000005, 17)
+scale = Vector2(0.7894737, 0.78947365)
+texture = ExtResource("5_8l6hi")
+
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_b6hpx")]
-position = Vector2(-43, 49)
+position = Vector2(81, 42)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1628475172]
 
