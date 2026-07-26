@@ -55,6 +55,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjwp"]
+size = Vector2(22, 20)
+
 [node name="DulceHogar" type="Node2D" unique_id=905585205]
 script = ExtResource("1_60hde")
 
@@ -110,3 +113,11 @@ script = ExtResource("5_wjpaa")
 
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_vxohv")]
 position = Vector2(93, 148)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=738377915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1914938880]
+position = Vector2(70, 142)
+shape = SubResource("RectangleShape2D_jvjwp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
