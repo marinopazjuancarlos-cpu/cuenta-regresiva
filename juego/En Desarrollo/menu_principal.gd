@@ -17,7 +17,7 @@ func _on_continuar_button_pressed() -> void:
 
 func _on_nueva_partida_button_pressed() -> void:
 	ControladorJuego.nueva_partida()
-	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA,tr("dia_1_dialogo1") + "[br]" + tr("dia_1_dialogo2") + "[br]" + tr("dia_1_dialogo3"), 1.5, false)
+	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA,tr("dia_1_dialogo1_interacion1") + "[br]" + tr("dia_1_dialogo1_interacion2") + "[br]" + tr("dia_1_dialogo1_interacion3"), 1.5, false)
 
 
 func _on_creditos_button_pressed() -> void:

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_vxohv"]
 [ext_resource type="Script" uid="uid://ds6ady3stk4nl" path="res://Desarrollado/Entidades/Interactuable/interactuable.gd" id="3_interactuable"]
 [ext_resource type="Texture2D" uid="uid://ualkk2rv8y4u" path="res://arte/radio/radio.png" id="4_14ssg"]
+[ext_resource type="Script" uid="uid://djqiyilgbbm2x" path="res://Desarrollado/Escenas/DulceHogar/cama.gd" id="4_wjpaa"]
 [ext_resource type="Script" uid="uid://btir33goq0kux" path="res://Desarrollado/Escenas/animated_sprite_2d.gd" id="5_wjpaa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ubc1v"]
@@ -54,6 +55,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjwp"]
+size = Vector2(22, 20)
+
 [node name="DulceHogar" type="Node2D" unique_id=905585205]
 script = ExtResource("1_60hde")
 
@@ -91,8 +95,7 @@ position = Vector2(-35, 66)
 
 [node name="Cama" type="Area2D" parent="." unique_id=852202137]
 position = Vector2(497, 310)
-script = ExtResource("3_interactuable")
-lineas = Array[String](["Aun no estoy cansado."])
+script = ExtResource("4_wjpaa")
 
 [node name="JugadorAlcance" type="Marker2D" parent="Cama" unique_id=1521565327]
 position = Vector2(-20, 10)
@@ -110,3 +113,11 @@ script = ExtResource("5_wjpaa")
 
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_vxohv")]
 position = Vector2(93, 148)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=738377915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1914938880]
+position = Vector2(70, 142)
+shape = SubResource("RectangleShape2D_jvjwp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

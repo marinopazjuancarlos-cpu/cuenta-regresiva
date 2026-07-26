@@ -1,5 +1,6 @@
 extends Node2D
 
+const RUTA_CASA = "uid://c5tycjcp8j56r"
 const RUTA_VENTILACION = "uid://biilnxqs0ofwg"
 const RUTA_CABLES = "uid://wghivwd36qef"
 
@@ -14,3 +15,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	ControladorTransiciones.ir_a_escena(RUTA_CABLES)
+
+func _on_area_2d_3_body_entered(body: Node2D) -> void:
+	if ControladorJuego.fin_de_jornada == true:
+		ControladorTransiciones.ir_a_escena(RUTA_CASA)
