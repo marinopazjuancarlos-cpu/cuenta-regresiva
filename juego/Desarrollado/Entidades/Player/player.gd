@@ -5,7 +5,7 @@ class_name Player
 signal llego_a_destino
 
 ## Velocidad
-@export var speed: float = 75.0
+@export var speed: float = 180.0
 ## Que tan rápido alcanza velocidad máxima
 @export var aceleracion: float = 10.0        
 ## Que tan rapido frena
