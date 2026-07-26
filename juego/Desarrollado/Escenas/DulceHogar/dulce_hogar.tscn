@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_vxohv"]
 [ext_resource type="Script" uid="uid://ds6ady3stk4nl" path="res://Desarrollado/Entidades/Interactuable/interactuable.gd" id="3_interactuable"]
 [ext_resource type="Texture2D" uid="uid://ualkk2rv8y4u" path="res://arte/radio/radio.png" id="4_14ssg"]
+[ext_resource type="Script" uid="uid://djqiyilgbbm2x" path="res://Desarrollado/Escenas/DulceHogar/cama.gd" id="4_wjpaa"]
 [ext_resource type="Script" uid="uid://btir33goq0kux" path="res://Desarrollado/Escenas/animated_sprite_2d.gd" id="5_wjpaa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ubc1v"]
@@ -91,8 +92,7 @@ position = Vector2(-35, 66)
 
 [node name="Cama" type="Area2D" parent="." unique_id=852202137]
 position = Vector2(497, 310)
-script = ExtResource("3_interactuable")
-lineas = Array[String](["Aun no estoy cansado."])
+script = ExtResource("4_wjpaa")
 
 [node name="JugadorAlcance" type="Marker2D" parent="Cama" unique_id=1521565327]
 position = Vector2(-20, 10)

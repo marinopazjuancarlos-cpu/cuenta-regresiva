@@ -16,6 +16,7 @@ const RUTAS_FINAL = {
 
 signal progreso_actualizado
 
+var fin_de_jornada = false
 var dia_actual: int = 1
 var indice_minijuego_actual: int = 0
 var partida_en_curso: bool = false
@@ -79,7 +80,7 @@ func avanzar_minijuego() -> void:
 	indice_minijuego_actual += 1
 	if indice_minijuego_actual >= MINIJUEGOS_POR_DIA[dia_actual-1]:
 		indice_minijuego_actual = 0
-		dia_actual += 1
+		fin_de_jornada = true
 	guardar_partida()
 
 
