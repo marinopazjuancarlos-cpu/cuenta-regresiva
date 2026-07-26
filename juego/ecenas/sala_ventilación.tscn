@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://biilnxqs0ofwg"]
+
+[ext_resource type="Script" uid="uid://wgaasx2yo6g0" path="res://ecenas/sala_ventilación.gd" id="1_b6hpx"]
+[ext_resource type="Texture2D" uid="uid://kpx311klmo63" path="res://arte/habitaciones base/habitacion lateral.png" id="1_fdc5o"]
+[ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_b6hpx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ji5db"]
+vertices = PackedVector2Array(-59.773438, 41.929688, -79, 41.46875, -77.203125, 39.132813, -58.648438, 39.648438, 90.85156, 28.960938, 110.703125, 68, -72.82031, 68, -52.84375, 28.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 0), PackedInt32Array(7, 4, 0, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-59, 18, -64.74107, 29.482132, -82, 29, -99, 51, -75.77264, 51.54526, -89, 78, 127, 78, 97, 19)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
+size = Vector2(20, 53)
+
+[node name="sala_ventilación" type="Node2D" unique_id=1298471561]
+script = ExtResource("1_b6hpx")
+
+[node name="HabitacionLateral" type="Sprite2D" parent="." unique_id=1969915886]
+texture = ExtResource("1_fdc5o")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1328152249]
+position = Vector2(5, -1)
+navigation_polygon = SubResource("NavigationPolygon_ji5db")
+
+[node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_b6hpx")]
+position = Vector2(-43, 49)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1628475172]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1488138817]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1958764453]
+position = Vector2(-75, 17.5)
+shape = SubResource("RectangleShape2D_goqy1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
