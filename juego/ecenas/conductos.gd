@@ -43,8 +43,8 @@ func _process(delta: float) -> void:
 			$Path2D/PathFollow2D.progress += 2
 			_sumar_rotacion(1)
 		elif mouse_speed.y > 0:
-			$Sprite2D.rotation -= 0.02
-			$Path2D/PathFollow2D.progress += 2
+			$Sprite2D.rotation += 0.02
+			$Path2D/PathFollow2D.progress -= 2
 			_sumar_rotacion(1)
 
 
