@@ -41,58 +41,37 @@ const GLITCH_TIEMPO = 30.0
 
 
 
+#gas1 = izquierda, gas2 = centro, gas3 = derecha (según posición en hojas.tscn)
 const PATRONES_DIAS = {
 	1: {
-		"duracion": 45.0,
+		"duracion": 30.0,
 		"velocidad_caida": 0.52,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 4.5, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 9.0, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 13.5, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 18.0, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 22.5, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 27.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 31.5, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 36.0, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 10.0, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 20.0, "slot": "gas2", "tipo": TIPO_VERDE},
 		],
 	},
 	2: {
-		"duracion": 40.0,
-		"velocidad_caida": 0.68,
+		"duracion": 30.0,
+		"velocidad_caida": 0.60,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 4.0, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 8.0, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 12.0, "slot": "gas1", "tipo": TIPO_ROJA},
-			{"tiempo": 16.0, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 20.0, "slot": "gas3", "tipo": TIPO_ROJA},
-			{"tiempo": 24.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 28.0, "slot": "gas2", "tipo": TIPO_VERDE},
-			{"tiempo": 32.0, "slot": "gas3", "tipo": TIPO_ROJA},
-			{"tiempo": 36.0, "slot": "gas1", "tipo": TIPO_VERDE},
+			{"tiempo": 10.0, "slot": "gas3", "tipo": TIPO_VERDE},
+			{"tiempo": 20.0, "slot": "gas2", "tipo": TIPO_ROJA},
 		],
 	},
 	3: {
 		"duracion": 40.0,
-		"velocidad_caida": 0.88,
+		"velocidad_caida": 0.75,
 		"eventos": [
 			{"tiempo": 0.0, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 3.6, "slot": "gas2", "tipo": TIPO_ROJA},
-			{"tiempo": 7.2, "slot": "gas3", "tipo": TIPO_VERDE},
-			{"tiempo": 10.8, "slot": "gas1", "tipo": TIPO_ROJA},
-			{"tiempo": 14.4, "slot": "gas2", "tipo": TIPO_PESADA},
-			{"tiempo": 18.0, "slot": "gas3", "tipo": TIPO_ROJA},
-			{"tiempo": 21.6, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 25.2, "slot": "gas2", "tipo": TIPO_ROJA},
-			{"tiempo": 28.8, "slot": "gas3", "tipo": TIPO_PESADA},
-			{"tiempo": 32.4, "slot": "gas1", "tipo": TIPO_VERDE},
-			{"tiempo": 36.0, "slot": "gas2", "tipo": TIPO_VERDE},
+			{"tiempo": 10.0, "slot": "gas2", "tipo": TIPO_ROJA},
+			{"tiempo": 20.0, "slot": "gas3", "tipo": TIPO_PESADA},
+			#segundo 30: GLITCH_TIEMPO convierte todas las hojas en pesadas
 		],
 	},
 }
-
-@export var dia: int = 1
 
 var velocidad_caida: float = 0.52
 var puntos: int = 0
@@ -100,9 +79,11 @@ var eventos_pendientes: Array = []
 var tipos_hoja: Dictionary = {}
 var clics_restantes: Dictionary = {}
 var glitch_activado: bool = false
+var dia: int
 
 
 func _ready() -> void:
+	dia = ControladorJuego.dia_actual
 	var patron = PATRONES_DIAS.get(dia, PATRONES_DIAS[1])
 	velocidad_caida = patron.velocidad_caida
 	eventos_pendientes = patron.eventos.duplicate(true)
@@ -159,7 +140,7 @@ func _physics_process(_delta: float) -> void:
 			pendulo(gas, slot)
 
 		elif tubo.visible:
-			if gas.position.y < 52:
+			if gas.position.y < 80:
 				gas.position.y += velocidad_caida
 				gas.position.x += VELOCIDAD_HORIZONTAL * direccion_horizontal[slot]
 				pendulo(gas, slot)

@@ -92,6 +92,8 @@ func abrir_minijuego(escena_minijuego: PackedScene, capa: Node) -> void:
 
 	_instancia_minijuego_actual = escena_minijuego.instantiate()
 	_instancia_minijuego_actual.process_mode = Node.PROCESS_MODE_ALWAYS
+	if "dia" in _instancia_minijuego_actual:
+		_instancia_minijuego_actual.dia = dia_actual
 	capa.add_child(_instancia_minijuego_actual)
 
 	get_tree().paused = true

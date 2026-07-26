@@ -24,6 +24,9 @@ navigation_polygon = SubResource("NavigationPolygon_oficina")
 [node name="Player" parent="." unique_id=1701795305 instance=ExtResource("1_player")]
 position = Vector2(0, 200)
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1966953609]
+zoom = Vector2(0.5, 0.5)
+
 [node name="PuntoMinijuego_D1_0" parent="." unique_id=36714037 instance=ExtResource("2_punto")]
 position = Vector2(-400, -100)
 escena_minijuego = ExtResource("3_hojas")

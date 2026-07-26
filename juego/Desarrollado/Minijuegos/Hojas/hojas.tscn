@@ -27,24 +27,11 @@ font_size = 12
 
 [node name="Node2D2" type="Node2D" unique_id=1650403230]
 script = ExtResource("1_b1x30")
+metadata/_edit_horizontal_guides_ = [80.0]
 
-[node name="Fondo" type="TextureRect" parent="." unique_id=1117214074]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.6
-offset_top = -81.09
-offset_right = 164.4
-offset_bottom = 98.91
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-mouse_filter = 2
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1117214074]
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_yot8g")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="gas1" type="CharacterBody2D" parent="." unique_id=1030209451 groups=["gas"]]
 position = Vector2(-65.2, -108)
@@ -121,6 +108,7 @@ shape = SubResource("RectangleShape2D_ps0ba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
 position = Vector2(12.4, 9.2)
+enabled = false
 zoom = Vector2(1.05, 1.05)
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
