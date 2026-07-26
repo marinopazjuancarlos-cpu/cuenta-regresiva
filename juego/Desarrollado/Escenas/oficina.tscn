@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cq4qjnpbpbdtx" path="res://arte/habitaciones base/oficina/pc.png" id="4_ad4l7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oficina"]
-vertices = PackedVector2Array(131.32031, 120.0625, 132.45313, 121.96094, 115.97656, 121.9375, 115.13281, 120.24219, 125.609375, 140.85156, 19, 139.90625, -30, 142.09375, -132.49219, 141.14844, -113.96875, 106, -53.859375, 106, 107.86719, 106, 44.859375, 106, 19, 158.85156, -30, 158.14063, 1.921875, 96, 34.859375, 96, -6.921875, 96, -3.921875, 82, -1.078125, 82, -43.859375, 96)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 3, 2, 5, 11), PackedInt32Array(5, 12, 13, 6, 14), PackedInt32Array(15, 11, 5, 14), PackedInt32Array(14, 6, 9, 16), PackedInt32Array(16, 17, 18, 14), PackedInt32Array(16, 9, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(29, 169, 29, 150, 142, 151, 132.31113, 131.96828, 150, 132, 137, 110, 121.2157, 110.173676, 114, 96, 49, 96, 39, 86, 10, 86, 7, 72, -12, 72, -15, 86, -48, 86, -58, 96, -120, 96, -149, 151, -40, 152, -40, 168)])
+vertices = PackedVector2Array(131.32031, 120.0625, 132.45313, 121.96094, 115.97656, 121.9375, 115.13281, 120.24219, 125.609375, 140.85156, 19, 139.90625, 107.86719, 106, 44.859375, 106, 1.921875, 96, 19, 158.85156, -30, 158.14063, -30, 142.09375, -6.921875, 96, 34.859375, 96, -63.6875, 121, -60.890625, 106, -53.859375, 106, -3.921875, 82, -1.078125, 82, -43.859375, 96, -132.49219, 141.14844, -99.078125, 121, -114.078125, 106.22656, -102.14844, 106.6875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5), PackedInt32Array(6, 3, 2, 5, 7), PackedInt32Array(8, 5, 9, 10, 11, 12), PackedInt32Array(13, 7, 5, 8), PackedInt32Array(14, 15, 16, 11), PackedInt32Array(12, 17, 18, 8), PackedInt32Array(19, 12, 11, 16), PackedInt32Array(14, 11, 20, 21), PackedInt32Array(21, 20, 22, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(29, 169, 29, 150, 142, 151, 132.31113, 131.96828, 150, 132, 137, 110, 121.2157, 110.173676, 114, 96, 49, 96, 39, 86, 10, 86, 7, 72, -12, 72, -15, 86, -48, 86, -58, 96, -69.19971, 96, -72, 111, -91, 111, -94, 97, -120, 96, -149, 151, -40, 152, -40, 168)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_madkl"]
 size = Vector2(20, 61.5)
