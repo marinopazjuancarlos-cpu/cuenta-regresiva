@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dow41cea5qirf"
-path="res://.godot/imported/cable 2.png-292d5af56fba3899330a06df66d9c985.ctex"
+uid="uid://b5ov015t8e7yp"
+path="res://.godot/imported/cable 1.png-bfa80227d68571765b13f70340846194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arte/minijuego cables/cable 2.png"
-dest_files=["res://.godot/imported/cable 2.png-292d5af56fba3899330a06df66d9c985.ctex"]
+source_file="res://Desarrollado/Minijuegos/Cables/cable 1.png"
+dest_files=["res://.godot/imported/cable 1.png-bfa80227d68571765b13f70340846194.ctex"]
 
 [params]
 
