@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://7fitbdihwg4d" path="res://arte/minijuego brackets (frenillos)/braker_v2png.png" id="3_hyvb8"]
 [ext_resource type="Texture2D" uid="uid://dsxq0ro1nhcwj" path="res://arte/minijuego brackets (frenillos)/palancas.png" id="4_gtd3j"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pc2w5"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_h6y1n"]
 font_size = 30
 
@@ -23,6 +21,9 @@ offset_top = -19.499992
 offset_right = 52.999992
 offset_bottom = 60.5
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gas1" unique_id=221022403]
+position = Vector2(11, -99)
+
 [node name="gas2" type="Node2D" parent="." unique_id=1868825216 groups=["interruptor"]]
 position = Vector2(-105, 95)
 
@@ -32,11 +33,6 @@ offset_left = -54.0
 offset_top = -17.500002
 offset_right = 28.5
 offset_bottom = 62.499992
-
-[node name="Icon" type="Sprite2D" parent="gas2" unique_id=1708222793]
-position = Vector2(-5.999995, 2)
-scale = Vector2(0.85937506, 1.046875)
-texture = SubResource("CompressedTexture2D_pc2w5")
 
 [node name="gas3" type="Node2D" parent="." unique_id=1626421883 groups=["interruptor"]]
 position = Vector2(43, 91)
