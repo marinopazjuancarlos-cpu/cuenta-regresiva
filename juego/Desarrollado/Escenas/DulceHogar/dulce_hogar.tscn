@@ -50,7 +50,7 @@ polygon = PackedVector2Array(-12, -70, 10, -91, 10, -10, -12, 12)
 [node name="VentanaParque" type="Area2D" parent="." unique_id=1556171366]
 position = Vector2(267, 225)
 script = ExtResource("3_interactuable")
-lineas = Array[String](["El parque se ve tranquilo desde aqui.", "Hace tiempo que no voy."])
+lineas = Array[String](["ventana_dulce_hogar"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VentanaParque" unique_id=370361541]
 position = Vector2(0, -1)

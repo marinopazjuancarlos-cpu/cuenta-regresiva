@@ -46,7 +46,7 @@ click={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Desarrollado/Traducciones/traducciones.en.translation", "res://Desarrollado/Traducciones/traducciones.es.translation")
+locale/translations=PackedStringArray("res://traducciones.en.translation", "res://traducciones.es.translation")
 
 [physics]
 
