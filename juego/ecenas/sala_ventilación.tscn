@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="7_558nb"]
 [ext_resource type="Script" uid="uid://bsff1rtcjo01a" path="res://ecenas/animated_sprite_2d.gd" id="7_xtw0y"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="8_pt8cp"]
+[ext_resource type="PackedScene" uid="uid://ckgm75dvxa7e5" path="res://ecenas/conductos.tscn" id="10_v36to"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ji5db"]
 vertices = PackedVector2Array(-59.773438, 41.929688, -79, 41.46875, -77.203125, 39.132813, -58.648438, 39.648438, 83.828125, 68, -72.82031, 68, 69.921875, 28.9375, -52.84375, 28.039063)
@@ -84,6 +85,17 @@ shape = SubResource("RectangleShape2D_goqy1")
 [node name="PuntoMinijuego" parent="." unique_id=845886716 instance=ExtResource("7_558nb")]
 position = Vector2(-6, -23)
 escena_minijuego = ExtResource("8_pt8cp")
+
+[node name="PuntoMinijuego2" parent="." unique_id=1423879656 instance=ExtResource("7_558nb")]
+position = Vector2(-6, -23)
+dia = 2
+escena_minijuego = ExtResource("8_pt8cp")
+
+[node name="PuntoMinijuego3" parent="." unique_id=481380662 instance=ExtResource("7_558nb")]
+position = Vector2(102, 13)
+dia = 3
+indice = 3
+escena_minijuego = ExtResource("10_v36to")
 
 [node name="CapaMinijuego" type="CanvasLayer" parent="." unique_id=1537888703]
 process_mode = 3

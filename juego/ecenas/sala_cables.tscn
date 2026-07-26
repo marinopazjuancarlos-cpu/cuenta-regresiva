@@ -93,4 +93,28 @@ position = Vector2(41, -9)
 indice = 1
 escena_minijuego = ExtResource("5_ehp3j")
 
+[node name="PuntoMinijuego2" parent="." unique_id=1929721215 instance=ExtResource("4_wobu7")]
+position = Vector2(41, -9)
+dia = 2
+indice = 1
+escena_minijuego = ExtResource("5_ehp3j")
+
+[node name="PuntoMinijuego3" parent="." unique_id=1487766097 instance=ExtResource("4_wobu7")]
+position = Vector2(41, -9)
+dia = 3
+indice = 1
+escena_minijuego = ExtResource("5_ehp3j")
+
+[node name="PuntoMinijuego4" parent="." unique_id=2018168064 instance=ExtResource("4_wobu7")]
+position = Vector2(-42, -12)
+dia = 2
+indice = 2
+escena_minijuego = ExtResource("5_ehp3j")
+
+[node name="PuntoMinijuego5" parent="." unique_id=1269511438 instance=ExtResource("4_wobu7")]
+position = Vector2(-43, -12)
+dia = 3
+indice = 2
+escena_minijuego = ExtResource("5_ehp3j")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
