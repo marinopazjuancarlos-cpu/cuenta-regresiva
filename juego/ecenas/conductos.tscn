@@ -117,8 +117,8 @@ offset_bottom = -116.999985
 label_settings = SubResource("LabelSettings_fwm1q")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=622919375]
-position = Vector2(10, 1.5258789e-05)
-scale = Vector2(4.5624995, 4.555555)
+position = Vector2(17.187502, -7.176547)
+scale = Vector2(5.28125, 5.2732115)
 texture = ExtResource("6_xl7gy")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
