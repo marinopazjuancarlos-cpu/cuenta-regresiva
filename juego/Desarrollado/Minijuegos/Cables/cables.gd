@@ -86,8 +86,6 @@ var orden_conexion: Array = []
 @onready var cable_arrastre: Line2D = $CableArrastre
 @onready var label_puntos: Label = $UI/Puntos
 @onready var label_tiempo: Label = $UI/Tiempo
-@onready var corazon: Label = $Corazon
-
 
 func _ready() -> void:
 	dia = ControladorJuego.dia_actual
