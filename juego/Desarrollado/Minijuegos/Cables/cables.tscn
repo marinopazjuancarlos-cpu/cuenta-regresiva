@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://08n5s35ro8u5" path="res://Desarrollado/Minijuegos/Cables/cables.gd" id="1_cables"]
 [ext_resource type="Texture2D" uid="uid://bvj5yms0vvg7d" path="res://Desarrollado/Minijuegos/Cables/fondo_minijuego_cables.png" id="2_c6oh6"]
 [ext_resource type="Texture2D" uid="uid://k436p0eqw0i6" path="res://Desarrollado/Minijuegos/Cables/corazon.png" id="2_l3um3"]
-[ext_resource type="Texture2D" uid="uid://b5ov015t8e7yp" path="res://Desarrollado/Minijuegos/Cables/cable 1.png" id="4_6eske"]
+[ext_resource type="Texture2D" uid="uid://dgdgte6hepmwp" path="res://atlascables.tres" id="4_6eske"]
+[ext_resource type="Texture2D" uid="uid://x84wu8vbotab" path="res://Desarrollado/Minijuegos/Cables/cablel.png" id="5_75y5y"]
+[ext_resource type="Texture2D" uid="uid://nj5lkbau0uqj" path="res://Desarrollado/Minijuegos/Cables/cablel2.png" id="6_38xab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6oh6"]
 atlas = ExtResource("2_l3um3")
@@ -75,9 +77,14 @@ region = Rect2(64, 0, 32, 32)
 atlas = SubResource("CompressedTexture2D_oinq6")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y7n8"]
+atlas = ExtResource("5_75y5y")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oinq6"]
-atlas = ExtResource("4_6eske")
-region = Rect2(0, 0, 32, 0)
+atlas = ExtResource("6_38xab")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urm2j"]
+atlas = ExtResource("6_38xab")
 
 [node name="Cables" type="Node2D" unique_id=2082628001]
 script = ExtResource("1_cables")
@@ -167,21 +174,27 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Cable_arriba" type="Line2D" parent="." unique_id=1057372483]
 visible = false
-width = 4.0
-texture = SubResource("AtlasTexture_oinq6")
+width = 20.0
+texture = ExtResource("4_6eske")
 texture_mode = 2
 
 [node name="Cable_derecha" type="Line2D" parent="." unique_id=372302727]
 visible = false
-width = 4.0
+width = 20.0
+texture = SubResource("AtlasTexture_0y7n8")
+texture_mode = 2
 
 [node name="Cable_abajo" type="Line2D" parent="." unique_id=238243847]
 visible = false
-width = 4.0
+width = 20.0
+texture = SubResource("AtlasTexture_oinq6")
+texture_mode = 2
 
 [node name="Cable_izquierda" type="Line2D" parent="." unique_id=1280387130]
 visible = false
-width = 4.0
+width = 20.0
+texture = SubResource("AtlasTexture_urm2j")
+texture_mode = 2
 
 [node name="CableArrastre" type="Line2D" parent="." unique_id=96008932]
 visible = false
