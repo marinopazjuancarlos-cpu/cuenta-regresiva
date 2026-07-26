@@ -3,11 +3,29 @@
 [ext_resource type="Script" uid="uid://ck1cc24tkkno7" path="res://ecenas/sala_cables.gd" id="1_aqgsm"]
 [ext_resource type="Texture2D" uid="uid://dqcs8wtikniug" path="res://arte/habitaciones base/habitacion entrada  trasera.png" id="1_rjw2o"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_aqgsm"]
+[ext_resource type="Texture2D" uid="uid://na6mog8p581u" path="res://arte/electricidad/palancas.png" id="4_bb4qi"]
+[ext_resource type="Texture2D" uid="uid://drn5yxmb5tq08" path="res://arte/electricidad/servidor.png" id="5_egk54"]
+[ext_resource type="Texture2D" uid="uid://dktl7rmhjusuw" path="res://arte/electricidad/caja de cable.png" id="6_jjmfu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
-vertices = PackedVector2Array(104.82031, -23, 123.82031, 15, 54.773438, 15, -37.476563, -23, 21.710938, 16, -54.671875, 16, 38.773438, 38, 34.710938, 38)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2), PackedInt32Array(4, 2, 6, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -33, -70, 26, 16, 26, 29, 48, 44, 48, 60, 25, 140, 25, 111, -33)])
+vertices = PackedVector2Array(104.82031, -23, 123.82031, 15, 54.773438, 15, 68.77344, -13, 21.710938, 16, -54.671875, 16, -37.476563, -23, 23.992188, -23, 24.46875, -13, 38.773438, 38, 34.710938, 38, 72.77344, -23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 4, 8, 3, 2), PackedInt32Array(0, 3, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -33, -70, 26, 16, 26, 29, 48, 44, 48, 60, 25, 140, 25, 111, -33, 66, -33, 62, -23, 34, -23, 33.51873, -33)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltb20"]
+atlas = ExtResource("6_jjmfu")
+region = Rect2(0, 0, 32, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ukto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltb20")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
 size = Vector2(20, 25)
@@ -21,12 +39,27 @@ script = ExtResource("1_aqgsm")
 texture = ExtResource("1_rjw2o")
 metadata/_edit_lock_ = true
 
+[node name="Palancas" type="Sprite2D" parent="." unique_id=964218744]
+position = Vector2(-37, -18.000002)
+scale = Vector2(0.6153847, 0.61538464)
+texture = ExtResource("4_bb4qi")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1532880181]
 position = Vector2(-38, 48)
 navigation_polygon = SubResource("NavigationPolygon_wobu7")
 
+[node name="Servidor" type="Sprite2D" parent="." unique_id=854439903]
+position = Vector2(18, -3)
+texture = ExtResource("5_egk54")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2108666976]
+position = Vector2(47, -17)
+scale = Vector2(0.6724138, 0.6724138)
+sprite_frames = SubResource("SpriteFrames_8ukto")
+frame_progress = 0.20172521
+
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_aqgsm")]
-position = Vector2(0, 60)
+position = Vector2(-37, 29)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1347127053]
 
