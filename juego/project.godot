@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://djr8lkkuy1xui"
 ControladorTransiciones="*uid://p0vfohjgpsn2"
 ControladorJuego="*res://Desarrollado/Autoloads/controlador_juego.gd"
 ControladorDialogo="*res://Desarrollado/Autoloads/controlador_dialogo.tscn"
+ControladorAudio="*res://Desarrollado/Autoloads/controlador_audio.gd"
 
 [display]
 
