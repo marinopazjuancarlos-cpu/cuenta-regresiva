@@ -25,6 +25,7 @@ var tiempo_soltó: float = 0.0
 const VENTANA_DOBLE_CLIC: float = 400.0  # ms
 
 func _ready() -> void:
+	sprite.play("idle")
 	agente.target_position = global_position
 
 func _input(event: InputEvent) -> void:
@@ -50,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		if abs(velocity.x) > 10.0:
 			sprite.flip_h = velocity.x < 0.0
 
-		sprite.play("caminar")
+		sprite.play("walk")
 	elif moviéndose:
 		# is_navigation_finished() se adelantó a nuestra distancia_llegada: igual contamos como llegada
 		_llegar()
@@ -58,7 +59,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.lerp(Vector2.ZERO, frenado * delta)
 		if velocity.length() < 2.0:
 			velocity = Vector2.ZERO
-			if sprite.is_playing(): sprite.stop()
+			if sprite.is_playing(): sprite.play("idle")
 
 	move_and_slide()
 

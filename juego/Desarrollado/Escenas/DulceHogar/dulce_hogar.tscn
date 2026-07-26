@@ -29,7 +29,7 @@ navigation_polygon = SubResource("NavigationPolygon_ubc1v")
 [node name="Player" parent="NavigationRegion2D" unique_id=987147644 instance=ExtResource("2_vxohv")]
 position = Vector2(207, 338)
 
-[node name="Camera2D" type="Camera2D" parent="NavigationRegion2D/Player" unique_id=271271098]
+[node name="Camera2D2" type="Camera2D" parent="NavigationRegion2D/Player" unique_id=271271098]
 position = Vector2(106, -72)
 zoom = Vector2(0.75, 0.75)
 limit_left = 0
