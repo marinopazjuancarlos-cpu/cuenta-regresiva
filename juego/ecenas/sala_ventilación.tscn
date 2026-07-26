@@ -15,9 +15,6 @@ size = Vector2(20, 53)
 [node name="sala_ventilación" type="Node2D" unique_id=1298471561]
 script = ExtResource("1_b6hpx")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1937399866]
-position = Vector2(5, -1)
-
 [node name="HabitacionLateral" type="Sprite2D" parent="." unique_id=1969915886]
 texture = ExtResource("1_fdc5o")
 
