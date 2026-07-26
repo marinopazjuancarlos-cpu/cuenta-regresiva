@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyjmpfbug815r"
-path="res://.godot/imported/probarlo.png-7d6f525f76043c3d85f6e71fb55e5809.ctex"
+uid="uid://cf1w5ojgkyh3y"
+path="res://.godot/imported/oficina.png-8a2bc5727d21d50871ae440f2d338210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Desarrollado/Escenas/DulceHogar/probarlo.png"
-dest_files=["res://.godot/imported/probarlo.png-7d6f525f76043c3d85f6e71fb55e5809.ctex"]
+source_file="res://arte/habitaciones base/oficina.png"
+dest_files=["res://.godot/imported/oficina.png-8a2bc5727d21d50871ae440f2d338210.ctex"]
 
 [params]
 
