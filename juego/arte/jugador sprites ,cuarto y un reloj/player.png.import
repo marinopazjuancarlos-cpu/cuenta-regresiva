@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyjmpfbug815r"
-path="res://.godot/imported/probarlo.png-7d6f525f76043c3d85f6e71fb55e5809.ctex"
+uid="uid://1t02mpmin6cn"
+path="res://.godot/imported/player.png-60a643fae9407b28e57d0f61ff467bdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Desarrollado/Escenas/DulceHogar/probarlo.png"
-dest_files=["res://.godot/imported/probarlo.png-7d6f525f76043c3d85f6e71fb55e5809.ctex"]
+source_file="res://arte/jugador sprites ,cuarto y un reloj/player.png"
+dest_files=["res://.godot/imported/player.png-60a643fae9407b28e57d0f61ff467bdd.ctex"]
 
 [params]
 
