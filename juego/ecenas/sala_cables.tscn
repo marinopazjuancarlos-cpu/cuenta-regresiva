@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://wghivwd36qef"]
+
+[ext_resource type="Script" uid="uid://ck1cc24tkkno7" path="res://ecenas/sala_cables.gd" id="1_aqgsm"]
+[ext_resource type="Texture2D" uid="uid://dqcs8wtikniug" path="res://arte/habitaciones base/habitacion entrada  trasera.png" id="1_rjw2o"]
+[ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_aqgsm"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
+vertices = PackedVector2Array(104.82031, -23, 123.82031, 15, 54.773438, 15, -37.476563, -23, 21.710938, 16, -54.671875, 16, 38.773438, 38, 34.710938, 38)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2), PackedInt32Array(4, 2, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -33, -70, 26, 16, 26, 29, 48, 44, 48, 60, 25, 140, 25, 111, -33)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
+size = Vector2(20, 25)
+
+[node name="sala_cables" type="Node2D" unique_id=800900409]
+script = ExtResource("1_aqgsm")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1456309651]
+
+[node name="HabitacionEntradaTrasera" type="Sprite2D" parent="." unique_id=1667473225]
+texture = ExtResource("1_rjw2o")
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1532880181]
+position = Vector2(-38, 48)
+navigation_polygon = SubResource("NavigationPolygon_wobu7")
+
+[node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_aqgsm")]
+position = Vector2(0, 60)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1347127053]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=589566271]
+position = Vector2(-1, 84.5)
+shape = SubResource("RectangleShape2D_goqy1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=159849768]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
