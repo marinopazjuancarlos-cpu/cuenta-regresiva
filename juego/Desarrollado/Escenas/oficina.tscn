@@ -20,6 +20,8 @@ size = Vector2(21, 10.25)
 [node name="Oficina" type="Node2D" unique_id=1629527104]
 script = ExtResource("1_ad4l7")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=727011743]
+
 [node name="Oficina" type="Sprite2D" parent="." unique_id=994921696]
 texture = ExtResource("1_5g58u")
 metadata/_edit_lock_ = true
@@ -75,4 +77,5 @@ position = Vector2(2, -35.125)
 shape = SubResource("RectangleShape2D_goqy1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_area_shape_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

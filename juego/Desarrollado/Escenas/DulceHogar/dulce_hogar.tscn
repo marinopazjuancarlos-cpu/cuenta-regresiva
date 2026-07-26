@@ -4,17 +4,55 @@
 [ext_resource type="Texture2D" uid="uid://dermxr0gqhp07" path="res://arte/jugador sprites ,cuarto y un reloj/cuarto prota.png" id="2_porpt"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_vxohv"]
 [ext_resource type="Script" uid="uid://ds6ady3stk4nl" path="res://Desarrollado/Entidades/Interactuable/interactuable.gd" id="3_interactuable"]
+[ext_resource type="Texture2D" uid="uid://ualkk2rv8y4u" path="res://arte/radio/radio.png" id="4_14ssg"]
+[ext_resource type="Script" uid="uid://btir33goq0kux" path="res://Desarrollado/Escenas/animated_sprite_2d.gd" id="5_wjpaa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ubc1v"]
-vertices = PackedVector2Array(230.90625, 326.0703, 329.71875, 327.82813, 330.7578, 341.22656, 213.86719, 342.20313, 412.46094, 339.1875, 413.78125, 343.8828)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5), PackedInt32Array(2, 5, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(189, 352, 227, 316, 339, 318, 340, 331, 420, 329, 427, 354)])
+vertices = PackedVector2Array(330.70313, 340.10938, 414, 339.1172, 414, 343, 213.0625, 343, 230.97656, 326, 329.6875, 326)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(188, 353, 227, 316, 339, 316, 340, 330, 424, 329, 424, 342, 437, 353)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubc1v"]
 size = Vector2(43, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyojl"]
 size = Vector2(75, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_madkl"]
+atlas = ExtResource("4_14ssg")
+region = Rect2(0, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8vhr"]
+atlas = ExtResource("4_14ssg")
+region = Rect2(25, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3w85"]
+atlas = ExtResource("4_14ssg")
+region = Rect2(75, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwcxu"]
+atlas = ExtResource("4_14ssg")
+region = Rect2(50, 0, 25, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux6my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_madkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3w85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwcxu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DulceHogar" type="Node2D" unique_id=905585205]
 script = ExtResource("1_60hde")
@@ -64,5 +102,11 @@ position = Vector2(-258.5, -183.5)
 shape = SubResource("RectangleShape2D_tyojl")
 debug_color = Color(1, 0, 0, 0.41960785)
 
+[node name="Radio" type="AnimatedSprite2D" parent="." unique_id=978187278]
+position = Vector2(167, 123)
+scale = Vector2(0.58, 0.6304348)
+sprite_frames = SubResource("SpriteFrames_ux6my")
+script = ExtResource("5_wjpaa")
+
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_vxohv")]
-position = Vector2(103, 147)
+position = Vector2(93, 148)
