@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://lhj0vm1aumjr" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.gd" id="1_pm001"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pm001"]
-radius = 40.0
+radius = 21.38
 
 [node name="PuntoMinijuego" type="Area2D" unique_id=845886716]
 script = ExtResource("1_pm001")

@@ -15,12 +15,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(29, 169, 29, 150, 142, 
 size = Vector2(20, 61.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
-size = Vector2(21, 10.25)
+size = Vector2(21, 15.25)
 
 [node name="Oficina" type="Node2D" unique_id=1629527104]
 script = ExtResource("1_ad4l7")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=727011743]
 
 [node name="Oficina" type="Sprite2D" parent="." unique_id=994921696]
 texture = ExtResource("1_5g58u")
@@ -69,7 +67,7 @@ shape = SubResource("RectangleShape2D_madkl")
 [node name="Area2D2" type="Area2D" parent="." unique_id=1227897361]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1612193175]
-position = Vector2(2, -35.125)
+position = Vector2(2, -32.625)
 shape = SubResource("RectangleShape2D_goqy1")
 
 [node name="Player" parent="." unique_id=1701795305 instance=ExtResource("1_player")]

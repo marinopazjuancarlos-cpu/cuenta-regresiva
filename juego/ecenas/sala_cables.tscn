@@ -3,13 +3,31 @@
 [ext_resource type="Script" uid="uid://ck1cc24tkkno7" path="res://ecenas/sala_cables.gd" id="1_aqgsm"]
 [ext_resource type="Texture2D" uid="uid://dqcs8wtikniug" path="res://arte/habitaciones base/habitacion entrada  trasera.png" id="1_rjw2o"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_aqgsm"]
+[ext_resource type="Texture2D" uid="uid://dktl7rmhjusuw" path="res://arte/electricidad/caja de cable.png" id="3_egk54"]
+[ext_resource type="Texture2D" uid="uid://na6mog8p581u" path="res://arte/electricidad/palancas.png" id="4_jjmfu"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="4_wobu7"]
+[ext_resource type="Texture2D" uid="uid://drn5yxmb5tq08" path="res://arte/electricidad/servidor.png" id="5_6yscf"]
 [ext_resource type="PackedScene" uid="uid://bi67isvw0aflf" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="5_ehp3j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
-vertices = PackedVector2Array(104.82031, -23, 123.82031, 15, 54.773438, 15, -37.476563, -23, 21.710938, 16, -54.671875, 16, 38.773438, 38, 34.710938, 38)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2), PackedInt32Array(4, 2, 6, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -33, -70, 26, 16, 26, 29, 48, 44, 48, 60, 25, 140, 25, 111, -33)])
+vertices = PackedVector2Array(58.210938, -23, 104.82031, -23, 123.82031, 15, 54.773438, 15, 55.210938, -14, 21.710938, 16, -54.671875, 16, -37.476563, -23, 8.1015625, -14, 38.773438, 38, 34.710938, 38, 8.0078125, -23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(8, 4, 3, 9, 10, 5), PackedInt32Array(11, 8, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-44, -33, -70, 26, 16, 26, 29, 48, 44, 48, 60, 25, 140, 25, 111, -33, 51, -33, 48, -24, 18, -24, 17.917725, -33)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtern"]
+atlas = ExtResource("3_egk54")
+region = Rect2(0, 0, 32, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goqy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtern")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
 size = Vector2(20, 25)
@@ -27,8 +45,21 @@ metadata/_edit_lock_ = true
 position = Vector2(-38, 48)
 navigation_polygon = SubResource("NavigationPolygon_wobu7")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1572475612]
+position = Vector2(41, -10)
+sprite_frames = SubResource("SpriteFrames_goqy1")
+
+[node name="Palancas" type="Sprite2D" parent="." unique_id=1892430694]
+position = Vector2(-39, -14.000001)
+scale = Vector2(0.65384614, 0.65384614)
+texture = ExtResource("4_jjmfu")
+
+[node name="Servidor" type="Sprite2D" parent="." unique_id=240235665]
+position = Vector2(3.0000038, -3.000001)
+texture = ExtResource("5_6yscf")
+
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_aqgsm")]
-position = Vector2(0, 60)
+position = Vector2(-37, 50)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1347127053]
 
@@ -58,7 +89,7 @@ process_mode = 3
 position = Vector2(144, 81)
 
 [node name="PuntoMinijuego" parent="." unique_id=845886716 instance=ExtResource("4_wobu7")]
-position = Vector2(-10, -7)
+position = Vector2(41, -9)
 indice = 1
 escena_minijuego = ExtResource("5_ehp3j")
 
