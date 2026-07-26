@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="4_wobu7"]
 [ext_resource type="Texture2D" uid="uid://drn5yxmb5tq08" path="res://arte/electricidad/servidor.png" id="5_6yscf"]
 [ext_resource type="PackedScene" uid="uid://bi67isvw0aflf" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="5_ehp3j"]
+[ext_resource type="PackedScene" uid="uid://doeksx7ng0y7c" path="res://Desarrollado/Escenas/interruptores.tscn" id="9_jjmfu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
 vertices = PackedVector2Array(58.210938, -23, 104.82031, -23, 123.82031, 15, 54.773438, 15, 55.210938, -14, 21.710938, 16, -54.671875, 16, -37.476563, -23, 8.1015625, -14, 38.773438, 38, 34.710938, 38, 8.0078125, -23)
@@ -109,12 +110,12 @@ escena_minijuego = ExtResource("5_ehp3j")
 position = Vector2(-42, -12)
 dia = 2
 indice = 2
-escena_minijuego = ExtResource("5_ehp3j")
+escena_minijuego = ExtResource("9_jjmfu")
 
 [node name="PuntoMinijuego5" parent="." unique_id=1269511438 instance=ExtResource("4_wobu7")]
 position = Vector2(-43, -12)
 dia = 3
 indice = 2
-escena_minijuego = ExtResource("5_ehp3j")
+escena_minijuego = ExtResource("9_jjmfu")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

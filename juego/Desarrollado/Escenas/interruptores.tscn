@@ -34,6 +34,7 @@ font_size = 30
 font_size = 30
 
 [node name="Interruptores" type="Node2D" unique_id=1710233671]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_doqfr")
 
 [node name="BrakerV2Png" type="Sprite2D" parent="." unique_id=1378870752]
@@ -193,7 +194,8 @@ offset_bottom = 43.999985
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=66195943]
 position = Vector2(31, 23)
-zoom = Vector2(0.4, 0.4)
+enabled = false
+zoom = Vector2(0.1, 0.1)
 
 [node name="Tiempo" type="Label" parent="." unique_id=182872907]
 offset_left = 297.49997
