@@ -87,6 +87,8 @@ var orden_conexion: Array = []
 @onready var label_puntos: Label = $UI/Puntos
 @onready var label_tiempo: Label = $UI/Tiempo
 
+
+
 func _ready() -> void:
 	dia = ControladorJuego.dia_actual
 	tiempo_restante = DURACION.get(dia, DURACION[1])
