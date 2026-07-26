@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c27uvtp7ssdue"]
 
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
-[ext_resource type="Texture2D" uid="uid://sa6sr2btcsv5" path="res://arte/libreta/libreta1.png" id="2_1u08f"]
+[ext_resource type="Texture2D" uid="uid://dqsefysln0ub0" path="res://arte/minijuego hojas/ductomejor3.png" id="2_yot8g"]
 [ext_resource type="Texture2D" uid="uid://bigrxstfcnkpd" path="res://Desarrollado/Minijuegos/Hojas/hoja_verde.tres" id="3_verde"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tubo"]
@@ -34,15 +34,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.5
-offset_top = -90.0
-offset_right = 152.5
-offset_bottom = 90.0
+offset_left = -140.6
+offset_top = -81.09
+offset_right = 164.4
+offset_bottom = 98.91
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 2
-texture = ExtResource("2_1u08f")
+texture = ExtResource("2_yot8g")
 expand_mode = 1
 stretch_mode = 5
 
@@ -121,6 +121,7 @@ shape = SubResource("RectangleShape2D_ps0ba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1908426147]
 position = Vector2(12.4, 9.2)
+zoom = Vector2(1.05, 1.05)
 
 [node name="Tiempo" type="Label" parent="." unique_id=2144871555]
 offset_left = 119.0
@@ -151,8 +152,6 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="techo/AreaTecho" unique_id=419102151]
 position = Vector2(1.5, 17.75)
 shape = SubResource("RectangleShape2D_tj7tt")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1015605459]
 
 [node name="Label" type="Label" parent="." unique_id=389693401]
 offset_left = -103.0
