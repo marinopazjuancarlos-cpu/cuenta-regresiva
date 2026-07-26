@@ -162,19 +162,15 @@ color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726454520]
 texture_filter = 1
-position = Vector2(0, -28)
+position = Vector2(0, -38.25)
+scale = Vector2(1.7, 1.7)
 sprite_frames = SubResource("SpriteFrames_5yfxe")
 animation = &"idle"
 frame_progress = 0.20540935
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434649882]
-position = Vector2(0, -26.4)
+position = Vector2(0, -22.000002)
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_jvjwp")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=482988854]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=727712143]
-
-[node name="Habitacion3Entradas" type="Sprite2D" parent="." unique_id=1521721757]
-position = Vector2(161, 92)

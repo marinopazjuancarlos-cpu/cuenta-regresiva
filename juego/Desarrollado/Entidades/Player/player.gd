@@ -29,6 +29,8 @@ func _ready() -> void:
 	agente.target_position = global_position
 
 func _input(event: InputEvent) -> void:
+	if ControladorDialogo.esta_mostrando:
+		return
 	if event.is_action_pressed("click"):
 		var destino := get_global_mouse_position()
 		agente.target_position = destino

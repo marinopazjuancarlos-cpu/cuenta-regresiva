@@ -44,6 +44,10 @@ click={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Desarrollado/Traducciones/traducciones.en.translation", "res://Desarrollado/Traducciones/traducciones.es.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

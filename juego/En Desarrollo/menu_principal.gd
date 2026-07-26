@@ -17,7 +17,7 @@ func _on_continuar_button_pressed() -> void:
 
 func _on_nueva_partida_button_pressed() -> void:
 	ControladorJuego.nueva_partida()
-	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA, "[rainbow]Mondongo...")
+	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA, "[rainbow]Mondongo...", 1.5, false)
 
 
 func _on_creditos_button_pressed() -> void:

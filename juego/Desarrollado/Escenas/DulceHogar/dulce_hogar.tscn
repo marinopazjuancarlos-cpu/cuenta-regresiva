@@ -40,7 +40,7 @@ limit_bottom = 428
 [node name="Puerta" type="Area2D" parent="." unique_id=1704407867]
 position = Vector2(146, 333)
 script = ExtResource("3_interactuable")
-lineas = Array[String](["No tengo ganas de salir todavia."])
+lineas = Array[String](["dulce_hogar_puerta"])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puerta" unique_id=176583432]
 polygon = PackedVector2Array(-12, -70, 10, -91, 10, -10, -12, 12)

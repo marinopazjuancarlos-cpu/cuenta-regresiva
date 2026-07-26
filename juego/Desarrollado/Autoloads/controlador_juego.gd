@@ -6,7 +6,6 @@ enum Final { A, B, C }
 const RUTA_GUARDADO = "user://partida.save"
 const MINIJUEGOS_POR_DIA = [2, 3, 4]
 
-#PENDIENTES DE CREAR: las tres escenas de final
 const RUTA_OFICINA = "uid://cfd61lgqbjf37"
 const RUTAS_FINAL = {
 	Final.A: "res://Desarrollado/Escenas/final_a.tscn",
@@ -24,7 +23,21 @@ var puntos_por_final: Dictionary = {Final.A: 0, Final.B: 0, Final.C: 0}
 var _instancia_minijuego_actual: Node = null
 
 
-func _ready() -> void: get_viewport().physics_object_picking = true
+func _ready() -> void:
+	get_viewport().physics_object_picking = true
+	initializar_idioma()
+	
+	
+# Metodo que detecta el idioma actual del sistema
+func initializar_idioma() -> void:
+	var idioma = OS.get_locale()
+	if idioma.begins_with("es"):
+		TranslationServer.set_locale("es")
+	elif idioma.begins_with("en"):
+		TranslationServer.set_locale("en")
+	else:
+		TranslationServer.set_locale("en")
+
 
 
 #LLAMAR AL TERMINAR CADA MINIJUEGO: SUMA UN PUNTO AL FINAL QUE CORRESPONDA

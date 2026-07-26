@@ -4,6 +4,7 @@ class_name Interactuable
 ## Area2D genérico: al hacer clic, el jugador camina hasta "JugadorAlcance"
 ## y luego se muestra el diálogo asignado.
 
+## Claves de traducción definidas en el CSV (ej. "DIALOGO_CAJA_L1").
 @export var lineas: Array[String] = []
 @export var una_sola_vez: bool = false
 

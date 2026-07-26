@@ -39,7 +39,7 @@ func mostrar_dialogo(lineas: Array) -> void:
 	panel.visible = true
 
 	for linea in lineas:
-		await _mostrar_linea(linea)
+		await _mostrar_linea(tr(linea))
 		await linea_avanzada
 
 	panel.visible = false

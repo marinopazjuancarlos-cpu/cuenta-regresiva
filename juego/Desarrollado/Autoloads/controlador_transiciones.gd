@@ -6,14 +6,14 @@ extends CanvasLayer
 @export var tiempo_espera_punto: float = 0.4
 @export var tiempo_espera_elipsis: float = 0.8
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var rich_text_label: RichTextLabel = $ColorRect/RichTextLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var color_rect: ColorRect = $ColorRect
 
 var esta_escribiendo: bool = false
 
 
-func ir_a_escena(escena, texto: String = "", pausa_post_texto: float = 1.5) -> void:
+func ir_a_escena(escena, texto: String = "", pausa_post_texto: float = 1.5, limpiar_texto: bool = true) -> void:
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
 	var pausa_final: float = 0.0 if texto == "" else pausa_post_texto
 	animation_player.play("FadeInOut")
@@ -24,9 +24,10 @@ func ir_a_escena(escena, texto: String = "", pausa_post_texto: float = 1.5) -> v
 		rich_text_label.visible_characters = true
 		await _escribir_texto(texto)
 		await get_tree().create_timer(pausa_final).timeout
-		rich_text_label.visible_characters = false
-		rich_text_label.text = ""
-		rich_text_label.visible_characters = 0
+		if limpiar_texto:
+			rich_text_label.visible_characters = false
+			rich_text_label.text = ""
+			rich_text_label.visible_characters = 0
 	
 	if escena is String:
 		get_tree().change_scene_to_file(escena)
@@ -37,6 +38,9 @@ func ir_a_escena(escena, texto: String = "", pausa_post_texto: float = 1.5) -> v
 	
 	animation_player.play_backwards("FadeInOut")
 	await animation_player.animation_finished
+	rich_text_label.visible_characters = false
+	rich_text_label.text = ""
+	rich_text_label.visible_characters = 0
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
@@ -47,7 +51,7 @@ func _ready() -> void:
 
 func _escribir_texto(texto_a_mostrar: String) -> void:
 	rich_text_label.visible = false
-	rich_text_label.text = texto_a_mostrar
+	rich_text_label.text = tr(texto_a_mostrar)
 	rich_text_label.visible_ratio = 0.0
 	rich_text_label.visible = true
 	esta_escribiendo = true
