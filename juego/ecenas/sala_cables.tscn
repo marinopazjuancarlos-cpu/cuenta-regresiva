@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ck1cc24tkkno7" path="res://ecenas/sala_cables.gd" id="1_aqgsm"]
 [ext_resource type="Texture2D" uid="uid://dqcs8wtikniug" path="res://arte/habitaciones base/habitacion entrada  trasera.png" id="1_rjw2o"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_aqgsm"]
+[ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="4_wobu7"]
+[ext_resource type="PackedScene" uid="uid://bi67isvw0aflf" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="5_ehp3j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
 vertices = PackedVector2Array(104.82031, -23, 123.82031, 15, 54.773438, 15, -37.476563, -23, 21.710938, 16, -54.671875, 16, 38.773438, 38, 34.710938, 38)
@@ -35,5 +37,29 @@ position = Vector2(-1, 84.5)
 shape = SubResource("RectangleShape2D_goqy1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=159849768]
+
+[node name="CapaMinijuego" type="CanvasLayer" parent="." unique_id=884460642]
+process_mode = 3
+layer = 10
+
+[node name="Marco" type="Control" parent="CapaMinijuego" unique_id=613658674 groups=["marco_minijuego"]]
+process_mode = 3
+visible = false
+clip_contents = true
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+mouse_filter = 2
+
+[node name="Contenido" type="Node2D" parent="CapaMinijuego/Marco" unique_id=805483861 groups=["capa_minijuego"]]
+process_mode = 3
+position = Vector2(144, 81)
+
+[node name="PuntoMinijuego" parent="." unique_id=845886716 instance=ExtResource("4_wobu7")]
+position = Vector2(-10, -7)
+indice = 1
+escena_minijuego = ExtResource("5_ehp3j")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://wgaasx2yo6g0" path="res://ecenas/sala_ventilación.gd" id="1_b6hpx"]
 [ext_resource type="Texture2D" uid="uid://kpx311klmo63" path="res://arte/habitaciones base/habitacion lateral.png" id="1_fdc5o"]
 [ext_resource type="PackedScene" uid="uid://d3d5exwecuaq7" path="res://Desarrollado/Entidades/Player/player.tscn" id="2_b6hpx"]
+[ext_resource type="Texture2D" uid="uid://cnx0i5wg83y78" path="res://arte/filtro aire.png" id="4_8l6hi"]
+[ext_resource type="Texture2D" uid="uid://ceuhpxnm51k8f" path="res://arte/tubo de aire.png" id="5_xtw0y"]
+[ext_resource type="Texture2D" uid="uid://buf4vo4fq1bq8" path="res://arte/conducto de aire.png" id="6_v36to"]
+[ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="7_558nb"]
+[ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="8_pt8cp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ji5db"]
 vertices = PackedVector2Array(-59.773438, 41.929688, -79, 41.46875, -77.203125, 39.132813, -58.648438, 39.648438, 90.85156, 28.960938, 110.703125, 68, -72.82031, 68, -52.84375, 28.03125)
@@ -35,5 +40,40 @@ position = Vector2(-43, 49)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1958764453]
 position = Vector2(-75, 17.5)
 shape = SubResource("RectangleShape2D_goqy1")
+
+[node name="FiltroAire" type="Sprite2D" parent="." unique_id=1171859743]
+position = Vector2(16, 5)
+texture = ExtResource("4_8l6hi")
+
+[node name="TuboDeAire" type="Sprite2D" parent="." unique_id=1713696708]
+position = Vector2(50, -1)
+texture = ExtResource("5_xtw0y")
+
+[node name="ConductoDeAire" type="Sprite2D" parent="." unique_id=1911583221]
+position = Vector2(17, -1)
+texture = ExtResource("6_v36to")
+
+[node name="PuntoMinijuego" parent="." unique_id=845886716 instance=ExtResource("7_558nb")]
+position = Vector2(60, 13)
+escena_minijuego = ExtResource("8_pt8cp")
+
+[node name="CapaMinijuego" type="CanvasLayer" parent="." unique_id=1537888703]
+process_mode = 3
+layer = 10
+
+[node name="Marco" type="Control" parent="CapaMinijuego" unique_id=1165101739 groups=["marco_minijuego"]]
+process_mode = 3
+visible = false
+clip_contents = true
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+mouse_filter = 2
+
+[node name="Contenido" type="Node2D" parent="CapaMinijuego/Marco" unique_id=837839222 groups=["capa_minijuego"]]
+process_mode = 3
+position = Vector2(144, 81)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
