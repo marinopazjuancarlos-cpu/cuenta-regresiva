@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bj7uopskohmsx"]
+
+[ext_resource type="Script" uid="uid://beu8m4hxbbyr3" path="res://rayo.gd" id="1_j37ud"]
+[ext_resource type="SpriteFrames" uid="uid://c881oi2gp558i" path="res://ecenas/rayo.tres" id="1_osk8g"]
+
+[node name="Rayo" type="AnimatedSprite2D" unique_id=1479745600]
+sprite_frames = ExtResource("1_osk8g")
+frame_progress = 0.9221929
+script = ExtResource("1_j37ud")

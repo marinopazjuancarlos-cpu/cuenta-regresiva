@@ -3,7 +3,7 @@ extends Node2D
 ## Minijuego "Cables": proteger al corazón conectando cables entre los círculos
 ## de cada lado antes de que la advertencia de ese lado lance una descarga.
 ## La configuración (tiempos, virus, eventos especiales) cambia según el día.
-
+@onready var corazon = [preload("res://SFX/LATIDO_CORAZÓN_1.ogg"),preload("res://SFX/LATIDO_CORAZÓN_2.ogg")]
 const LADOS = ["arriba", "derecha", "abajo", "izquierda"]
 
 ## POSICIÓN DE LOS 2 CÍRCULOS DE CADA LADO, SEGÚN EL DÍA
@@ -115,6 +115,8 @@ func _centro_lado(lado: String) -> Vector2:
 
 
 func _process(delta: float) -> void:
+	if $Corazon.get_frame() == 1:
+		random_corazon()
 	if not jugando:
 		return
 
@@ -128,7 +130,11 @@ func _process(delta: float) -> void:
 	_procesar_virus(delta)
 	_procesar_evento_dia3()
 	_actualizar_ui()
-
+	
+func random_corazon():
+	$corazon.stream = corazon[randi_range(0,1)]
+	$corazon.pitch_scale =randf_range(0.8,1.4)
+	$corazon.play()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not jugando:
@@ -175,14 +181,29 @@ func _lanzar_advertencia_aleatoria(forzar_lado: String = "", falsa: bool = false
 	}
 	primera_advertencia = false
 	indicadores[lado].visible = true
-
-
-func _crear_rayo(lado: String, avance: float) -> Label:
-	var rayo := Label.new()
-	rayo.text = "⚡"
-	rayo.add_theme_color_override("font_color", Color(1.0, 0.85, 0.1))
-	rayo.add_theme_font_size_override("font_size", 18)
+func _crear_rayo(lado: String, avance: float) -> Rayos:
+	var escena_rayo := load("uid://bj7uopskohmsx") as PackedScene
+	var rayo := escena_rayo.instantiate() as Rayos
+	
+	rayo.animation = "default"
+	rayo.play()
+	
 	rayo.position = _centro_lado(lado).lerp(Vector2.ZERO, avance)
+	
+	# Rotar si viene de arriba o abajo
+	if lado == "arriba":
+		rayo.rotation_degrees = -90
+	elif lado == "abajo":
+		rayo.rotation_degrees = 90
+	else:
+		rayo.rotation_degrees = 0  # derecha sin rotación
+	
+	# Flip horizontal si viene de la izquierda
+	if lado == "izquierda":
+		rayo.flip_h = true
+	else:
+		rayo.flip_h = false
+	
 	add_child(rayo)
 	return rayo
 
@@ -282,11 +303,12 @@ func _alternar_cable(lado: String) -> void:
 
 ## CONECTA UN LADO. SI YA HAY MAX_CABLES_CONECTADOS ACTIVOS, EXPULSA EL MÁS ANTIGUO PRIMERO
 func _conectar(lado: String) -> void:
+	$conectado.play()
 	if conectados[lado]:
 		return
 	if orden_conexion.size() >= MAX_CABLES_CONECTADOS:
 		_desconectar(orden_conexion.pop_front())
-
+	
 	conectados[lado] = true
 	armados[lado] = false
 	orden_conexion.append(lado)

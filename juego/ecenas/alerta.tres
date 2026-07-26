@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dowl4mew1pt7i"]
+
+[ext_resource type="Texture2D" uid="uid://dk5x34m7obwqj" path="res://Desarrollado/Minijuegos/Cables/alerta.png" id="1_6qe1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0edm"]
+atlas = ExtResource("1_6qe1j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xifr8"]
+atlas = ExtResource("1_6qe1j")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0edm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xifr8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

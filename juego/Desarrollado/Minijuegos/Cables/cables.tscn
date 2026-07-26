@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dgdgte6hepmwp" path="res://atlascables.tres" id="4_6eske"]
 [ext_resource type="Texture2D" uid="uid://x84wu8vbotab" path="res://Desarrollado/Minijuegos/Cables/cablel.png" id="5_75y5y"]
 [ext_resource type="Texture2D" uid="uid://nj5lkbau0uqj" path="res://Desarrollado/Minijuegos/Cables/cablel2.png" id="6_38xab"]
+[ext_resource type="SpriteFrames" uid="uid://dowl4mew1pt7i" path="res://ecenas/alerta.tres" id="7_4nuns"]
+[ext_resource type="AudioStream" uid="uid://cb6pmrrpqbpvj" path="res://SFX/CABLE_CONECTADO.ogg" id="7_rkm4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6oh6"]
 atlas = ExtResource("2_l3um3")
@@ -201,45 +203,22 @@ visible = false
 width = 3.0
 default_color = Color(1, 0.9, 0.3, 0.8)
 
-[node name="Advertencia_arriba" type="Label" parent="." unique_id=717513868]
+[node name="Advertencia_arriba" type="AnimatedSprite2D" parent="." unique_id=2075805956]
 visible = false
-offset_left = -8.0
-offset_top = -80.0
-offset_right = -8.0
-offset_bottom = -80.0
-theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
-theme_override_font_sizes/font_size = 20
-text = "!"
+sprite_frames = ExtResource("7_4nuns")
+frame_progress = 0.12405352
 
-[node name="Advertencia_derecha" type="Label" parent="." unique_id=1672767036]
+[node name="Advertencia_derecha" type="AnimatedSprite2D" parent="." unique_id=1749752034]
 visible = false
-offset_left = 122.0
-offset_top = -10.0
-offset_right = 122.0
-offset_bottom = -10.0
-theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
-theme_override_font_sizes/font_size = 20
-text = "!"
+sprite_frames = ExtResource("7_4nuns")
 
-[node name="Advertencia_abajo" type="Label" parent="." unique_id=1864409175]
+[node name="Advertencia_abajo" type="AnimatedSprite2D" parent="." unique_id=784848480]
 visible = false
-offset_left = -8.0
-offset_top = 62.0
-offset_right = -8.0
-offset_bottom = 62.0
-theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
-theme_override_font_sizes/font_size = 20
-text = "!"
+sprite_frames = ExtResource("7_4nuns")
 
-[node name="Advertencia_izquierda" type="Label" parent="." unique_id=1864329599]
+[node name="Advertencia_izquierda" type="AnimatedSprite2D" parent="." unique_id=1746120061]
 visible = false
-offset_left = -130.0
-offset_top = -10.0
-offset_right = -130.0
-offset_bottom = -10.0
-theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
-theme_override_font_sizes/font_size = 20
-text = "!"
+sprite_frames = ExtResource("7_4nuns")
 
 [node name="UI" type="Node2D" parent="." unique_id=2014098113]
 
@@ -260,3 +239,9 @@ offset_bottom = -68.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
 text = "20"
+
+[node name="conectado" type="AudioStreamPlayer2D" parent="." unique_id=1410213111]
+stream = ExtResource("7_rkm4v")
+
+[node name="corazon" type="AudioStreamPlayer2D" parent="." unique_id=1483547360]
+volume_db = 22.265

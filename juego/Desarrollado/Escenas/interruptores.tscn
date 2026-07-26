@@ -5,6 +5,28 @@
 [ext_resource type="Texture2D" uid="uid://7fitbdihwg4d" path="res://arte/minijuego brackets (frenillos)/braker_v2png.png" id="3_hyvb8"]
 [ext_resource type="Texture2D" uid="uid://dsxq0ro1nhcwj" path="res://arte/minijuego brackets (frenillos)/palancas.png" id="4_gtd3j"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyvb8"]
+atlas = ExtResource("4_gtd3j")
+region = Rect2(0, 0, 27, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtd3j"]
+atlas = ExtResource("4_gtd3j")
+region = Rect2(27, 0, 27, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oinq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyvb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtd3j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_h6y1n"]
 font_size = 30
 
@@ -23,6 +45,8 @@ offset_bottom = 60.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gas1" unique_id=221022403]
 position = Vector2(11, -99)
+sprite_frames = SubResource("SpriteFrames_oinq6")
+frame_progress = 0.820884
 
 [node name="gas2" type="Node2D" parent="." unique_id=1868825216 groups=["interruptor"]]
 position = Vector2(-105, 95)
@@ -142,10 +166,6 @@ texture = ExtResource("2_pc2w5")
 [node name="BrakerV2Png" type="Sprite2D" parent="." unique_id=1378870752]
 position = Vector2(-18, 75)
 texture = ExtResource("3_hyvb8")
-
-[node name="Palancas" type="Sprite2D" parent="." unique_id=1593863941]
-position = Vector2(-282, 0)
-texture = ExtResource("4_gtd3j")
 
 [connection signal="pressed" from="gas1/tubo" to="." method="_on_tubo_1_pressed"]
 [connection signal="pressed" from="gas2/tubo" to="." method="_on_tubo_2_pressed"]
