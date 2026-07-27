@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	if ControladorJuego.fin_de_jornada == true:
 		if secuencia_en_curso or (una_sola_vez and ya_interactuado):
 			return
-		_iniciar_interaccion()
+		
 
 func _iniciar_interaccion() -> void:
 	secuencia_en_curso = true
