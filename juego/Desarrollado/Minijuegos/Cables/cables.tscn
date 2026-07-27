@@ -105,7 +105,7 @@ frame_progress = 0.08025912
 
 [node name="Circulo_arriba_0" type="Area2D" parent="." unique_id=943889463]
 position = Vector2(-35, -55)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_arriba_0" unique_id=248184193]
 position = Vector2(6, 0)
@@ -117,7 +117,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_arriba_1" type="Area2D" parent="." unique_id=1422520231]
 position = Vector2(35, -55)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_arriba_1" unique_id=231117825]
 position = Vector2(-8, 0)
@@ -129,7 +129,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_derecha_0" type="Area2D" parent="." unique_id=1463849745]
 position = Vector2(110, -25)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_derecha_0" unique_id=304059528]
 texture = SubResource("AtlasTexture_i7sx3")
@@ -139,7 +139,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_derecha_1" type="Area2D" parent="." unique_id=1192128209]
 position = Vector2(110, 25)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_derecha_1" unique_id=162883339]
 texture = SubResource("AtlasTexture_i7sx3")
@@ -149,7 +149,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_abajo_0" type="Area2D" parent="." unique_id=1969132288]
 position = Vector2(-35, 55)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_abajo_0" unique_id=785615413]
 texture = SubResource("AtlasTexture_w8ik6")
@@ -159,7 +159,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_abajo_1" type="Area2D" parent="." unique_id=1934610725]
 position = Vector2(35, 55)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_abajo_1" unique_id=1893392450]
 texture = SubResource("AtlasTexture_w8ik6")
@@ -169,7 +169,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_izquierda_0" type="Area2D" parent="." unique_id=361382286]
 position = Vector2(-110, -25)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_izquierda_0" unique_id=1872002635]
 texture = SubResource("AtlasTexture_l3um3")
@@ -179,7 +179,7 @@ shape = SubResource("CircleShape2D_circulo")
 
 [node name="Circulo_izquierda_1" type="Area2D" parent="." unique_id=1766634000]
 position = Vector2(-110, 25)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Circulo_izquierda_1" unique_id=1963661115]
 texture = SubResource("AtlasTexture_l3um3")

@@ -14,7 +14,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(29, 169, 29, 150, 142, 151, 132.31113, 131.96828, 150, 132, 137, 110, 121.2157, 110.173676, 114, 96, 49, 96, 39, 86, 10, 86, 7, 72, -12, 72, -15, 86, -48, 86, -58, 96, -69.19971, 96, -72, 111, -91, 111, -94, 97, -120, 96, -149, 151, -40, 152, -40, 168)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_madkl"]
-size = Vector2(20, 61.5)
+size = Vector2(24, 61.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goqy1"]
 size = Vector2(21, 15.25)
@@ -67,7 +67,7 @@ texture = ExtResource("4_ad4l7")
 [node name="Area2D" type="Area2D" parent="." unique_id=1227678716]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1564723714]
-position = Vector2(142, 15.75)
+position = Vector2(140, 15.75)
 shape = SubResource("RectangleShape2D_madkl")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1227897361]
