@@ -34,6 +34,7 @@ font_size = 30
 font_size = 30
 
 [node name="Interruptores" type="Node2D" unique_id=1710233671]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_doqfr")
 
 [node name="BrakerV2Png" type="Sprite2D" parent="." unique_id=1378870752]
@@ -193,7 +194,8 @@ offset_bottom = 43.999985
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=66195943]
 position = Vector2(31, 23)
-zoom = Vector2(0.4, 0.4)
+enabled = false
+zoom = Vector2(0.1, 0.1)
 
 [node name="Tiempo" type="Label" parent="." unique_id=182872907]
 offset_left = 297.49997
@@ -204,6 +206,7 @@ label_settings = SubResource("LabelSettings_h6y1n")
 
 [node name="Tiempo_restante" type="Timer" parent="." unique_id=1162736715]
 wait_time = 30.0
+one_shot = true
 autostart = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=723552850]
@@ -229,3 +232,4 @@ label_settings = SubResource("LabelSettings_hyvb8")
 [connection signal="pressed" from="gas8/tubo" to="." method="_on_tubo_8_pressed"]
 [connection signal="pressed" from="gas9/tubo" to="." method="_on_tubo_9_pressed"]
 [connection signal="pressed" from="gas10/tubo" to="." method="_on_tubo_10_pressed"]
+[connection signal="timeout" from="Tiempo_restante" to="." method="_on_tiempo_restante_timeout"]

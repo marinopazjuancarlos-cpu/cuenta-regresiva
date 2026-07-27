@@ -187,19 +187,29 @@ func _crear_rayo(lado: String, avance: float) -> Rayos:
 	
 	rayo.animation = "default"
 	rayo.play()
-	
 	rayo.position = _centro_lado(lado).lerp(Vector2.ZERO, avance)
-	
-	# Rotar si viene de arriba o abajo
-	if lado == "arriba":
-		rayo.rotation_degrees = -90
-	elif lado == "abajo":
-		rayo.rotation_degrees = 90
+
+	# Rotación según lado y día
+	if dia >= 2:
+		match lado:
+			"arriba":
+				rayo.rotation_degrees = -45   # diagonal arriba-izquierda
+			"derecha":
+				rayo.rotation_degrees = 45    # diagonal arriba-derecha
+			"abajo":
+				rayo.rotation_degrees = 135   # diagonal abajo-derecha
+			"izquierda":
+				rayo.rotation_degrees = -135  # diagonal abajo-izquierda
 	else:
-		rayo.rotation_degrees = 0  # derecha sin rotación
-	
-	# Flip horizontal si viene de la izquierda
-	if lado == "izquierda":
+		if lado == "arriba":
+			rayo.rotation_degrees = -90
+		elif lado == "abajo":
+			rayo.rotation_degrees = 90
+		else:
+			rayo.rotation_degrees = 0  # derecha/izquierda sin rotación
+
+	# Flip horizontal si viene de la izquierda (solo día ≠ 3)
+	if dia <= 2 and lado == "izquierda":
 		rayo.flip_h = true
 	else:
 		rayo.flip_h = false

@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://dnfc66huirves"]
+[gd_scene format=3 uid="uid://dhsnbnrgnepkv"]
 
-[ext_resource type="Script" uid="uid://c62xa7utbp3h5" path="res://interruptores.gd" id="1_doqfr"]
-[ext_resource type="Texture2D" uid="uid://cbt3id3ggbawd" path="res://lampara.png" id="2_h6y1n"]
+[ext_resource type="Script" uid="uid://5jhdebwi06eo" path="res://interruptores.gd" id="1_doqfr"]
 [ext_resource type="Texture2D" uid="uid://dks0l84nxcovl" path="res://icon.svg" id="2_pc2w5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pc2w5"]
@@ -135,7 +134,6 @@ autostart = true
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1778530826]
 visible = false
 energy = 1.6
-texture = ExtResource("2_h6y1n")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=723552850]
 visible = false
