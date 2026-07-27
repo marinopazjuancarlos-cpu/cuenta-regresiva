@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://buf4vo4fq1bq8" path="res://arte/conducto de aire.png" id="6_v36to"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="7_558nb"]
 [ext_resource type="Script" uid="uid://bsff1rtcjo01a" path="res://ecenas/animated_sprite_2d.gd" id="7_xtw0y"]
+[ext_resource type="AudioStream" uid="uid://00gpm5oisqqm" path="res://SFX/PASOS_CEMENTO.ogg" id="8_558nb"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="8_pt8cp"]
 [ext_resource type="PackedScene" uid="uid://ckgm75dvxa7e5" path="res://ecenas/conductos.tscn" id="10_v36to"]
 
@@ -74,6 +75,9 @@ texture = ExtResource("4_8l6hi")
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_b6hpx")]
 position = Vector2(-43, 49)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1739409263]
+stream = ExtResource("8_558nb")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1628475172]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1488138817]
@@ -93,7 +97,6 @@ escena_minijuego = ExtResource("8_pt8cp")
 
 [node name="PuntoMinijuego3" parent="." unique_id=481380662 instance=ExtResource("7_558nb")]
 position = Vector2(102, 13)
-dia = 3
 indice = 3
 escena_minijuego = ExtResource("10_v36to")
 

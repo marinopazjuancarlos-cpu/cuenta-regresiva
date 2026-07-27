@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="4_wobu7"]
 [ext_resource type="Texture2D" uid="uid://drn5yxmb5tq08" path="res://arte/electricidad/servidor.png" id="5_6yscf"]
 [ext_resource type="PackedScene" uid="uid://bi67isvw0aflf" path="res://Desarrollado/Minijuegos/Cables/cables.tscn" id="5_ehp3j"]
+[ext_resource type="AudioStream" uid="uid://00gpm5oisqqm" path="res://SFX/PASOS_CEMENTO.ogg" id="7_6yscf"]
 [ext_resource type="PackedScene" uid="uid://doeksx7ng0y7c" path="res://Desarrollado/Escenas/interruptores.tscn" id="9_jjmfu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wobu7"]
@@ -61,6 +62,9 @@ texture = ExtResource("5_6yscf")
 
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_aqgsm")]
 position = Vector2(-37, 50)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1901307930]
+stream = ExtResource("7_6yscf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1347127053]
 

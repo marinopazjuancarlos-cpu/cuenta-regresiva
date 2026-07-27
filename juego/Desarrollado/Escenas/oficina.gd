@@ -13,6 +13,9 @@ var ya_interactuado: bool = false
 var secuencia_en_curso: bool = false
 
 func _physics_process(delta: float) -> void:
+	if $Player.velocity !=Vector2(0,0) and $Player/AudioStreamPlayer2D.is_playing() == false:
+		$Player/AudioStreamPlayer2D.pitch_scale = randf_range(0.8,1.5)
+		$Player/AudioStreamPlayer2D.play()
 	if ControladorJuego.fin_de_jornada == true:
 		if secuencia_en_curso or (una_sola_vez and ya_interactuado):
 			return

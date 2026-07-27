@@ -7,6 +7,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
+func _physics_process(delta: float) -> void:
+	if $Player.velocity !=Vector2(0,0) and $Player/AudioStreamPlayer2D.is_playing() == false:
+		$Player/AudioStreamPlayer2D.pitch_scale = randf_range(0.8,1.5)
+		$Player/AudioStreamPlayer2D.play()
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	ControladorTransiciones.ir_a_escena(RUTA_OFICINA)
