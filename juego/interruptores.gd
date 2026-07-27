@@ -8,7 +8,6 @@ func _ready() -> void:
 	var a=0 
 	
 	activar_interruptores()
-			
 
 func activar_interruptores():
 	var a=0 
