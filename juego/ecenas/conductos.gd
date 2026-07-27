@@ -7,7 +7,7 @@ var puntos: int = 0
 const PUNTOS_MINIMOS_FINAL_A = 100
 const PUNTOS_MINIMOS_FINAL_B = 50
 const PUNTOS_MINIMOS_FINAL_C = 10
-const COLOR_OCULTO = Color(0.05, 0.05, 0.05, 1)
+
 const COLOR_ILUMINADO = Color(1, 1, 1, 1)
 const DURACION_MINIJUEGO = 30.0
 const PUNTOS_POR_VUELTA = 10
@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 			if tiempo_contacto >= 2.0: 
 				puntos -= PENALIZACION_CARA
 				tiempo_contacto = 0.0    
-				_linterna_alerta()
+				
 		if tiempo_cara >= DURACION_CARA:
 			_desactivar_cara()
 
@@ -85,18 +85,15 @@ func _activar_cara() -> void:
 	tiempo_contacto = 0.0
 	var sprite_cara = $Path2D/PathFollow2D/CharacterBody2D/Sprite2D
 	sprite_cara.visible = true
-	sprite_cara.modulate = COLOR_OCULTO  # arranca oculta
-
+	
 func _desactivar_cara() -> void:
 	cara_activa = false
 	$Path2D/PathFollow2D/CharacterBody2D/Sprite2D.visible = false
 	tiempo_cara = 0.0
 	tiempo_contacto = 0.0
 	cara_en_linterna = false
-	$Area2D/lin.modulate = Color(1,1,1)
 
-func _linterna_alerta() -> void:
-	$Area2D/lin.modulate = Color(1, 0.5, 0.5)
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D and body.name == "Cara":
@@ -109,5 +106,3 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D and body.name == "Cara":
 		cara_en_linterna = false
 		tiempo_contacto = 0.0
-		$Area2D/lin.modulate = Color(1,1,1)
-		body.get_node("Sprite2D").modulate = COLOR_OCULTO

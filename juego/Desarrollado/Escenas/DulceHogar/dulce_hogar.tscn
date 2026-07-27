@@ -77,6 +77,7 @@ lineas = Array[String](["dulce_hogar_puerta"])
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puerta" unique_id=176583432]
 position = Vector2(-8, -3)
 polygon = PackedVector2Array(-79, -219, -68, -227, -68, -185, -79, -176)
+disabled = true
 
 [node name="JugadorAlcance" type="Marker2D" parent="Puerta" unique_id=2104919151]
 
@@ -91,7 +92,7 @@ shape = SubResource("RectangleShape2D_ubc1v")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="JugadorAlcance" type="Marker2D" parent="VentanaParque" unique_id=53566866]
-position = Vector2(-35, 66)
+position = Vector2(-140, 66)
 
 [node name="Cama" type="Area2D" parent="." unique_id=852202137]
 position = Vector2(497, 310)

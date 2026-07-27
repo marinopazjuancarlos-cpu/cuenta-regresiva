@@ -2,6 +2,8 @@ extends Node2D
 #var nivel1 =get_tree().get_nodes_in_group("pantalla")[0]
 # Called when the node enters the scene tree for the first time.
 var puntos : int
+const PUNTOS_MINIMOS_FINAL_A = 200
+const PUNTOS_MINIMOS_FINAL_B = 100
 func _ready() -> void:
 	var a=0 
 	
@@ -86,6 +88,7 @@ func _on_tiempo_restante_timeout() -> void:
 	$Tiempo_restante.stop()
 	#PAUSADOR
 	get_tree().paused =true
+	ControladorJuego.terminar_minijuego(puntos, PUNTOS_MINIMOS_FINAL_A, PUNTOS_MINIMOS_FINAL_B)
 
 
 
