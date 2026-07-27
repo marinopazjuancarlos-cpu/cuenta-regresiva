@@ -8,7 +8,7 @@ const PUNTOS_MINIMOS_FINAL_A = 100
 const PUNTOS_MINIMOS_FINAL_B = 50
 const PUNTOS_MINIMOS_FINAL_C = 10
 
-const COLOR_ILUMINADO = Color(1, 1, 1, 1)
+
 const DURACION_MINIJUEGO = 30.0
 const PUNTOS_POR_VUELTA = 10
 const INTERVALO_CARA = 10.0
@@ -99,7 +99,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D and body.name == "Cara":
 		cara_en_linterna = true
 		tiempo_contacto = 0.0
-		body.get_node("Sprite2D").modulate = COLOR_ILUMINADO
+		
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ceuhpxnm51k8f" path="res://arte/tubo de aire.png" id="5_xtw0y"]
 [ext_resource type="Texture2D" uid="uid://buf4vo4fq1bq8" path="res://arte/conducto de aire.png" id="6_v36to"]
 [ext_resource type="PackedScene" uid="uid://b6oerp7v0wsup" path="res://Desarrollado/Entidades/PuntoMinijuego/punto_minijuego.tscn" id="7_558nb"]
+[ext_resource type="AudioStream" uid="uid://cflqwq024lf31" path="res://SFX/VENTILADOR.ogg" id="7_pt8cp"]
 [ext_resource type="Script" uid="uid://bsff1rtcjo01a" path="res://ecenas/animated_sprite_2d.gd" id="7_xtw0y"]
 [ext_resource type="AudioStream" uid="uid://00gpm5oisqqm" path="res://SFX/PASOS_CEMENTO.ogg" id="8_558nb"]
 [ext_resource type="PackedScene" uid="uid://c27uvtp7ssdue" path="res://Desarrollado/Minijuegos/Hojas/hojas.tscn" id="8_pt8cp"]
@@ -72,11 +73,18 @@ texture = ExtResource("5_xtw0y")
 position = Vector2(-2, -30)
 texture = ExtResource("4_8l6hi")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=318537755]
+position = Vector2(53, -12)
+stream = ExtResource("7_pt8cp")
+autoplay = true
+
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_b6hpx")]
 position = Vector2(-43, 49)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1739409263]
 stream = ExtResource("8_558nb")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=449132163]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1628475172]
 
