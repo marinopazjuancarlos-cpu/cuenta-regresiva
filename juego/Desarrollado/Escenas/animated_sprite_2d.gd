@@ -10,10 +10,8 @@ func _on_radio_2_pressed() -> void:
 		$".".play("default")
 		ControladorAudio.reproducir_musica(radio[encendido])
 	if encendido == 1:
-		$".".play("default")
 		ControladorAudio.reproducir_musica(radio[encendido])
-	if encendido == 2:
+	if encendido >= 2:
 		$".".stop()
 		ControladorAudio.detener_musica()
-	if encendido >= 3:
-		encendido = 0
+		encendido = -1

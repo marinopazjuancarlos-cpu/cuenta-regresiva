@@ -13,12 +13,10 @@ signal linea_avanzada
 var esta_mostrando: bool = false
 var saltar_escritura: bool = false
 
-
 func _ready() -> void:
 	layer = 20
 	panel.visible = false
 	etiqueta.bbcode_enabled = true
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not esta_mostrando:
@@ -29,8 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			saltar_escritura = true
 
-
-## Muestra las líneas una por una. Un clic adelanta la escritura, otro clic pasa a la siguiente línea.
 func mostrar_dialogo(lineas: Array) -> void:
 	if lineas.is_empty():
 		return
