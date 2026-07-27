@@ -6,7 +6,6 @@ func _ready() -> void:
 
 func _on_radio_2_pressed() -> void:
 	encendido += 1
-	
 	if encendido == 0:
 		$".".play("default")
 		ControladorAudio.reproducir_musica(radio[encendido])

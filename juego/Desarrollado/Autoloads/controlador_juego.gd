@@ -1,9 +1,9 @@
 extends Node
 
-
 enum Final { A, B, C }
 
 const RUTA_GUARDADO = "user://partida.save"
+
 const MINIJUEGOS_POR_DIA = [2, 3, 4]
 
 const RUTA_OFICINA = "uid://cfd61lgqbjf37"

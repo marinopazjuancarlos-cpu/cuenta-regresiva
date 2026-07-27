@@ -13,18 +13,15 @@ class_name Interactuable
 var ya_interactuado: bool = false
 var secuencia_en_curso: bool = false
 
-
 func _ready() -> void:
 	input_pickable = true
 	input_event.connect(_on_input_event)
-
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if secuencia_en_curso or (una_sola_vez and ya_interactuado):
 		return
 	if event.is_action_pressed("click"):
 		_iniciar_interaccion()
-
 
 func _iniciar_interaccion() -> void:
 	secuencia_en_curso = true
