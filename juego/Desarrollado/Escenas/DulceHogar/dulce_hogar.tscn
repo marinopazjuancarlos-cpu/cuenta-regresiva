@@ -138,12 +138,15 @@ script/source = "extends AudioStreamPlayer2D
 
 func _ready() -> void:
 	$\".\".stream = preload(\"uid://6f4couvfynqe\")
+	$\".\".volume_db = 0
 	
-	if $\"../VentanaParque\".abrir_ventana == true:
+	if $\"../VentanaParque\".ventana_abierta == true:
+		$\".\".stop()
 		$\".\".volume_db += 12
 		$\".\".play()
 	else:
-		$\".\".volume_db -= 12
+		$\".\".stop()
+		$\".\".volume_db -= 90
 		$\".\".play()
 "
 
