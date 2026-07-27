@@ -23,8 +23,8 @@ size = Vector2(55.5, 47.5)
 line_spacing = 4.73
 font_size = 26
 
-[sub_resource type="LabelSettings" id="LabelSettings_fwm1q"]
-font_size = 26
+[sub_resource type="LabelSettings" id="LabelSettings_xl7gy"]
+font_size = 6
 
 [node name="Conductos" type="Node2D" unique_id=1899294917]
 scale = Vector2(0.2, 0.2)
@@ -78,7 +78,6 @@ shape = SubResource("RectangleShape2D_7btj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=566875688]
 visible = false
-light_mask = 2
 visibility_layer = 3
 scale = Vector2(3, 3)
 texture = ExtResource("3_p6r33")
@@ -108,13 +107,11 @@ label_settings = SubResource("LabelSettings_71vgh")
 [node name="Puntos" type="Label" parent="." unique_id=1334734469]
 show_behind_parent = true
 top_level = true
-light_mask = 4
-visibility_layer = 4
-offset_left = -254.99994
-offset_top = -139.99998
-offset_right = -214.99994
-offset_bottom = -116.999985
-label_settings = SubResource("LabelSettings_fwm1q")
+offset_left = -44.0
+offset_top = -30.0
+offset_right = -4.0
+offset_bottom = -7.0
+label_settings = SubResource("LabelSettings_xl7gy")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=622919375]
 position = Vector2(10, 1.5258789e-05)
