@@ -1,6 +1,7 @@
 extends Area2D
 class_name Interactuable
-
+var abrir_ventana = true
+var dialogo: int
 ## Area2D genérico: al hacer clic, el jugador camina hasta "JugadorAlcance"
 ## y luego se muestra el diálogo asignado.
 
@@ -21,7 +22,29 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if secuencia_en_curso or (una_sola_vez and ya_interactuado):
 		return
 	if event.is_action_pressed("click"):
-		_iniciar_interaccion()
+			
+			if abrir_ventana == true:
+				if dialogo == 0:
+					_iniciar_interaccion()
+					_abrir_ventana()
+					dialogo +=1
+				else:
+					_abrir_ventana()
+				
+			else:
+				cerrar_ventana()
+
+func cerrar_ventana():
+				$"../AnimatedSprite2D/AudioStreamPlayer2D".stream = preload("uid://dr22th6wsx7k8")
+				$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
+				$"../AnimatedSprite2D".play_backwards("default")
+				abrir_ventana = true
+
+func _abrir_ventana():
+				$"../AnimatedSprite2D/AudioStreamPlayer2D".stream = preload("uid://urrv7cy25wv8")
+				$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
+				$"../AnimatedSprite2D".play("default")
+				abrir_ventana = false
 
 func _iniciar_interaccion() -> void:
 	secuencia_en_curso = true

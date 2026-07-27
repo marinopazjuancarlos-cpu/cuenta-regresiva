@@ -121,24 +121,8 @@ tags = {
 "encoder": "REAPER"
 }
 
-[sub_resource type="GDScript" id="GDScript_fksgl"]
-script/source = "extends AudioStreamPlayer2D
-
-func _ready() -> void:
-	$\".\".stream = preload(\"uid://6f4couvfynqe\")
-	$\".\".volume_db -= 16
-	$\".\".play()
-#	if .abrir_ventana:
-"
-
-[sub_resource type="GDScript" id="GDScript_j6w4e"]
-script/source = "extends AudioStreamPlayer2D
-
-func _ready() -> void:
-	$\".\".stream = preload(\"uid://7j8msuaefu00\")
-	$\".\".volume_db -= 6
-	$\".\".play()
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubc1v"]
+size = Vector2(43, 29)
 
 [node name="DulceHogar" type="Node2D" unique_id=905585205]
 script = ExtResource("1_60hde")
@@ -187,13 +171,6 @@ sprite_frames = SubResource("SpriteFrames_goqy1")
 speed_scale = 2.0
 script = SubResource("GDScript_goqy1")
 
-[node name="Button" type="Button" parent="AnimatedSprite2D" unique_id=1221203992]
-modulate = Color(1, 1, 1, 0)
-offset_left = -21.0
-offset_top = -16.0
-offset_right = 22.0
-offset_bottom = 14.0
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D" unique_id=538378741]
 
 [node name="Player" parent="." unique_id=987147644 instance=ExtResource("2_vxohv")]
@@ -219,13 +196,19 @@ offset_top = 115.0
 offset_right = 198.0
 offset_bottom = 134.0
 
-[node name="SONIDO AMBIENTE" type="AudioStreamPlayer2D" parent="." unique_id=1071751454]
-script = SubResource("GDScript_fksgl")
+[node name="VentanaParque" type="Area2D" parent="." unique_id=1738226405]
+position = Vector2(293, 223)
+script = ExtResource("3_interactuable")
+lineas = Array[String](["ventana_dulce_hogar"])
 
-[node name="SONIDO AMBIENTE2" type="AudioStreamPlayer2D" parent="." unique_id=820895916]
-script = SubResource("GDScript_j6w4e")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VentanaParque" unique_id=1033249774]
+position = Vector2(-143, -127)
+shape = SubResource("RectangleShape2D_ubc1v")
+debug_color = Color(1, 0, 0, 0.41960785)
 
-[connection signal="pressed" from="AnimatedSprite2D/Button" to="AnimatedSprite2D" method="_on_button_pressed"]
+[node name="JugadorAlcance" type="Marker2D" parent="VentanaParque" unique_id=455970090]
+position = Vector2(-142, -105)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Radio2" to="." method="_on_radio_2_pressed"]
 [connection signal="pressed" from="Radio2" to="Radio" method="_on_radio_2_pressed"]
