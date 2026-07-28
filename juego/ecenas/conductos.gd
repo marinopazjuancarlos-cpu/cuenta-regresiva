@@ -8,7 +8,6 @@ const PUNTOS_MINIMOS_FINAL_A = 100
 const PUNTOS_MINIMOS_FINAL_B = 50
 const PUNTOS_MINIMOS_FINAL_C = 10
 
-
 const DURACION_MINIJUEGO = 30.0
 const PUNTOS_POR_VUELTA = 10
 const INTERVALO_CARA = 10.0
@@ -29,25 +28,21 @@ func _ready() -> void:
 	$Tiempo_restante.start()
 	$CaraTimer.wait_time = INTERVALO_CARA
 	$CaraTimer.start()
-
+	
 func _process(delta: float) -> void:
 	pos_cosas($PointLight2D)
-
-
-
 	$Label.text = str(int($Tiempo_restante.time_left))
 	var current_mouse_pos = get_viewport().get_mouse_position()
 	mouse_speed = (current_mouse_pos - prev_mouse_pos) / delta
 	prev_mouse_pos = current_mouse_pos
-
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		if mouse_speed.y < 0:
-			$Sprite2D.rotation -= 0.02
-			$Path2D/PathFollow2D.progress += 2
+			$Sprite2D.rotation -= 0.1
+			$Path2D/PathFollow2D.progress += 10
 			_sumar_rotacion(1)
 		elif mouse_speed.y > 0:
-			$Sprite2D.rotation += 0.02
-			$Path2D/PathFollow2D.progress -= 2
+			$Sprite2D.rotation += 0.1
+			$Path2D/PathFollow2D.progress -= 10
 			_sumar_rotacion(1)
 	if cara_activa:
 		tiempo_cara += delta
@@ -65,7 +60,7 @@ func pos_cosas(cosa):
 	cosa.position = get_global_mouse_position() * 4
 	# Movimiento de la rueda
 func _sumar_rotacion(grados: float) -> void:
-	rotacion_acumulada += abs(grados)
+	rotacion_acumulada += abs(grados*5)
 	if rotacion_acumulada >= 360.0:
 		rotacion_acumulada = 0.0
 		vueltas += 1

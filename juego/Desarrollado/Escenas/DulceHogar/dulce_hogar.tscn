@@ -138,7 +138,7 @@ script/source = "extends AudioStreamPlayer2D
 
 func _ready() -> void:
 	$\".\".stream = preload(\"uid://6f4couvfynqe\")
-	$\".\".volume_db = 0
+	$\".\".volume_db = -21
 	
 	if $\"../VentanaParque\".ventana_abierta == true:
 		$\".\".stop()

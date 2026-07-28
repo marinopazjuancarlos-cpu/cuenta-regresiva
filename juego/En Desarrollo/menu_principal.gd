@@ -20,7 +20,7 @@ func _on_nueva_partida_button_pressed() -> void:
 	$pulsar.play()
 	ControladorJuego.nueva_partida()
 	ControladorTransiciones.ir_a_escena(ControladorJuego.RUTA_OFICINA,tr("dia_1_dialogo1_interacion1") + "[br]" + tr("dia_1_dialogo1_interacion2") + "[br]" + tr("dia_1_dialogo1_interacion3"), 1.5, false)
-
+	
 
 func _on_creditos_button_pressed() -> void:
 	$pulsar.play()
