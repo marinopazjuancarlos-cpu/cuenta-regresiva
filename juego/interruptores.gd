@@ -40,44 +40,55 @@ func _process(delta: float) -> void:
 
 
 func _on_tubo_1_pressed() -> void:
+	$palanca.play()
 	$gas1/tubo.visible = false
 	$gas1/AnimatedSprite2D.set_frame(0)
 
 
 
 func _on_tubo_2_pressed() -> void:
+	$palanca.play()
 	$gas2/tubo.visible = false
 	$gas2/AnimatedSprite2D.set_frame(0)
 
 
 
 func _on_tubo_3_pressed() -> void:
+	$palanca.play()
 	$gas3/tubo.visible = false
 	$gas3/AnimatedSprite2D.set_frame(0)
 
 
 func _on_tubo_4_pressed() -> void:
+	$palanca.play()
 	$gas4/tubo.visible = false
 	$gas4/AnimatedSprite2D.set_frame(0)
 
 
 func _on_tubo_5_pressed() -> void:
+	$palanca.play()
 	$gas5/tubo.visible = false
 	$gas5/AnimatedSprite2D.set_frame(0)
 	
 func _on_tubo_6_pressed() -> void:
+	$palanca.play()
 	$gas6/tubo.visible = false
 	$gas6/AnimatedSprite2D.set_frame(0)
 func _on_tubo_7_pressed() -> void:
+	$palanca.play()
 	$gas7/tubo.visible = false
 	$gas7/AnimatedSprite2D.set_frame(0)
 func _on_tubo_8_pressed() -> void:
+	$palanca.play()
 	$gas8/tubo.visible = false
 	$gas8/AnimatedSprite2D.set_frame(0)
 func _on_tubo_9_pressed() -> void:
+	$palanca.play()
 	$gas9/tubo.visible = false
 	$gas9/AnimatedSprite2D.set_frame(0)
+	
 func _on_tubo_10_pressed() -> void:
+	$palanca.play()
 	$gas10/tubo.visible = false
 	$gas10/AnimatedSprite2D.set_frame(0)
 

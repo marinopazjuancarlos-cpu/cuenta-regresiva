@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dks0l84nxcovl" path="res://icon.svg" id="2_pc2w5"]
 [ext_resource type="Texture2D" uid="uid://7fitbdihwg4d" path="res://arte/minijuego brackets (frenillos)/braker_v2png.png" id="3_hyvb8"]
 [ext_resource type="Texture2D" uid="uid://dsxq0ro1nhcwj" path="res://arte/minijuego brackets (frenillos)/palancas.png" id="4_gtd3j"]
+[ext_resource type="AudioStream" uid="uid://clkt5pq7k2xag" path="res://SFX/PALANCA.ogg" id="5_gtd3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyvb8"]
 atlas = ExtResource("4_gtd3j")
@@ -231,6 +232,9 @@ offset_top = -144.0
 offset_right = -246.0
 offset_bottom = -130.0
 label_settings = SubResource("LabelSettings_hyvb8")
+
+[node name="palanca" type="AudioStreamPlayer2D" parent="." unique_id=683637286]
+stream = ExtResource("5_gtd3j")
 
 [connection signal="pressed" from="gas1/tubo" to="." method="_on_tubo_1_pressed"]
 [connection signal="pressed" from="gas2/tubo" to="." method="_on_tubo_2_pressed"]

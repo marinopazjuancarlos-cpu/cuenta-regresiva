@@ -94,7 +94,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"agachado",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,7 +142,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 3.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvjwp"]
@@ -164,7 +164,7 @@ color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
 texture_filter = 1
 position = Vector2(1, -24)
 sprite_frames = SubResource("SpriteFrames_5yfxe")
-animation = &"agachado"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434649882]
 position = Vector2(0, -22.000002)

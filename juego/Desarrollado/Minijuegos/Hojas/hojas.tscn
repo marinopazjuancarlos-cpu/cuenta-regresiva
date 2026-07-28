@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dn6f5u5kpfie6" path="res://Desarrollado/Minijuegos/Hojas/hojas.gd" id="1_b1x30"]
 [ext_resource type="Texture2D" uid="uid://dtkad1svd06if" path="res://arte/minijuego hojas/fondo_filtro.png" id="2_1u08f"]
 [ext_resource type="Texture2D" uid="uid://bigrxstfcnkpd" path="res://Desarrollado/Minijuegos/Hojas/hoja_verde.tres" id="3_verde"]
+[ext_resource type="AudioStream" uid="uid://ck66v55y4f7rd" path="res://SFX/HOJA.ogg" id="4_yot8g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tubo"]
 
@@ -147,6 +148,9 @@ offset_top = -67.0
 offset_right = -73.0
 offset_bottom = -48.0
 label_settings = SubResource("LabelSettings_4wfsb")
+
+[node name="hoja" type="AudioStreamPlayer2D" parent="." unique_id=188834240]
+stream = ExtResource("4_yot8g")
 
 [connection signal="pressed" from="gas1/tubo1" to="." method="_on_tubo_1_pressed"]
 [connection signal="pressed" from="gas2/tubo2" to="." method="_on_tubo_2_pressed"]

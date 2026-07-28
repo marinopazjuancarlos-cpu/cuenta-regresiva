@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://ckgm75dvxa7e5"]
 
 [ext_resource type="Script" uid="uid://cmqx8alaa1uxi" path="res://ecenas/conductos.gd" id="1_71vgh"]
-[ext_resource type="Texture2D" uid="uid://dks0l84nxcovl" path="res://icon.svg" id="2_p6r33"]
 [ext_resource type="Texture2D" uid="uid://b3yf082sd1giy" path="res://arte/minijuego rueda/tuberias_v2.png" id="2_xl7gy"]
 [ext_resource type="Texture2D" uid="uid://dfq8ts504p32n" path="res://arte/minijuego rueda/manibela.png" id="3_mvgjt"]
 [ext_resource type="Texture2D" uid="uid://da5by443h7afd" path="res://arte/minijuego rueda/cabeza.png" id="3_p6r33"]
 [ext_resource type="Texture2D" uid="uid://cqmtl2yfwn3ny" path="res://arte/minijuego rueda/simetria.png" id="6_xl7gy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1x30"]
-radius = 73.01542
+radius = 50.000008
 
 [sub_resource type="Curve2D" id="Curve2D_mvgjt"]
 _data = {
@@ -26,9 +25,45 @@ font_size = 26
 [sub_resource type="LabelSettings" id="LabelSettings_xl7gy"]
 font_size = 6
 
+[sub_resource type="Curve2D" id="Curve2D_7oks3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 489.99994, 4.9999995)
+}
+point_count = 1
+
 [node name="Conductos" type="Node2D" unique_id=1899294917]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_71vgh")
+
+[node name="Button" type="Button" parent="." unique_id=2119770371]
+offset_left = 119.99997
+offset_top = -214.99998
+offset_right = 334.99997
+offset_bottom = 144.99998
+disabled = true
+
+[node name="Button2" type="Button" parent="." unique_id=171933111]
+offset_left = -299.99994
+offset_top = -214.99998
+offset_right = -119.999985
+offset_bottom = 144.99998
+disabled = true
+
+[node name="Button3" type="Button" parent="." unique_id=86988755]
+offset_left = -289.99997
+offset_top = -214.99998
+offset_right = 339.99997
+offset_bottom = -129.99998
+disabled = true
+
+[node name="Button4" type="Button" parent="." unique_id=342397939]
+offset_left = -289.99997
+offset_top = 124.99996
+offset_right = 339.99997
+offset_bottom = 149.99997
+disabled = true
+
+[node name="cara" type="Timer" parent="." unique_id=851272594]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=704211301]
 position = Vector2(22.695, -33.425)
@@ -40,20 +75,13 @@ scale = Vector2(2.0000005, 2.0000005)
 texture = ExtResource("2_xl7gy")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1443140334]
-position = Vector2(664.9999, 134.99998)
+position = Vector2(10, 0)
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=902139475]
-position = Vector2(22.500061, -15.000008)
+position = Vector2(5, 0)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b1x30")
-
-[node name="lin" type="Sprite2D" parent="Area2D" unique_id=912497850]
-visible = false
-position = Vector2(20.000061, -9.999954)
-rotation = 0.01819424
-scale = Vector2(1.0131158, 0.83937263)
-texture = ExtResource("2_p6r33")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2136552184]
 scale = Vector2(5.9999995, 5.9999995)
@@ -85,8 +113,10 @@ texture = ExtResource("3_p6r33")
 [node name="PuntajeTimer" type="Timer" parent="." unique_id=2146456558]
 
 [node name="CaraTimer" type="Timer" parent="." unique_id=1947490150]
+wait_time = 2.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=939315998]
+visible = false
 z_as_relative = false
 color = Color(0, 0, 0, 1)
 
@@ -118,6 +148,18 @@ position = Vector2(10, 1.5258789e-05)
 scale = Vector2(4.5624995, 4.555555)
 texture = ExtResource("6_xl7gy")
 
+[node name="Path2D2" type="Path2D" parent="." unique_id=403671432]
+curve = SubResource("Curve2D_7oks3")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button2" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Button3" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button3" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Button4" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button4" to="." method="_on_button_mouse_exited"]
+[connection signal="timeout" from="cara" to="." method="_on_cara_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="CaraTimer" to="." method="_on_cara_timer_timeout"]
