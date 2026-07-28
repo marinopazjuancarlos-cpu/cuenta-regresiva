@@ -116,7 +116,6 @@ texture = ExtResource("3_p6r33")
 wait_time = 2.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=939315998]
-visible = false
 z_as_relative = false
 color = Color(0, 0, 0, 1)
 
