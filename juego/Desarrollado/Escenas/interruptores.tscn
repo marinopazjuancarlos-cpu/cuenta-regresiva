@@ -52,6 +52,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas1" unique_id=578520711]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -29.5
 offset_top = -19.499992
 offset_right = 52.999992
@@ -67,6 +68,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas2" unique_id=288409288]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -54.0
 offset_top = -17.500002
 offset_right = 28.5
@@ -82,6 +84,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas3" unique_id=1164798897]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -17.0
 offset_top = -12.000004
 offset_right = 65.5
@@ -97,6 +100,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas4" unique_id=1792226291]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -29.0
 offset_top = -10.000004
 offset_right = 53.5
@@ -112,6 +116,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas5" unique_id=968682859]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -36.0
 offset_top = -14.000004
 offset_right = 46.5
@@ -127,6 +132,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas6" unique_id=773327854]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -66.5
 offset_top = -17.500004
 offset_right = 16.0
@@ -142,6 +148,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas7" unique_id=1492945334]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -48.0
 offset_top = -31.0
 offset_right = 34.5
@@ -157,6 +164,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas8" unique_id=1012176615]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -23.0
 offset_top = -51.0
 offset_right = 51.0
@@ -172,6 +180,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas9" unique_id=1267765838]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -13.0
 offset_top = -23.0
 offset_right = 69.5
@@ -187,6 +196,7 @@ sprite_frames = SubResource("SpriteFrames_oinq6")
 
 [node name="tubo" type="Button" parent="gas10" unique_id=1575481797]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -16.0
 offset_top = -36.0
 offset_right = 66.5
