@@ -54,6 +54,9 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = velocity.x < 0.0
 
 		sprite.play("walk")
+	elif $AnimatedSprite2D.animation == "cama":
+		print("camaa")
+		velocity.x = 0
 	elif moviéndose:
 		# is_navigation_finished() se adelantó a nuestra distancia_llegada: igual contamos como llegada
 		_llegar()

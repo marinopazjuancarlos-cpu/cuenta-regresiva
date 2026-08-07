@@ -27,21 +27,21 @@ region = Rect2(385, 0, 35, 45)
 atlas = ExtResource("2_4wfsb")
 region = Rect2(420, 0, 35, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8uiq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2da2k"]
 atlas = ExtResource("2_4wfsb")
-region = Rect2(455, 0, 35, 45)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytxpo"]
-atlas = ExtResource("2_4wfsb")
-region = Rect2(490, 0, 35, 45)
+region = Rect2(560, 0, 35, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2vxm"]
 atlas = ExtResource("2_4wfsb")
 region = Rect2(525, 0, 35, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2da2k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytxpo"]
 atlas = ExtResource("2_4wfsb")
-region = Rect2(560, 0, 35, 45)
+region = Rect2(490, 0, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8uiq"]
+atlas = ExtResource("2_4wfsb")
+region = Rect2(455, 0, 35, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2qyc"]
 atlas = ExtResource("2_4wfsb")
@@ -98,20 +98,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k8uiq")
+"texture": SubResource("AtlasTexture_2da2k")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytxpo")
-}, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_k2vxm")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2da2k")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ytxpo")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_k8uiq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"cama",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,7 +164,7 @@ color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
 texture_filter = 1
 position = Vector2(1, -24)
 sprite_frames = SubResource("SpriteFrames_5yfxe")
-animation = &"walk"
+animation = &"cama"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434649882]
 position = Vector2(0, -22.000002)

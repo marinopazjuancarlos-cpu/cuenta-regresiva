@@ -105,7 +105,7 @@ escena_minijuego = ExtResource("8_pt8cp")
 
 [node name="PuntoMinijuego3" parent="." unique_id=481380662 instance=ExtResource("7_558nb")]
 position = Vector2(102, 13)
-dia = 3
+dia = 2
 indice = 3
 escena_minijuego = ExtResource("10_v36to")
 

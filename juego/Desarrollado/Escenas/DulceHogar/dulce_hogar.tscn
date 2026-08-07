@@ -174,14 +174,14 @@ disabled = true
 [node name="JugadorAlcance" type="Marker2D" parent="Puerta" unique_id=2104919151]
 
 [node name="Cama" type="Area2D" parent="." unique_id=852202137]
-position = Vector2(497, 310)
+position = Vector2(240, 126)
 script = ExtResource("4_wjpaa")
 
 [node name="JugadorAlcance" type="Marker2D" parent="Cama" unique_id=1521565327]
-position = Vector2(-20, 10)
+position = Vector2(14.915, -5.015)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cama" unique_id=1552038582]
-position = Vector2(-258.5, -183.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_tyojl")
 debug_color = Color(1, 0, 0, 0.41960785)
 

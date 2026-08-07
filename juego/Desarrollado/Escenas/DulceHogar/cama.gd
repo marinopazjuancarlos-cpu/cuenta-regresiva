@@ -1,11 +1,59 @@
 extends Area2D
 
+var ventana_abierta = true
+var dialogo: int
+## Area2D genérico: al hacer clic, el jugador camina hasta "JugadorAlcance"
+## y luego se muestra el diálogo asignado.
+
+## Claves de traducción definidas en el CSV (ej. "DIALOGO_CAJA_L1").
+@export var lineas: Array[String] = []
+@export var una_sola_vez: bool = false
+
+@onready var punto_destino: Marker2D = $JugadorAlcance
+
+var ya_interactuado: bool = false
+var secuencia_en_curso: bool = false
 const RUTA_CASA = "uid://c5tycjcp8j56r"
+func _ready() -> void:
+	
+	input_pickable = true
+	input_event.connect(_on_input_event)
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if secuencia_en_curso or (una_sola_vez and ya_interactuado):
+		return
+	if event.is_action_pressed("click") and ControladorJuego.fin_de_jornada == true:
+			
+			if ventana_abierta == true:
+				if dialogo == 0:
+					_iniciar_interaccion()
+					dialogo +=1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("click") and ControladorJuego.fin_de_jornada == true:
-		ControladorJuego.dia_actual += 1
-		ControladorJuego.fin_de_jornada = false
-		ControladorTransiciones.ir_a_escena(RUTA_CASA)
+	pass
+	
 		
+func _iniciar_interaccion() -> void:
+	
+	secuencia_en_curso = true
+
+	var jugador: Node = get_tree().get_first_node_in_group("player")
+	if jugador == null:
+		push_error("Interactuable: no se encontró al Player en el grupo 'player'")
+		secuencia_en_curso = false
+		return
+
+	jugador.mover_a(punto_destino.global_position)
+	await jugador.llego_a_destino
+	$"../Player/AnimatedSprite2D".play("cama")
+	$"../Player/AnimatedSprite2D".play_backwards("cama")
+	await ControladorDialogo.mostrar_dialogo(lineas)
+	
+	ControladorJuego.dia_actual += 1
+	ControladorJuego.fin_de_jornada = false
+	ControladorTransiciones.ir_a_escena(RUTA_CASA)
+	
+	ya_interactuado = true
+	secuencia_en_curso = false
+	input_pickable = false
