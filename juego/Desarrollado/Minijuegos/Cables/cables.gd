@@ -90,7 +90,7 @@ var orden_conexion: Array = []
 
 
 func _ready() -> void:
-	dia = 2
+	dia =  ControladorJuego.dia_actual
 	tiempo_restante = DURACION.get(dia, DURACION[1])
 
 	var posiciones: Dictionary = POSICIONES_CIRCULOS.get(dia, POSICIONES_CIRCULOS[2])

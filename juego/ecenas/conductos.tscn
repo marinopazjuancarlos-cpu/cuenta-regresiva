@@ -129,7 +129,7 @@ autostart = true
 [node name="Label" type="Label" parent="." unique_id=300613071]
 offset_left = 114.99998
 offset_top = -144.99997
-offset_right = 219.99998
+offset_right = 219.99997
 offset_bottom = -74.99998
 label_settings = SubResource("LabelSettings_71vgh")
 
